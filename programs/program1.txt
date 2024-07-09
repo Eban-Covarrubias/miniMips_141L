@@ -1,0 +1,80 @@
+Hamming distance:
+
+LIST of REQ Ops( and, sub, add, xor, branch) or (hamDIST, algDist, GreaterTHN, LessTHN, Branch)
+Def: the number of bits between two strings that differ
+
+example:
+1001001
+1011010
+
+= 3 out of 8.
+This can be solved using bitwise xor and adding the number of 1s that we get.
+
+note: 1^1 = 0 and 0^0 = 0. The only time output = 1 is when the two inputs are different.
+
+The correlation is always the number of bits minus the hamming distance.
+
+In this case 5 / 8.
+
+For question 1.
+We are given 32 half world (16 bit) numbers. These are stored in addresses 0 up to 63. (each address slot is only able to store up to 8 bits). We will check the hamming distance between each possible pair using naive approach (O(n^2)) and then place the min distance in memory address 64 and the max in address 65.
+
+//going to use r1 and r2 for holding arguments, and will hold smallest distance in r4 and largest in r5
+//will use r3 to hold incrementing addresses
+//also we will only use registers r0-r7 to minimize bit usage
+
+
+
+mov r0, 0//store address 0 in r0
+mov r3, 0 //store address 0 in r3
+mov r4, 16’b 1111_1111_1111_1111 //store largest possible val in r4
+mov r5, 16’b 0000_0000_0000_0000 //smallest possible val in r5mov r7, 1 //store the number 1 in r7 to use for incrementing
+
+
+outerLoop:
+ldr r1, r0 //load first number in pair
+add r0, r0, r7 //increment outerPointer by 1
+innerLoop:
+add r3, r3, r7 //add 1 to r3
+ldr r2, r3 //load from addresses 1 to 63
+xor r6, r1, r2 // run xor on each pair
+branchLessThan updateMin, r6, r4
+backtoLoop:
+branchIfLessThan innerLoop, r3, 64
+
+branchIfLessThan outerLoop, r
+
+updateMin
+
+For question 2:
+Input array is X half words (16 bit) signed numbers. We will find the arithmetic distances between all of the possible pairs and then place the minimum in address 66-67 and the maximum in address 68-69.
+
+Note that because we are dealing with 2’s comp signed numbers, we can create a custom operation that finds distances. abs(A-B).
+
+Say we have 1001 (-7) and 0010 (2). [2’s comp input]we are dealing with (9) = 1001 [unsigned ouput]
+
+We can use a custom alg distance op, which checks the first bit to see if we have opposite sign.
+
+(first check can be done using xor gate on the msb of inputs)
+if(signs == opposite){
+-convert both to positive unsigned representations 
+(convert negatives):
+1001 -> (1000) - (0001) = 0111
+              (can be achieved using 1001 AND 1000) (can be achieved using 1001 AND 0111) (as taken from pa5 from cse 30 masking bits)
+(lastly using SUB function)
+(convert positives):
+0010 -> 0010 (we dont need to do anything lol)
+-add the two values
+-that is our output
+}
+else{
+-convert both to positive unsigned representations
+-subtract the smaller of the two values from the larger
+-return that as our output
+}
+
+1000_0000 = -128
+0111_1111 = 127
+difference = 255
+message.txt
+3 KB
