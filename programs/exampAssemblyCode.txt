@@ -1,0 +1,8 @@
+Xor R0 R1 R2
+And R1 R2 R3
+Saddto 1 1 R2 R3
+Mov R0 15
+Shift R1 4
+blt R0 R1 R2
+Str R2 R1 3
+ldr R3 R0 2
