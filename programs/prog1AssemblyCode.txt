@@ -1,0 +1,69 @@
+//going to use r1 and r2 for holding arguments, and will hold smallest dist
+//in r4 and largest in r5
+//will use r3 to hold incrementing addresses
+//also we will only use registers r0-r7 to minimize bit usage
+current set of instructions[mov, add, branchLessThan, xor, ldrs]
+
+//we will use memory address 69 and 70 for the index pointers for nested for loop
+//Assume that all moves using values over 15 are corrected to use shifts and saddto to get to their value
+mov r1, #66
+mov r0, #1 //move 1 in r0
+str r0, [r1, #0] //store the value 1 at memory address 66, pointerA
+mov r0, #0
+str r0, [r1, #1] //store the value 0 at memory address 67, pointerB
+
+
+//Largest signed value a register can hold is 2^7 = 128
+//largest unsigned value a register can hold is 2^8 = 256
+mov r0, 0b'0111_1111 //move largest val into r0
+mov r1, #64
+str r0, [r1, #0] //store the value 0 at memory address 64
+mov r0, 1111_1111 //move largest val into r0
+mov r1, #64 //note that each of these addresses should actually be written in binary representation not decimal
+str r0, [r1] //store the largest possible value in mem addr 64
+
+
+outerLoop:
+
+ldr r1, [r0]
+
+innerLoop:
+
+
+
+xor r3, r1, r2 // run xor on each pair
+
+countingLoop:
+//now we need to count the number of 1s and store that in r6 for checking
+and r9, r6, r0 // and with ...000_0001 to the the far right bit in temp reg r9
+add r10, r10, r9 //add either zero or one depending on prev and (will add 1 iff we see a 1 on the right side)
+rls r6, 1 //logical right shift by 1 bit.
+branchLessThanImmediate countingLoop, 
+
+branchLessThan updateMin, r6, r4
+branchLessThan updateMax, r5, r6
+backtoLoop:
+
+add r3, r3, r7 //add 1 to r3
+
+ldr r3, 
+branchLessThan innerLoop, r3, 64
+
+add r0, r0, r7 //increment outerPointer by 1
+branchLessThan outerLoop, r0, 63 //branch to start of outerloop iff the outer index is less than 63
+
+
+
+//I wrote this skip to prevent helper functions from being called unintentionally
+mov r0, 0
+mov r1, 1
+branchLessThan skip, r0, r1
+updateMin: 
+//finish this later, we will store the new min in r4
+str r4, r6
+branchLessThan backtoLoop, r6, r4
+
+updateMax: 
+//finish this later, we will store the new max in r5
+branchLessThan backtoLoop, r5, r6
+skip:
