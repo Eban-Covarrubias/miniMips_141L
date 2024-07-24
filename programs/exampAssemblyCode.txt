@@ -4,5 +4,13 @@ Saddto 1 1 R2 R3
 Mov R0 15
 Shift R1 4
 blt R0 R1 R2
-Str R2 R1 3
-ldr R3 R0 2
+Str R2 R1 3 
+ldr r3 r0 2
+ldr r3 r0 0 //test comment
+shift r1 b1000 //another test comment
+//this line should be skipped
+shift r1 3//seeing if empty lines are removed
+//
+//
+//
+str r0 r0 00 

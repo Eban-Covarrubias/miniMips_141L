@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
+
 /*
 To use this assembler, use the following lines:
 
@@ -32,6 +34,10 @@ or for binary output use the -b flag, ex:
 unsigned int parseInstruction(char *instruction);
 unsigned int getRegister(char *reg);
 void printBinary(FILE *file, unsigned int num, int bits);
+void toLowerCase(char *str);
+void removeComments(char *line);
+unsigned int parseImmediate(char *str);
+void trimWhitespace(char *str);
 
 int main(int argc, char *argv[]) {
     if (argc < 3 || argc > 4) {
@@ -59,6 +65,14 @@ int main(int argc, char *argv[]) {
 
     char line[256];
     while (fgets(line, sizeof(line), inputFile)) {
+        removeComments(line);
+        trimWhitespace(line);
+
+        // Skip blank lines
+        if (strlen(line) == 0) {
+            continue;
+        }
+
         unsigned int machineCode = parseInstruction(line);
         if (binaryOutput) {
             printBinary(outputFile, machineCode, 9);
@@ -79,81 +93,104 @@ unsigned int parseInstruction(char *instruction) {
 
     // Tokenize the instruction
     char *token = strtok(instruction, " ");
+    if (!token) return 0;
     strcpy(opcode, token);
+    toLowerCase(opcode);
 
     // Determine the opcode and parse accordingly
-    if (strcmp(opcode, "Xor") == 0 || strcmp(opcode, "And") == 0) {
-        int op = (strcmp(opcode, "Xor") == 0) ? XOR : AND;
+    if (strcmp(opcode, "xor") == 0 || strcmp(opcode, "and") == 0) {
+        int op = (strcmp(opcode, "xor") == 0) ? XOR : AND;
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(reg1, token);
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(reg2, token);
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(reg3, token);
 
         machineCode = (op << 6) | (getRegister(reg1) << 4) | (getRegister(reg2) << 2) | getRegister(reg3);
-    } else if (strcmp(opcode, "Saddto") == 0) {
+    } else if (strcmp(opcode, "saddto") == 0) {
         token = strtok(NULL, " ");
+        if (!token) return 0;
         char signedAddition = (token[0] == '1') ? 1 : 0;
         token = strtok(NULL, " ");
+        if (!token) return 0;
         char carryIn = (token[0] == '1') ? 1 : 0;
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(reg1, token);
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(reg2, token);
 
         machineCode = (SADD << 6) | (signedAddition << 5) | (carryIn << 4) | (getRegister(reg1) << 2) | getRegister(reg2);
-    } else if (strcmp(opcode, "Mov") == 0) {
+    } else if (strcmp(opcode, "mov") == 0) {
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(reg1, token);
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(immediate, token);
 
-        machineCode = (MOV << 6) | (getRegister(reg1) << 4) | atoi(immediate);
-    } else if (strcmp(opcode, "Shift") == 0) {
+        machineCode = (MOV << 6) | (getRegister(reg1) << 4) | parseImmediate(immediate);
+    } else if (strcmp(opcode, "shift") == 0) {
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(reg1, token);
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(immediate, token);
 
-        machineCode = (SHIFT << 6) | (getRegister(reg1) << 4) | (atoi(immediate) & 0x0F);
+        machineCode = (SHIFT << 6) | (getRegister(reg1) << 4) | (parseImmediate(immediate) & 0x0F);
     } else if (strcmp(opcode, "blt") == 0) {
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(reg1, token);
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(reg2, token);
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(reg3, token);
 
         machineCode = (BLT << 6) | (getRegister(reg1) << 4) | (getRegister(reg2) << 2) | getRegister(reg3);
-    } else if (strcmp(opcode, "Str") == 0) {
+    } else if (strcmp(opcode, "str") == 0) {
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(reg1, token);
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(reg2, token);
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(immediate, token);
 
-        machineCode = (STR << 6) | (getRegister(reg1) << 4) | (getRegister(reg2) << 2) | atoi(immediate);
+        machineCode = (STR << 6) | (getRegister(reg1) << 4) | (getRegister(reg2) << 2) | parseImmediate(immediate);
     } else if (strcmp(opcode, "ldr") == 0) {
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(reg1, token);
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(reg2, token);
         token = strtok(NULL, " ");
+        if (!token) return 0;
         strcpy(immediate, token);
 
-        machineCode = (LDR << 6) | (getRegister(reg1) << 4) | (getRegister(reg2) << 2) | atoi(immediate);
+        machineCode = (LDR << 6) | (getRegister(reg1) << 4) | (getRegister(reg2) << 2) | parseImmediate(immediate);
     }
 
     return machineCode;
 }
 
 unsigned int getRegister(char *reg) {
-    if (strcmp(reg, "R0") == 0) return R0;
-    if (strcmp(reg, "R1") == 0) return R1;
-    if (strcmp(reg, "R2") == 0) return R2;
-    if (strcmp(reg, "R3") == 0) return R3;
+    toLowerCase(reg);
+    if (strcmp(reg, "r0") == 0) return R0;
+    if (strcmp(reg, "r1") == 0) return R1;
+    if (strcmp(reg, "r2") == 0) return R2;
+    if (strcmp(reg, "r3") == 0) return R3;
     return 0; // Default case, should never reach here if input is correct
 }
 
@@ -161,4 +198,44 @@ void printBinary(FILE *file, unsigned int num, int bits) {
     for (int i = bits - 1; i >= 0; i--) {
         fprintf(file, "%d", (num >> i) & 1);
     }
+}
+
+void toLowerCase(char *str) {
+    while (*str) {
+        *str = tolower(*str);
+        str++;
+    }
+}
+
+void removeComments(char *line) {
+    char *comment = strstr(line, "//");
+    if (comment) {
+        *comment = '\0';
+    }
+}
+
+unsigned int parseImmediate(char *str) {
+    if (str[0] == 'b') {
+        return strtol(str + 1, NULL, 2); // Parse binary
+    } else {
+        return atoi(str); // Parse decimal
+    }
+}
+
+void trimWhitespace(char *str) {
+    char *end;
+
+    // Trim leading space
+    while (isspace((unsigned char)*str)) str++;
+
+    if (*str == 0) { // All spaces?
+        return;
+    }
+
+    // Trim trailing space
+    end = str + strlen(str) - 1;
+    while (end > str && isspace((unsigned char)*end)) end--;
+
+    // Write new null terminator character
+    end[1] = '\0';
 }
