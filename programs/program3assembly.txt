@@ -1,0 +1,113 @@
+//start
+//memory locations used 
+//counter (128), multiplier (129), multiplicand (130), result (140), (me using data_mem is a place holder for where the array starts)
+ldr r0 data_mem 00//loads the data_mem address to r0
+mov r3 #0x00 // loop counter
+loop: 
+    mov r2 #0x80 //memory location of counter
+    ldr r3 r2 00// ldr counter from memory location 128
+    mov r2 #0b10000 //stores the number 16 into r2 to compare to the counter
+    blt exit r2 r3 //r2(16) < counter then we branch to the exit
+    ldr r0 data_mem 00//loads datamem address into r0
+    shift r3 #0b1110 // shifts r3 to the left 2 for 4*i
+    saddto 0 0 r0 r3 // creates the addres for data_mem of 4*i
+    ldr r1 r0 00// load the value from memory location data_mem[4*i]
+    mov r2 #0b01 // stores 1 into r2
+    saddto 0 0 r0 r2 //add 1 to the memory location to create data_mem[4*i+1] to next the next value
+    ldr r2 r0 00// load the value from memory location data_mem[4*i+1]
+    mov r3 #0b1000 // -8 into r3
+    shift r1 r3 //shifts left 8 times for r1
+//
+    //idk how to use orr
+    //orr r1 r1 r2 //this combines the 2 together
+    mov r3 #0x81 //store memory location 129 into r3
+    str r1 r3 //store the combination of r1 and r2 into r3 (memory location 129)
+//
+    mov r2 #0x80 //memory location of counter
+    ldr r3 r2 00// ldr counter from memory location 128
+    ldr r0 data_mem 00//loads datamem address into r0
+    shift r3 #0b1110 // shifts r3 to the left 2 for 4*i
+    mov r1 0b10 // 2 into r1
+    saddto 0 0 r3 r1 // 4*i + 2
+    saddto 0 0 r0 r3 // creates the address for data_mem of 4*i+2
+    ldr r1 r0 00// load the value from memory location data_mem[4*i+2]
+    mov r2 #0b01 // stores 1 into r2
+    saddto 0 0 r0 r2 //4*i+2 + 1 to create data_mem[4*i+3] to next the next value
+    ldr r2 r0 00// load the value from memory location data_mem[4*i+1]
+    mov r3 #0b1000 // -8 into r3
+    shift r1 r3 //shifts left 8 times for r1
+//
+    //idk how to use orr
+    //orr r1 r1 r2 //this combines the 2 together
+    mov r3 #0x82 //store memory location 130 into r3
+    str r1 r3 //store the combination of r1 and r2 into r3 (memory location 130)
+//
+    mov r3 0b0000 //initialize result 
+    mov r2 0x8c //memory location 140 for result location
+    str r3 r2 00 //stores r3 into memory locatin 140
+multiply_loop:
+    mov r0 #0x81 //memory location 129 for the first number we got
+    ldr r1 r0 00 //loads value from location 129 into r1
+    mov r0 #0x82 // location 130 for the second number we got
+    ldr r2 r0 00 //loads value from location 130 into r2
+    mov r3 0b0001 // 1 into r3
+    blt store r2 r3// r2 < 1 once r2 is less than 1 then we branch to the store branch
+//
+    //**check to see if the multiplier has an lsb of 1** <--write this part. This part is written under--> if so then result += multiplicand
+    //figure out how to write this
+    //if it doesnt then skip adding and branch to the shift
+    mov r0 0x8c // result memory location
+    ldr r3 r0 00 //load the value from the result memory location into r3
+    saddto 0 0 r3 r2 // result += multiplicand
+    str r3 r0 00 //store updated result back into result memory location
+shift:
+    mov r0 0b1111 // -1
+    shift r2 r0 //shifts to the left 1 for the multiplicand
+    mov r3 0x81 //memory location for multiplicand
+    str r2 r3 00 //stores updated multiplicand
+    mov r0 0b0001 // 1
+    shift r1 r0 // shifts to the right 1 for the multiplier
+    mov r3 0x82 //memory location for multiplier
+    str r1 r3 00 //stores updated multiplier
+//
+    //brain not functioning so ill just write out what should be here its definitely not correct based on our processor lol
+    b multiply_loop
+store:
+    ldr r0 data_mem 00 //loads data_mem address into r0
+    mov r1 0b01000000 // 64 into r1
+    saddto 0 0 r0 r1 // creates data_mem[64]
+    mov r1 0x80 // counter memory location
+    shift r1 0b1110 //shift 2 to the left for the counter to multiply by 4
+    saddto 0 0 r0 r1 // creates data_mem[64 + 4*1]
+    //DONT CHANGE r0 UNTIL WE NEED TO GO TO THE NEXT MEMORY LOCATION TO STORE
+    mov r2 0x8c //memory location for result
+    ldr r1 r2 00 //gets value within result memory location
+    str r1 r0 //stores result into memory location that is in r0 data_mem[64 + 4*i]
+//
+    shift r1 0b0100 //shifts right by 4
+    shift r1 0b0100 //shifts right by 4
+    mov r3 0b1 // 1 in r3
+    saddto 0 0 r0 r3 //adds 1 to r0 to get to the next memory location to store result
+    str r1 r0 00 //stores updated result into the next memory location data_mem[64 + 4*i + 1]
+//
+    shift r1 0b0100 //shifts right by 4
+    shift r1 0b0100 //shifts right by 4
+    saddto 0 0 r0 r3 //adds 1 to r0 to get to the next memory location to store result
+    str r1 r0 00 //stores updated result into the next memory location data_mem[64 + 4*i + 2]
+//
+    shift r1 0b0100 //shifts right by 4
+    shift r1 0b0100 //shifts right by 4
+    saddto 0 0 r0 r3 //adds 1 to r0 to get to the next memory location to store result
+    str r1 r0 00 //stores updated result into the next memory location data_mem[64 + 4*i + 3]
+//
+    //can change r0 now with no reprecussions
+    mov r0 0x80 // loop counter memory location
+    ldr r1 r0 00 // load the value that is stored in loop counter memory location
+    mov r0 0b0001 // 1 in r0
+    saddto 0 0 r1 r0 // r1 = r1 + r0
+    mov r0 0x80 // loop counter memory location
+    str r1 r0 00 //stores updated loop counter
+//
+    //idk how to force a branch so ill just leave this here for now
+    b loop
+end:
