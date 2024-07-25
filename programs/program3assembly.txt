@@ -71,7 +71,7 @@ shift:
     str r1 r3 00 //stores updated multiplier
 //
     //brain not functioning so ill just write out what should be here its definitely not correct based on our processor lol
-    b multiply_loop
+//   b multiply_loop
 store:
     ldr r0 data_mem 00 //loads data_mem address into r0
     mov r1 0b01000000 // 64 into r1
@@ -109,5 +109,5 @@ store:
     str r1 r0 00 //stores updated loop counter
 //
     //idk how to force a branch so ill just leave this here for now
-    b loop
+//    b loop
 end:
