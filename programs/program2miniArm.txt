@@ -1,35 +1,29 @@
-//START OF ASSEMBLY CODE
-//Set min and max MSB and LSB
-mov r0 8
-shift r0 3 //64
+mov r0 8 //Set min and max MSB and LSB
+shift r0 -3 //64
 mov r1 0
-saddto 1 1 r1 r1//subtract 1 from 0 to get 1111_1111
 str r1 r0 2 //store minMSB in 66
 str r1 r0 3 //store minLSB in 67
 mov r1 4
-saddto 0 0 r0 r1 //r0 = 68
+add r0 r1 //r0 = 68
 mov r1 0
 str r1 r0 0 //store maxMSB in 68
 str r1 r0 1 //store maxLSB in 69
 //Use memory slot 70 and 71 for i and j
 str r1 r0 2 //i = 0
-//set j = i+2
-mov r0 8
-shift r0 3 // 64
+mov r0 8 //SETTING j = i+2
+shift r0 -3 // 64
 mov r1 6
-saddto 0 0 r0 r1 //r0 = 70
+add r0 r1 //r0 = 70
 ldr r1 r0 0 //get value of i
 mov r2 2
-saddto 0 0 r1 r2
+add r1 r2
 str r1 r0 1 //j = i+2
-//INSIDE LOOP
-mov r0 b1000
-shift r0 4 //create sign mask
-//Loading in arr[i] arr[j]
-mov r1 8
-shift r1 3
+mov r0 8 //INSIDE J LOOP
+shift r0 -4 //create sign mask
+mov r1 8 //Loading in arr[i] arr[j]
+shift r1 -3
 mov r2 4
-saddto 0 0 r1 r2 //70
+add r1 r2 //70
 ldr r2 r1 0 //r2 holds I
 ldr r3 r1 1 //r3 holds j
 ldr r2 r2 0 //r2 holds arr[i]
@@ -38,39 +32,34 @@ and r0 r2 r0 //signA
 mov r1 0
 and r1 r3 r1 //signB
 mov r3 15
-shift r3 3 //120
+shift r3 -3 //120
 mov r2 4
-saddto 0 0 r3 r2 //124
-blt r3 r0 r1 //skip down 124 lines if signA < signB
-mov r3 15
-mov r3 3 //120
-mov r2 1
-saddto 1 0 r3 r2 //119
-blt r3 r1 r0 //skip down 119 lines if signB < signA
-//IF THE SIGNS ARE EQUAL DO THIS:
-mov r1 8
-shift r1 3
-mov r2 4
-saddto 0 0 r1 r2 //70
+add r3 r2 //124
+mov r2 2
+blt r3 r0 r1 //if signA < signB skip down ??? lines to line #154 if 
+sub r3 r2 //???-2
+blt r3 r1 r0 //if signB < signA dkip down ??? lines to line #154 
+mov r1 9 //IF THE SIGNS ARE EQUAL:
+shift r1 -3 //72
+sub r1 r2 //70
 ldr r2 r1 0 //r2 holds I
 ldr r3 r1 1 //r3 holds j
 ldr r2 r2 0 //r2 holds arr[i]
 ldr r3 r3 0 //r3 holds arr[j]
 mov r0 8
-shift r0 3 //64
+shift r0 -3 //64
 mov r1 7
-saddto 0 0 r0 r1 //71
-blt r0 r2 r3 //skip down 71 lines if arr[i] < arr[i]
-mov r0 6
-shift r0 3 //24
+add r0 r1 //71
+blt r0 r2 r3 //skip down ??? lines to line 121 if arr[i] < arr[j]
+mov r0 6 //if arr[i] >= arr[j]
+shift r0 -3 //24
 mov r1 3
-saddto 0 0 r0 r1 //27
-blt r0 r3 r2 //skip down 27 lines if arr[j] < arr[i]
-//CASE WHERE: arr[j] == arr[i] SO diffMSB = 0
-mov r0 8
-shift r0 3 //64
+add r0 r1 //27
+blt r0 r3 r2 //skip down ??? 27 lines to line 86 if arr[j] < arr[i]
+mov r0 8 //if arr[j] == arr[i] SO diffMSB = 0
+shift r0 -3 //64
 mov r1 6
-saddto 0 0 r0 r1 //r0=70
+add r0 r1 //r0=70
 mov r1 0
 str r1 r0 3 //UPDATE diffMSB = 0
 ldr r2 r0 0 //load in i
@@ -78,273 +67,267 @@ ldr r3 r0 1 //load in j
 ldr r2 r2 1 //load in arr[i+1]
 ldr r3 r3 1 //load in arr[j+1]
 mov r1 9
-shift r1 3 //hold r1 = 72
+shift r1 -3 //hold r1 = 72
 mov r0 6
 blt r0 r2 r3 //skip down 6 lines if arr[i+1] < arr[j+1]
-saddto 1 0 r2 r3
+sub r2 r3 //if arr[i+1] >= arr[j+1]
 str r2 r1 1 // update diffLSB = arr[i+1] - arr[j+1]
 mov r1 3
 mov r0 0
 blt r1 r0 r1 //forced skip down 3
-saddto 1 0 r3 r2
+sub r3 r2 //if arr[i+1] < arr[j+1]
 str r3 r1 1 //update diffLSB = arr[j+1] - arr[i+1]
-//LARGE FORCED SKIP TO AVOID FALL THRU
-mov r0 8
-shift r0 3
+mov r0 8 //CONTINUE
+shift r0 -3
 mov r1 4
-saddto 0 0 r0 r1 //68
-blt r0 r0 r1 //Forced skip down 68 (r0) lines (to J for loop)
-//
-//
-//IF SIGNS ARE EQUAL AND arr[j] < arr[i]
-mov r1 8
-shift r1 3
+add r0 r1 //68
+blt r0 r0 r1 //Forced skip down 68 (???) lines (to J for loop)
+mov r1 8 //IF SIGNS ARE EQUAL AND arr[j] < arr[i]
+shift r1 -3
 mov r0 6
-saddto 0 0 r1 r0 //70
+add r1 r0 //70
 ldr r2 r1 0 //r2 = i
 ldr r3 r1 1 //r3 = j
 ldr r2 r2 1 //arr[i+1]
 ldr r3 r3 1 //arr[j+1]
 mov r0 13
 blt r0 r2 r3 //jump down 13 lines if arr[i+1] < arr[j+1]
-saddto 1 0 r2 r3 //this is fine because we know arr[j+1] <= arr[i+1]
+sub r2 r3 //this is fine because we know arr[j+1] <= arr[i+1]
 str r2 r1 3 //update diffLSB to be arr[i+1] - arr[j+1]
 ldr r2 r1 0 //r2 = i
 ldr r3 r1 1 //r3 = j
 ldr r2 r2 0 //arr[i]
 ldr r3 r3 0 //arr[j]
-saddto 1 0 r2 r3 //arr[i]-arr[j]
+sub r2 r3 //arr[i]-arr[j]
 str r2 r1 2 //update diffMSB to be arr[i] - arr[j]
 mov r0 9
 mov r2 2
 mov r3 3
 blt r0 r2 r3 //forced jump down 9 lines
-// if arr[i+1] < arr[j+1]
-saddto 1 0 r2 r3
+sub r2 r3 // if arr[i+1] < arr[j+1]
 str r2 r1 3 //update diffLSB to be arr[i+1] - arr[j+1]
 ldr r2 r1 0 //r2 = i
 ldr r3 r1 1 //r3 = j
 ldr r2 r2 0 //arr[i]
 ldr r3 r3 0 //arr[j]
-saddto 1 1 r2 r3 //arr[i]-arr[j]-1
+sub r2 r3 //arr[i]-arr[j]
+mov r3 1
+sub r2 r3//arr[i]-arr[j]-1
 str r2 r1 2 //update diffMSB to be arr[i] - arr[j] - 1
-//Done with SIGNS ARE EQUAL AND arr[j] < arr[i]
+mov r0 6 //CONTINUE
+shift r0 -2 //24
+mov r1 5
+add r0 r1 //31
+blt r0 r1 r0 //force skip down 28 lines until J for loop
+mov r1 8 //IF SIGNS ARE EQUAL AND arr[i] < arr[j]
+shift r1 -3
 mov r0 6
-shift r0 2 //24
-mov r1 7
-saddto 0 0 r0 r1 //31
-mov r2 2
-mov r3 3
-blt r0 r2 r3 //force skip down 31 lines until J for loop
-//
-//
-//IF SIGNS ARE EQUAL AND arr[i] < arr[j]
-//
-//
-mov r1 8
-shift r1 3
-mov r0 6
-saddto 0 0 r1 r0 //70
+add r1 r0 //r1=70
 ldr r2 r1 0 //r2 = i
 ldr r3 r1 1 //r3 = j
 ldr r2 r2 1 //arr[i+1]
 ldr r3 r3 1 //arr[j+1]
 mov r0 13
 blt r0 r3 r2 //jump down 13 lines if arr[j+1] < arr[i+1]
-//we know arr[j+1] >= arr[i+1]
-saddto 1 0 r3 r2 //this is fine because we know arr[i+1] <= arr[j+1]
+sub r3 r2 //this is fine because we know arr[i+1] <= arr[j+1]
 str r3 r1 3 //update diffLSB to be arr[i+1] - arr[j+1]
 ldr r2 r1 0 //r2 = i
 ldr r3 r1 1 //r3 = j
 ldr r2 r2 0 //arr[i]
 ldr r3 r3 0 //arr[j]
-saddto 1 0 r3 r2 //arr[j]-arr[i]
+sub r3 r2 //arr[j]-arr[i]
 str r3 r1 2 //update diffMSB to be arr[j]-arr[i]
 mov r0 9
-mov r2 2
-mov r3 3
-blt r0 r2 r3 //forced jump down 9 lines
-//arr[j+1] < arr[i+1]
-saddto 1 0 r3 r2
+blt r0 r0 r1 //forced jump down 9 lines to 149 // ??? < 70
+sub r3 r2 //arr[j+1] < arr[i+1]
 str r3 r1 3 //update diffLSB to be arr[j+1] - arr[i+1]
 ldr r2 r1 0 //r2 = i
 ldr r3 r1 1 //r3 = j
 ldr r2 r2 0 //arr[i]
 ldr r3 r3 0 //arr[j]
-saddto 1 1 r3 r2 //arr[j]-arr[i]-1
-str r3 r1 2 //update diffMSB to be arr[j] - arr[i] - 1
-//Done with SIGNS ARE EQUAL AND arr[i] < arr[j]
-mov r0 9
-shift r0 2 //36
-mov r1 8
-saddto 0 0 r0 r1 //44
-mov r2 2
-mov r3 3
-blt r0 r2 r3 //force skip down 44 lines until J for loop
-//
-//IF THE SIGNS ARE NOT EQUAL DO THIS:
-mov r0 8
-shift r0 3 //64
+sub r3 r2 //arr[j]-arr[i]
+mov r2 1
+sub r3 r2//arr[j]-arr[i]-1
+str r3 r1 2 //update diffMSB to be arr[j] - arr[i] - 1 //Done with SIGNS ARE EQUAL AND arr[i] < arr[j]
+mov r0 9 //Start of force skip
+shift r0 -2 //36
+mov r1 8 //r1=8
+add r0 r1 //r0=44
+blt r0 r1 r0 //force skip down ??? lines until J for loop
+mov r0 8 //IF THE SIGNS ARE NOT EQUAL DO THIS:
+shift r0 -3 //64
 mov r1 6
-saddto 0 0 r0 r1 //r0=70
+add r0 r1 //r0=70
 ldr r2 r0 0 //load in i
-ldr r3 r0 1 //load in j
+copy r3 r2
+ldr r3 r3 0//load in arr[i]
 ldr r2 r2 1 //load in arr[i+1]
-ldr r3 r3 1 //load in arr[j+1]
-saddto 0 0 r3 r2 //calculate diffLSB
-str r3 r0 2 //diffLSB = arr[i + 1] + arr[j + 1];
-mov r0 11
+abs r3 r2 //get abs(arr[i].arr[i+1])
+mov r1 1
+add r0 r1 //r0 = 71
+ldr r1 r0 0//load in j
+copy r0 r1 //two j's
+ldr r1 r1 0//load in arr[j]
+ldr r0 r0 1//load in arr[j+1]
+abs r1 r0 //get abs(arr[i].arr[i+1])
+add r0 r2 //this addition may have had overflow
+mov r3 9
+shift r3 -3 //72
+str r0 r3 0 //diffLSB
+
+
+blt r1 r2 r3
+
+comp r1 r1
+blt r1
+ble r1
+beq r1
+bne r1
+bgt r1
+bge r1
+
 blt r0 r3 r2 //if diffLSB < arr[i+1] we have overflow error
-mov r1 9 //INSERTED RANGE EXTENDER
-mov r0 0
-blt r1 r0 r1 //forced skip over range extender
-mov r0 8 //RANGE EXTENDER FOR J LOOP
-shift r0 4//-128
-blt r1 1
-blt r0 r0 r1//END OF RANGE EXTENDER FOR J LOOP
-mov r0 8 //RANGE EXTENDER FOR I LOOP
-shift r0 4//-128
-blt r1 1
-blt r0 r0 r1//END OF RANGE EXTENDER FOR I LOOP
-//NO OVERFLOW ISSUES
-mov r0 8 //If we dont skip, we add as normal
+mov r0 8 //NO OVERFLOW ISSUES, we add as normal
 shift r0 3 //64
 mov r1 6
-saddto 0 0 r0 r1 //r0=70
+add r0 r1 //r0=70
 ldr r2 r0 0 //load in i
 ldr r3 r0 1 //load in j
 ldr r2 r2 0 //load in arr[i]
 ldr r3 r3 0 //load in arr[j]
-saddto 0 0 r2 r3 
+abs r3 r3
+abs r2 r2
+add r2 r3 
 str r2 r0 2 //diffMSB = arr[i] + arr[j]
-//OVERFLOW ERROR
-mov r0 8 //If we do skip, we add and include a carry
+mov r1 11
+blt r1 r1 r0 //Prevent Fall thru into OVERFLOW ERROR
+mov r0 8 //OVERFLOW ERROR, we add and include a carry bit
 shift r0 3 //64
 mov r1 6
-saddto 0 0 r0 r1 //r0=70
+add r0 r1 //r0=70
 ldr r2 r0 0 //load in i
 ldr r3 r0 1 //load in j
 ldr r2 r2 0 //load in arr[i]
 ldr r3 r3 0 //load in arr[j]
-saddto 0 1 r2 r3 //arr[i] + arr[j] + 1
-str r2 r0 2 //diffMSB = arr[i] + arr[j] + 1
-//DONE WITH if(signA != signB)
-//
-//DONE WITH ALL UPDATES OF diffMSB and diffLSB, update min and max
-//update MAX difference
-mov r0 8
-shift r0 3 //64
+add r2 r3 //arr[i] + arr[j]
+mov r1 1
+add r2 r1 //arr[i] + arr[j] + 1
+str r2 r0 2 //diffMSB = arr[i] + arr[j] + 1 //DONE WITH if(signA != signB)
+mov r0 ??? //Start Jump to helper function
+blt r0 r1 r0//HELPER function, update min and max //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+mov r0 8 //INNER LOOP IF J<64 
+shift r0 3 //r0 = 64
+mov r1 7
+add r0 r1 //r0 = 71
+ldr r1 r0 0 //load j into r1
+mov r2 2
+add r1 r2 
+str r1 r0 0 //j+=2 update j
+mov r2 8
+shift r2 -3 //64
+mov r3 8
+shift r3 -4 //-128
+mov r0 9
+add r3 r0 //-119
+blt r3 r1 r2 //branch up to line 191 by moving up 119 lines (-119) if j < 64
+mov r0 8 //OUTERLOOP IF I<64 
+shift r0 -3 //r0 = 64
+mov r1 6
+add r0 r1 //70
+ldr r1 r0 0 //load in i
+mov r2 2
+add r1 r2
+str r1 r0 0 //update i+=2
+mov r2 8
+shift r2 -3 //64
+mov r3 8
+shift r3 -4 //-128
+blt r3 r1 r2 //branch up to extender at line 207 (-128) lines if i < 64
+mov r3 15
+shift r3 -3
+blt r3 r1 r2//force a branch to prevent fall thru into helper function
+mov r0 8 //HELPER FUNCTION START:  //update MAX difference
+shift r0 -3 //64
 mov r1 4
-saddto 0 0 r0 r1 //r0 = 68
+add r0 r1 //r0 = 68
 ldr r2 r0 0 //load r2 = maxMSB
-saddto 0 0 r0 r1 //r0 = 72
+add r0 r1 //r0 = 72
 ldr r3 r0 0// load r3 = diffMSB
 mov r1 5
-shift r1 3 //20
+shift r1 -3 //20
 mov r0 4
-saddto 0 0 r1 r0 //26
+add r1 r0 //26
 blt r1 r2 r3 // skip down 26 lines if maxMSB < diffMSB and update
 mov r1 5
-shift r1 3 // 20
+shift r1 -3 // 20
 mov r0 1
-saddto 0 0 r1 r0 //21
+add r1 r0 //21
 blt r1 r3 r2 // skip down 21 lines if diffMSB < maxMSB and dont update
 //fall thru means maxMSB == diffMSB
 mov r0 8
-shift r0 3 //64
+shift r0 -3 //64
 mov r1 4
-saddto 0 0 r0 r1 //r0 = 68
+add r0 r1 //r0 = 68
 ldr r2 r0 1 //load r2 = maxLSB
-saddto 0 0 r0 r1 //r0 = 72
+add r0 r1 //r0 = 72
 ldr r3 r0 1// load r3 = diffLSB
 mov r1 12
 blt r1 r3 r2 //skip down 12 lines if diffLSB < maxLSB and dont update
 //update MAX to diff
+//Worry about branching later, prevent fall thru calls by default, and also go back up to main after executing
 mov r0 8
-shift r0 3 //64
+shift r0 -3 //64
 mov r1 4
-saddto 0 0 r0 r1 //r0 = 68
-saddto 0 0 r0 r1 //r0 = 72
+add r0 r1 //r0 = 68
+add r0 r1 //r0 = 72
 ldr r3 r0 0// load r3 = diffMSB
-saddto 1 0 r0 r1 //r0 = 68
+sub r0 r1 //r0 = 68
 str r3 r0 0 //update maxMSB = diffMSB
-saddto 0 0 r0 r1 //r0 = 72
+add r0 r1 //r0 = 72
 ldr r3 r0 1 //load r3 = diffLSB
-saddto 1 0 r0 r1 //r0 = 68
-str r3 r0 1 //update maxLSB = diffLSB
-//DONE WITH UPDATING MAX
-//
-//update MIN difference////////////////////
-mov r0 8
-shift r0 3 //64
+sub r0 r1 //r0 = 68
+str r3 r0 1 //update maxLSB = diffLSB//DONE WITH UPDATING MAX
+mov r0 8 //update MIN difference////////////////////
+shift r0 -3 //64
 mov r1 2
-saddto 0 0 r0 r1 //r0 = 66
+add r0 r1 //r0 = 66
 ldr r2 r0 0 //load r2 = minMSB
 mov r1 6
-saddto 0 0 r0 r1 //r0 = 72
+add r0 r1 //r0 = 72
 ldr r3 r0 0// load r3 = diffMSB
 mov r1 5
-shift r1 3 //20
+shift r1 -3 //20
 mov r0 4
-saddto 0 0 r1 r0 //26
+add r1 r0 //26
 blt r1 r3 r2 // skip down 26 lines if diffMSB < minMSB and update
 mov r1 5
-shift r1 3 // 20
+shift r1 -3 // 20
 mov r0 1
-saddto 0 0 r1 r0 //21
+add r1 r0 //21
 blt r1 r2 r3 // skip down 21 lines if minMSB < diffMSB and dont update
-//fall thru means minMSB == diffMSB
-mov r0 8
-shift r0 3 //64
+mov r0 8 //fall thru means minMSB == diffMSB
+shift r0 -3 //64
 mov r1 2
-saddto 0 0 r0 r1 //r0 = 66
+add r0 r1 //r0 = 66
 ldr r2 r0 1 //load r2 = minLSB
 mov r1 6
-saddto 0 0 r0 r1 //r0 = 72
+add r0 r1 //r0 = 72
 ldr r3 r0 1// load r3 = diffLSB
 mov r1 12
 blt r1 r2 r3 //skip down 12 lines if minLSB < diffLSB and dont update
-//update MIN to diff
-mov r0 8
-shift r0 3 //64
+mov r0 8 //update MIN to diff
+shift r0 -3 //64
 mov r1 8
-saddto 0 0 r0 r1 //r0 = 72
+add r0 r1 //r0 = 72
 ldr r3 r0 0// load r3 = diffMSB
-saddto 1 0 r0 r1 //r0 = 64
+sub r0 r1 //r0 = 64
 str r3 r0 2 //update minMSB = diffMSB
-saddto 0 0 r0 r1 //r0 = 72
+add r0 r1 //r0 = 72
 ldr r3 r0 1 //load r3 = diffLSB
-saddto 1 0 r0 r1 //r0 = 64
-str r3 r0 3 //update minLSB = diffLSB
-//DONE WITH UPDATING MIN
-//
-//INNER LOOP IF J<64
-mov r0 8
-shift r0 3 //r0 = 64
-mov r1 7
-saddto 0 0 r0 r1 //r0 = 71
-ldr r1 r0 0 //load j into r1
-mov r2 2
-saddto 0 0 r1 r2 
-str r1 r0 0 //j+=2 (update j)
-mov r2 8
-shift r2 3 //64
-mov r3 b1000
-shift r3 4 //-128
-mov r0 9
-saddto 0 0 r3 r0 //-119
-blt r3 r1 r2 //branch up to line 191 by moving up 119 lines (-119) if j < 64
-//OUTERLOOP IF I<64
-mov r0 8
-shift r0 3 //r0 = 64
-mov r1 6
-saddto 0 0 r0 r1 //70
-ldr r1 r0 0 //load in i
-mov r2 2
-saddto 0 0 r1 r2
-str r1 r0 0 //update i+=2
-mov r2 8
-shift r2 3 //64
-mov r3 b1000
-shift r3 4 //-128
-blt r3 r1 r2 //branch up to extender at line 207 (-128) lines if i < 64
+sub r0 r1 //r0 = 64
+str r3 r0 3 //update minLSB = diffLSB //DONE WITH UPDATING MIN
+mov r1 8//Forced branch back up to main loop
+shift r1 -4 //-128
+mov r2 13
+add r1 r2 //r1=-115
+blt r1 r0 r1 //Forced up -115 lines up to line 190 bc unsigned blt compares 65<140
