@@ -14,6 +14,7 @@ for (i = 0; i < 64; i += 2) {
         if (signA != signB) {
             // Different signs, addition
             diffLSB = arr[i + 1] + arr[j + 1];
+            
             carry = (diffLSB < arr[i + 1]) ? 1 : 0;
             diffMSB = arr[i] + arr[j] + carry;
         } else {

@@ -28,29 +28,36 @@ location 64 and the maximum in 65.
 For question 1.
 We are given 32 half world (16 bit) numbers. These are stored in addresses 0 up to 63. (each address slot is only able to store up to 8 bits). We will check the hamming distance between each possible pair using naive approach (O(n^2)) and then place the min distance in memory address 64 and the max in address 65.
 
-//going to use r1 and r2 for holding arguments, and will hold smallest distance in r4 and largest in r5
-//will use r3 to hold incrementing addresses
-//also we will only use registers r0-r7 to minimize bit usage
+For finding hamming distance, use sum(lrs((input1 xor input2) and mask))
 
+ex:
 
+110101 <input A
+010000 <input B
+Goal: hamming distance = 3
+A xor B = 100101
 
-mov r0, 0//store address 0 in r0
-mov r3, 0 //store address 0 in r3
-mov r4, 16’b 1111_1111_1111_1111 //store largest possible val in r4
-mov r5, 16’b 0000_0000_0000_0000 //smallest possible val in r5mov r7, 1 //store the number 1 in r7 to use for incrementing
+sum = 0
+100101
+000001
+sum += 000001
 
+010010
+000001
+sum+=000000
 
-outerLoop:
-ldr r1, r0 //load first number in pair
-add r0, r0, r7 //increment outerPointer by 1
-innerLoop:
-add r3, r3, r7 //add 1 to r3
-ldr r2, r3 //load from addresses 1 to 63
-xor r6, r1, r2 // run xor on each pair
-branchLessThan updateMin, r6, r4
-backtoLoop:
-branchIfLessThan innerLoop, r3, 64
+001001
+000001
+sum+=000001
 
-branchIfLessThan outerLoop, r
+000100
+000001
+sum+=000000
 
-updateMin
+000010
+000001
+sum+=000000
+
+000001
+000001
+sum+=000001
