@@ -5,39 +5,9 @@ str r0 r1 1 //max dist set to 0 (memory slot 65)
 mov r0 15 //15
 shift r0 -1 //shift left by 1 to set r0 to 30
 str r0 r1 0 //min dist set to 30 (mem slot 64)
-//
-//first compute the max by checking each pair
-//max = 0;
-//min = 255
-//for(int i = 0; i < 64; i += 2){
-//    for(int j = i+2; j < 64; j+=2){
-//          sum = 0;
-//          part = xor(arr[i], arr[j]);
-//          mask = 00000001
-//          for(int count = 0; count < 8; count ++){
-//            sum += and(mask, part);
-//            shiftLeft(part, 1);
-//          }
-//          part = xor(arr[i+1], arr[j+1]);
-//          mask = 00000001
-//          for(int count = 0; count < 8; count ++){
-//            sum += and(mask, part);
-//            shiftLeft(part, 1);
-//          }
-//        if(max < sum){
-//            max = sum;
-//        }
-//        if(sum < min){
-//            min = sum;
-//        }
-//   }
-//}
-//SETTING I
-mov r0 0
+mov r0 0 //SETTING I
 str r0 r1 2 //store i val of 0 in 66
-//
-//START OF INNER FOR LOOP, SET J
-mov r0 8// 8
+mov r0 8// 8//START OF INNER FOR LOOP, SET J
 shift r0 -3 // 64
 ldr r0 r0 2 //load in i
 mov r1 2
@@ -45,9 +15,7 @@ add r0 r1 //hold j in r0
 mov r1 8
 shift r1 -3 // 64
 str r0 r1 3 //begin with j = i+2
-//
-//INSIDE THE LOOP
-mov r0 0 //sum = 0
+mov r0 0 //sum = 0 //INSIDE THE LOOP
 mov r1 1 //mask = 00000001
 mov r3 8
 shift r3 -3 //r3 = 64
@@ -111,13 +79,14 @@ mov r3 8 //at this point sum = r0
 shift r3 3 // 64
 ldr r1 r3 1 //load in max = r1
 mov r2 2
-blt r2 r0 r1 //skip update if sum < max
+cmp r0 r1
+blt r2 //skip update if sum < max
 str r0 r3 1 //update max = sum
 ldr r1 r3 0 //load in min = r1
-blt r2 r1 r0 //skip update if min < sum
+cmp r1 r0
+blt r2//skip update if min < sum
 str r0 r3 0 //update min = sum
-//INNER FOR LOOP ON J
-mov r1 8
+mov r1 8 //INNER FOR LOOP ON J
 shift r1 -3 // r1 = 64
 ldr r0 r1 3 //load in j from slot 67
 mov r3 2 //r3 = 2
@@ -125,16 +94,17 @@ add r0 r3
 str r0 r1 3 //j += 2
 mov r3 11
 shift r3 -4 //get 10110000 in r3 aka -128+32+16 = -80
-mov r2 1
-add r3 r2 //r3 = -80+1=-79
-blt r3 r0 r1//branch -79 lines (up 79 lines) if j<64 
-//OUTER FOR LOOP ON I
-mov r1 8
+sub1 r3//r3 = -80-1=-81
+cmp r0 r1
+blt r3//branch -81 lines (up 81 lines) if j<64 
+mov r1 8 //OUTER FOR LOOP ON I
 shift r1 -3 // r1 = 64
 ldr r0 r1 2 //load in i from slot 66
-mov r3 2 //r3 = 2
-add r0 r3
+add2 r0
 str r0 r1 2 //i += 2 
 mov r3 10
 shift r3 -4 //get 10100000 in r3 aka -96
-blt r3 r0 r1//branch -96 lines (up 96 lines) if i<64 
+mov r1 4
+sub r3 r1 //-96-4=-100
+cmp r0 r1
+blt r3//branch -100 lines (up 100 lines) if i<64 

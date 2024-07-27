@@ -15,8 +15,7 @@ shift r0 -3 // 64
 mov r1 6
 add r0 r1 //r0 = 70
 ldr r1 r0 0 //get value of i
-mov r2 2
-add r1 r2
+add2 r1
 str r1 r0 1 //j = i+2
 mov r0 8 //INSIDE J LOOP
 shift r0 -4 //create sign mask
@@ -36,10 +35,17 @@ shift r3 -3 //120
 mov r2 4
 add r3 r2 //124
 mov r2 2
-blt r3 r0 r1 //if signA < signB skip down ??? lines to line #154 if 
-sub r3 r2 //???-2
-blt r3 r1 r0 //if signB < signA dkip down ??? lines to line #154 
+cmp r0 r1 //compare sign bits
+bne r3 //if signA != signB skip down ??? lines to line #154 if 
 mov r1 9 //IF THE SIGNS ARE EQUAL:
+
+//GOAL: subtract (16 bit subtraction) one from the other
+//First LSB subtraction (8 bit)
+//Store in diffLSB
+//Second MSB subtraction (8 bit)
+//Store in diffMSB
+
+
 shift r1 -3 //72
 sub r1 r2 //70
 ldr r2 r1 0 //r2 holds I
@@ -154,6 +160,13 @@ shift r0 -2 //36
 mov r1 8 //r1=8
 add r0 r1 //r0=44
 blt r0 r1 r0 //force skip down ??? lines until J for loop
+
+
+
+
+
+
+
 mov r0 8 //IF THE SIGNS ARE NOT EQUAL DO THIS:
 shift r0 -3 //64
 mov r1 6
@@ -169,22 +182,25 @@ ldr r1 r0 0//load in j
 copy r0 r1 //two j's
 ldr r1 r1 0//load in arr[j]
 ldr r0 r0 1//load in arr[j+1]
-abs r1 r0 //get abs(arr[i].arr[i+1])
+abs r1 r0 //get abs(arr[j].arr[j+1])
 add r0 r2 //this addition may have had overflow
 mov r3 9
 shift r3 -3 //72
-str r0 r3 0 //diffLSB
+str r0 r3 1 //diffLSB=mem[73]=result
+mov r0 1 //r0 will be overflow bit, by default set to 1
+mov r2 2
+bof r2 //if we have overflow, leave r0 as 1
+mov r0 0 //if no overflow, make overflow bit 0
+add r1 r3 //add MSB
+add r1 r0 //add overflow bit
+mov r3 9
+shift r3 -3//72
+str r1 r3 1//diffMSB=mem[72]
 
 
-blt r1 r2 r3
 
-comp r1 r1
-blt r1
-ble r1
-beq r1
-bne r1
-bgt r1
-bge r1
+
+
 
 blt r0 r3 r2 //if diffLSB < arr[i+1] we have overflow error
 mov r0 8 //NO OVERFLOW ISSUES, we add as normal
