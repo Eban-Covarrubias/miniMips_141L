@@ -49,6 +49,59 @@ assign branch = (Alu_op == Ble_type && (less_than_flag_reg || equal_flag_reg)) |
                 (Alu_op == B_type) ||
                 (Alu_op == Bof_type && overflow_flag_reg);
 
+// Combinational logic for Rslt
+always_comb begin
+    case (Alu_op)
+        Add_type: begin
+            Rslt = DatA + DatB;
+        end
+        Sub_type: begin
+            Rslt = DatA - DatB;
+        end
+        Abs_type: begin
+            // Combine DatA and DatB to form a 16-bit signed number
+            logic signed [15:0] signed_val;
+            signed_val = {DatA, DatB}; // Concatenate DatA (MSB) and DatB (LSB)
+            // Compute the absolute value
+            Rslt = (signed_val < 0) ? -signed_val : signed_val;
+        end
+        Copy_type: begin
+            Rslt = DatB;
+        end
+        Add1_type: begin
+            Rslt = DatA + 8'b00000001;
+        end
+        Add2_type: begin
+            Rslt = DatA + 8'b00000010;
+        end
+        Sub1_type: begin
+            Rslt = DatA - 8'b00000001;
+        end
+        Mov_type: begin
+            Rslt = DatB;
+        end
+        And_type: begin
+            Rslt = DatA & DatB;
+        end
+        Xor_type: begin
+            Rslt = DatA ^ DatB;
+        end
+        Leftshift_type: begin
+            Rslt = DatA << DatB;
+        end
+        Rightshift_type: begin
+            Rslt = DatA >> DatB;
+        end
+        Cmp_type: begin
+            Rslt = 16'b0; // CMP doesn't produce a result
+        end
+        default: begin
+            Rslt = 16'b0; // Default case
+        end
+    endcase
+end
+
+// Sequential logic for flags
 always_ff @(posedge Clk or posedge reset) begin
     if (reset) begin
         less_than_flag_reg <= 1'b0;
@@ -58,92 +111,39 @@ always_ff @(posedge Clk or posedge reset) begin
     end else begin
         case (Alu_op)
             Add_type: begin
-                Rslt = DatA + DatB;
-                overflow_flag_reg <= (DatA[7] == DatB[7]) && (Rslt[7] != DatA[7]);
+                overflow_flag_reg <= Rslt[8];
             end
             Sub_type: begin
-                Rslt = DatA - DatB;
                 overflow_flag_reg <= (DatA[7] != DatB[7]) && (Rslt[7] != DatA[7]);
             end
-            Abs_type: begin
-					 // Combine DatA and DatB to form a 16-bit signed number
-					 logic signed [15:0] signed_val;
-					 signed_val = {DatA, DatB}; // Concatenate DatA (MSB) and DatB (LSB)
-
-					 // Compute the absolute value
-					 Rslt = (signed_val < 0) ? -signed_val : signed_val;
-				end
-            Copy_type: begin
-                Rslt = DatB;
-            end
-            Add1_type: begin
-                Rslt = DatA + 8'b00000001;
-            end
-            Add2_type: begin
-                Rslt = DatA + 8'b00000010;
-            end
-            Sub1_type: begin
-                Rslt = DatA - 8'b00000001;
-            end
-            Mov_type: begin
-                Rslt = DatB;
-            end
-            And_type: begin
-                Rslt = DatA & DatB;
-            end
-            Xor_type: begin
-                Rslt = DatA ^ DatB;
-            end
-            Leftshift_type: begin
-                Rslt = DatA << DatB;
-            end
-            Rightshift_type: begin
-                Rslt = DatA >> DatB;
-            end
             Cmp_type: begin
-                Rslt = 16'b0; // CMP doesn't produce a result
                 less_than_flag_reg <= (DatA < DatB);
                 equal_flag_reg <= (DatA == DatB);
                 greater_than_flag_reg <= (DatA > DatB);
             end
             Ble_type: begin
-                Rslt = 16'b0; // Branch instructions typically don't produce a result
                 less_than_flag_reg <= (DatA <= DatB);
             end
             Blt_type: begin
-                Rslt = 16'b0;
                 less_than_flag_reg <= (DatA < DatB);
             end
             Beq_type: begin
-                Rslt = 16'b0;
                 equal_flag_reg <= (DatA == DatB);
             end
             Bne_type: begin
-                Rslt = 16'b0;
                 equal_flag_reg <= (DatA != DatB);
             end
             Bge_type: begin
-                Rslt = 16'b0;
                 greater_than_flag_reg <= (DatA >= DatB);
             end
             Bgt_type: begin
-                Rslt = 16'b0;
                 greater_than_flag_reg <= (DatA > DatB);
             end
-            B_type: begin
-                Rslt = 16'b0;
-                // Unconditional branch, flags might not be set
-            end
-            Bof_type: begin
-                Rslt = 16'b0;
-                // Handle overflow condition if necessary
-            end
             default: begin
-                Rslt = 16'b0;
+                // Other operations do not affect flags
             end
         endcase
     end
 end
 
 endmodule
-
