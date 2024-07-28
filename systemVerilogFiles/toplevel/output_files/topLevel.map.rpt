@@ -1,5 +1,5 @@
 Analysis & Synthesis report for topLevel
-Mon Jul 22 15:40:11 2024
+Sat Jul 27 18:26:39 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -13,14 +13,16 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
+  8. General Register Statistics
+  9. Port Connectivity Checks: "dataMem:dataMemory"
  10. Port Connectivity Checks: "alu:alu1"
- 11. Port Connectivity Checks: "adder:adr"
- 12. Port Connectivity Checks: "regFile:rf"
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 11. Port Connectivity Checks: "lut:controlBlock"
+ 12. Port Connectivity Checks: "adder:adr"
+ 13. Port Connectivity Checks: "regFile:rf"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -47,7 +49,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +-----------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status       ; Successful - Mon Jul 22 15:40:11 2024          ;
+; Analysis & Synthesis Status       ; Successful - Sat Jul 27 18:26:39 2024          ;
 ; Quartus Prime Version             ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                     ; topLevel                                       ;
 ; Top-level Entity Name             ; topLevel                                       ;
@@ -245,47 +247,6 @@ https://fpgasoftware.intel.com/eula.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                   ;
-+----------------------------------------+---------------------------------------------+
-; Register name                          ; Reason for Removal                          ;
-+----------------------------------------+---------------------------------------------+
-; regFile:rf|regfile[0][0]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[0][1]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[0][2]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[0][3]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[0][4]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[0][5]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[0][6]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[0][7]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[1][0]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[1][1]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[1][2]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[1][3]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[1][4]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[1][5]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[1][6]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[1][7]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[2][0]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[2][1]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[2][2]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[2][3]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[2][4]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[2][5]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[2][6]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[2][7]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[3][0]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[3][1]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[3][2]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[3][3]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[3][4]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[3][5]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[3][6]               ; Stuck at GND due to stuck port clock_enable ;
-; regFile:rf|regfile[3][7]               ; Stuck at GND due to stuck port clock_enable ;
-; Total Number of Removed Registers = 32 ;                                             ;
-+----------------------------------------+---------------------------------------------+
-
-
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
@@ -301,13 +262,35 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:alu1"                                                                               ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dataMem:dataMemory"                                                                                                                         ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:alu1"                                                                                                                                        ;
++--------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                        ;
++--------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Alu_op ; Input  ; Warning  ; Input port expression (3 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "Alu_op[4..3]" will be connected to GND. ;
+; Rslt   ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (8 bits) it drives; bit(s) "Rslt[15..8]" have no fanouts                      ;
+; reset  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.   ;
++--------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lut:controlBlock"                                                                                                           ;
++--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                   ;
++--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; AR3    ; Output ; Warning  ; Output or bidir port (2 bits) is wider than the port expression (1 bits) it drives; bit(s) "AR3[1..1]" have no fanouts    ;
+; AR3    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
+; alu_op ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (3 bits) it drives; bit(s) "alu_op[4..3]" have no fanouts ;
++--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -315,18 +298,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port     ; Type   ; Severity ; Details                                                                             ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
-; b[7..1]  ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "regFile:rf"                                                                                                                         ;
-+------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                                                                       ;
-+------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
-; read_data3 ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "read_data3[7..1]" have no fanouts ;
-+------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regFile:rf"                                                                                                                                              ;
++-------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port              ; Type  ; Severity ; Details                                                                                                                                      ;
++-------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; write_data[15..8] ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
+; reset             ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -359,7 +342,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Mon Jul 22 15:40:05 2024
+    Info: Processing started: Sat Jul 27 18:26:32 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off topLevel -c topLevel
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
@@ -368,8 +351,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file topleve
 Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
     Info (12023): Found entity 1: regFile File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/regFile.sv Line: 1
 Info (12021): Found 0 design units, including 0 entities, in source file programcounter.sv
-Info (12021): Found 1 design units, including 1 entities, in source file mux2to1.sv
-    Info (12023): Found entity 1: mux2To1 File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/mux2To1.sv Line: 1
+Warning (12019): Can't analyze file -- file mux2To1.sv is missing
 Info (12021): Found 1 design units, including 1 entities, in source file lut.sv
     Info (12023): Found entity 1: lut File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/lut.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file instrmem.sv
@@ -380,23 +362,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
     Info (12023): Found entity 1: alu File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/alu.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file adder.sv
     Info (12023): Found entity 1: adder File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/adder.sv Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at topLevel.sv(33): created implicit net for "read_data3" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 33
-Warning (10236): Verilog HDL Implicit Net warning at topLevel.sv(47): created implicit net for "overflow" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 47
+Warning (10236): Verilog HDL Implicit Net warning at topLevel.sv(53): created implicit net for "overflow" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 53
+Warning (10236): Verilog HDL Implicit Net warning at topLevel.sv(61): created implicit net for "write_reg" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 61
 Info (12127): Elaborating entity "topLevel" for the top level hierarchy
 Warning (10034): Output port "done" at topLevel.sv(5) has no driver File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 5
-Info (12128): Elaborating entity "regFile" for hierarchy "regFile:rf" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 34
-Info (12128): Elaborating entity "instrMem" for hierarchy "instrMem:instrMem1" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 40
-Warning (10858): Verilog HDL warning at instrMem.sv(6): object Core used but never assigned File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/instrMem.sv Line: 6
-Info (12128): Elaborating entity "adder" for hierarchy "adder:adr" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 48
-Info (12128): Elaborating entity "lut" for hierarchy "lut:controlBlock" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 64
-Warning (10230): Verilog HDL assignment warning at lut.sv(139): truncated value with size 32 to match size of target (4) File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/lut.sv Line: 139
-Info (12128): Elaborating entity "alu" for hierarchy "alu:alu1" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 74
-Info (12128): Elaborating entity "dataMem" for hierarchy "dataMem:dataMemory" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 83
-Warning (10034): Output port "data_out" at dataMem.sv(7) has no driver File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/dataMem.sv Line: 7
-Warning (12158): Entity "dataMem" contains only dangling pins File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 83
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12128): Elaborating entity "regFile" for hierarchy "regFile:rf" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 40
+Info (12128): Elaborating entity "instrMem" for hierarchy "instrMem:instrMem1" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 46
+Warning (10858): Verilog HDL warning at instrMem.sv(7): object Core used but never assigned File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/instrMem.sv Line: 7
+Info (12128): Elaborating entity "adder" for hierarchy "adder:adr" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 54
+Info (12128): Elaborating entity "lut" for hierarchy "lut:controlBlock" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 70
+Warning (10230): Verilog HDL assignment warning at lut.sv(143): truncated value with size 32 to match size of target (4) File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/lut.sv Line: 143
+Info (12128): Elaborating entity "alu" for hierarchy "alu:alu1" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 79
+Info (12128): Elaborating entity "dataMem" for hierarchy "dataMem:dataMemory" File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 88
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "done" is stuck at GND File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/topLevel.sv Line: 5
+Info (144001): Generated suppressed messages file C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/output_files/topLevel.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
@@ -405,10 +386,16 @@ Warning (21074): Design contains 2 input pin(s) that do not drive logic
 Info (21057): Implemented 3 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 1 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
     Info: Peak virtual memory: 4811 megabytes
-    Info: Processing ended: Mon Jul 22 15:40:11 2024
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Processing ended: Sat Jul 27 18:26:39 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:03
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/EbansCompArchitecture/toplevel/output_files/topLevel.map.smsg.
 
 
