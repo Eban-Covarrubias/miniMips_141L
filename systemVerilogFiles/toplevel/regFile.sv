@@ -1,9 +1,7 @@
 module regFile(
     input logic clk,
-    input logic reset,
     input logic [1:0] read_reg1,     // 1st read register number
     input logic [1:0] read_reg2,     // 2nd read register number
-    input logic [1:0] read_reg3,     // 3rd read register number
     input logic [1:0] write_reg1,    // 1st write register number
     input logic [1:0] write_reg2,    // 2nd write register number
     input logic [15:0] write_data,   // 16-bit data to be written
@@ -21,24 +19,17 @@ module regFile(
     always_comb begin
         read_data1 = reg_array[read_reg1];
         read_data2 = reg_array[read_reg2];
-        read_data3 = reg_array[read_reg3];
+        read_data3 = reg_array[read_reg2];
     end
 
     // Write operations
-    always_ff @(negedge clk or posedge reset) begin
-        if (reset) begin
-            integer i;
-            for (i = 0; i < 4; i = i + 1) begin
-                reg_array[i] <= 8'b0;
-            end
-        end else begin
-            if (write_en1) begin
-                reg_array[write_reg1] <= write_data[15:8]; // MSB to write_reg1
-            end
-            if (write_en2) begin
-                reg_array[write_reg2] <= write_data[7:0];  // LSB to write_reg2
-            end
-        end
+    always_ff @(negedge clk) begin
+			if (write_en1) begin
+				 reg_array[write_reg1] <= write_data[15:8]; // MSB to write_reg1
+			end
+			if (write_en2) begin
+				 reg_array[write_reg2] <= write_data[7:0];  // LSB to write_reg2
+			end
     end
 
 endmodule

@@ -7,19 +7,19 @@ module topLevel(
     logic [7:0] pc;
 	 logic [7:0] pc_next;
     logic [8:0] instruction;
-    logic [1:0] read_reg1, read_reg2, read_reg3, write_reg1, write_reg2;
+    logic [1:0] read_reg1, read_reg2, write_reg1, write_reg2;
 	 logic [7:0] read_data1, read_data2, read_data3;
 	 logic write_en1, write_en2;
 	 logic alu_src;
 	 logic alu_bypass;
 	 logic branch;
 	 logic overflow_flag;
-    logic [7:0] alu_result, memory_data, immediate_data, alu_input_b;
-    logic [2:0] alu_op;
+    logic [7:0] memory_data, immediate_data, alu_input_b, alu_input_a;
+    logic [4:0] alu_op;
     logic mem_read, mem_write, c;
     logic [7:0] data_mem_out;
 	 logic [7:0] jump_amount;
-	 logic [15:0] write_data;
+	 logic [15:0] write_data, alu_result;
 //    logic [8:0] instruction_memory [0:255]; // Instruction memory (ROM)
 	 
 	 
@@ -28,7 +28,6 @@ module topLevel(
 			.clk(clk),
         .read_reg1(read_reg1),
         .read_reg2(read_reg2),
-		  .read_reg3(read_reg3),
         .write_reg1(write_reg1),
 		  .write_reg2(write_reg2),
 		  .write_en1(write_en1),
@@ -56,9 +55,10 @@ module topLevel(
 	 //instance of control block
 	 lut controlBlock(
 		.data(instruction),
-		.AR1(read_reg1),
-		.AR2(read_reg2),
-		.AR3(write_reg),
+		.R1(read_reg1),
+		.R2(read_reg2),
+		.W1(write_reg1),
+		.W2(write_reg2),
 		.write_en1(write_en1),
 		.write_en2(write_en2),
 		.imm(immediate_data),
@@ -71,7 +71,7 @@ module topLevel(
 	 //instance of alu
 	 alu alu1(
 	   .Clk(clk),
-		.DatA(read_data1),
+		.DatA(alu_input_a),
 		.DatB(alu_input_b),
 		.Alu_op(alu_op),
 		.Rslt(alu_result),
@@ -86,24 +86,34 @@ module topLevel(
 		.mem_read(mem_read),
 		.data_out(data_mem_out)
 	 );
-	 
+
 	 always_ff @(posedge clk) begin
-		pc <= pc_next;
+		if (start) pc = 0;
+		else pc <= pc_next;
 	 end
 	 
 	 //use this to create needed muxs
 	 always_comb begin
-		//alu src mux
-		if(!alu_src) alu_input_b = read_data2;
-		else alu_input_b = immediate_data;
-		
-		//regfile input mux
-		if(alu_bypass) write_data = alu_result;
-		else write_data = data_mem_out;
-		
-		//pc update amount mux
-		if(!branch) jump_amount = 1;
-		else jump_amount = read_data3;
+		if(instruction == 9'b101100100) begin
+			done = 1;
+			jump_amount = 1;
+		end
+		else  begin 
+			done = 0;
+			//alu src mux
+			if(!alu_src) alu_input_b = read_data2;
+			else alu_input_b = immediate_data;
+			
+			alu_input_a = read_data1;
+
+			//regfile input mux
+			if(alu_bypass) write_data = alu_result;
+			else write_data = data_mem_out;
+			
+			//pc update amount mux
+			if(!branch) jump_amount = 1;
+			else jump_amount = read_data3;
+		end
 	 end
 	 
 
