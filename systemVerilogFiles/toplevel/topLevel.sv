@@ -7,16 +7,19 @@ module topLevel(
     logic [7:0] pc;
 	 logic [7:0] pc_next;
     logic [8:0] instruction;
-    logic [1:0] read_reg1, read_reg2, write_reg;
-	 logic write_en;
+    logic [1:0] read_reg1, read_reg2, read_reg3, write_reg1, write_reg2;
+	 logic [7:0] read_data1, read_data2, read_data3;
+	 logic write_en1, write_en2;
 	 logic alu_src;
 	 logic alu_bypass;
-	 logic lt_flag, overflow_flag;
-    logic [7:0] read_data1, read_data2, alu_result, memory_data, immediate_data, alu_input_b;
+	 logic branch;
+	 logic overflow_flag;
+    logic [7:0] alu_result, memory_data, immediate_data, alu_input_b;
     logic [2:0] alu_op;
     logic mem_read, mem_write, c;
     logic [7:0] data_mem_out;
-	 logic [7:0] write_data, jump_amount;
+	 logic [7:0] jump_amount;
+	 logic [15:0] write_data;
 //    logic [8:0] instruction_memory [0:255]; // Instruction memory (ROM)
 	 
 	 
@@ -25,8 +28,11 @@ module topLevel(
 			.clk(clk),
         .read_reg1(read_reg1),
         .read_reg2(read_reg2),
-        .write_reg(write_reg),
-		  .write_en(write_en),
+		  .read_reg3(read_reg3),
+        .write_reg1(write_reg1),
+		  .write_reg2(write_reg2),
+		  .write_en1(write_en1),
+		  .write_en2(write_en2),
 		  .write_data(write_data),
         .read_data1(read_data1),
         .read_data2(read_data2),
@@ -53,24 +59,23 @@ module topLevel(
 		.AR1(read_reg1),
 		.AR2(read_reg2),
 		.AR3(write_reg),
-		.write_en(write_en),
+		.write_en1(write_en1),
+		.write_en2(write_en2),
 		.imm(immediate_data),
 		.alu_op(alu_op),
 		.mem_write(mem_write),
 		.mem_read(mem_read),
 		.use_alu_bypass(alu_bypass),
-		.alu_src(alu_src),
-		.car(c)
-	 );
+		.alu_src(alu_src)
+		);
 	 //instance of alu
 	 alu alu1(
+	   .Clk(clk),
 		.DatA(read_data1),
 		.DatB(alu_input_b),
 		.Alu_op(alu_op),
-		.CarryIn(c),
 		.Rslt(alu_result),
-		.Lt_flag(lt_flag),
-		.Overflow(overflow_flag)
+		.branch(branch)
 	 );
 	 
 	 //instance of data memory
@@ -97,7 +102,7 @@ module topLevel(
 		else write_data = data_mem_out;
 		
 		//pc update amount mux
-		if(!lt_flag) jump_amount = 1;
+		if(!branch) jump_amount = 1;
 		else jump_amount = read_data3;
 	 end
 	 
