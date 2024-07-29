@@ -5,11 +5,11 @@
 /*
 To use this assembler, use the following lines:
 
-gcc assembler2.c -o assembler2
-./assembler2 instructions.txt output.txt
+gcc assembler.c -o assembler
+./assembler instructions.txt output.txt
 
 or for binary output use the -b flag, ex:
-./assembler2 instructions.txt output.txt -b
+./assembler instructions.txt output.txt -b
 
 */
 // Opcodes
@@ -31,9 +31,11 @@ or for binary output use the -b flag, ex:
 #define BGE     0b1011000
 #define BGT     0b1011010
 #define B       0b1011011
+#define BOF     0b1011111
 #define ADD1    0b1011100
 #define ADD2    0b1011101
 #define SUB1    0b1011110
+#define NOP     0b101100100
 
 // Register identifiers (assuming you have 4 registers: R0, R1, R2, R3)
 #define R0 0b00
@@ -141,6 +143,14 @@ int parseInstruction(char *instruction, unsigned int *machineCode) {
         strcpy(reg3, token);
 
         *machineCode = (op << 6) | (getRegister(reg1, &error) << 4) | (getRegister(reg2, &error) << 2) | getRegister(reg3, &error);
+    } else if (strcmp(opcode, "nop") == 0) {
+        *machineCode = NOP;
+    } else if (strcmp(opcode, "bof") == 0) {
+        token = strtok(NULL, " ,");
+        if (!token) return ERROR_MISSING_OPERAND;
+        strcpy(reg1, token);
+
+        *machineCode = (BOF << 9) | getRegister(reg1, &error);
     } else if (strcmp(opcode, "add") == 0 || strcmp(opcode, "sub") == 0 || strcmp(opcode, "copy") == 0 || strcmp(opcode, "abs") == 0) {
         int op = (strcmp(opcode, "add") == 0) ? ADD :
                  (strcmp(opcode, "sub") == 0) ? SUB :
