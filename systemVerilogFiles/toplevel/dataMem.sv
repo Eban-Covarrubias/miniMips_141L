@@ -1,10 +1,10 @@
 module dataMem(
+    input logic clk,
     input logic [7:0] addr,
     input logic [7:0] write_data,
     input logic mem_write,
     input logic mem_read,
-    output logic [7:0] data_out,
-    input logic clk // Added clock input
+    output logic [7:0] data_out
 );
 
 // Memory array
