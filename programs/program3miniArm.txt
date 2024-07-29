@@ -1,0 +1,58 @@
+//For now, let mem[128]=sum, mem[129]=carry, mem[130]=i, mem[131]=shiftingOp
+mov r1 8
+shift r1 -4
+mov r0 0
+str r0 r1 0//set sum = 0
+str r0 r1 1//set carry = 0
+str r0 r1 2//set i = 0
+ldr r0 r0 1//load r0=Alo 
+str r0 r1 3//set shiftingOP = Alo
+
+
+mov r1 8//loop for solving resLSB
+shift r1 -4 //128
+ldr r0 r1 3//let r0=shiftingOP
+ldr r1 //let r1 = Blo
+
+
+mov r2 1 //Create the mask
+and r3 r2 r0//start with solving for Lsb of Res_low
+mov r2 0
+sub r2 r2 r3//subtract 1 or 0 based on the mask to get 11111111 or 00000000
+and r1 r1 r2//and with our 00000 or 1111
+mov r0 1//let r2=carry
+ldr r2 //let r2=carry
+add1 r2 //let r2+=1
+mov r0 0//let r0 = sum
+ldr r0 //let r0 = sum
+add r0 r0 r1//sum += r1
+mov r1 2
+bof r1
+sub1 r2 //let r2-=1
+mov r0 1
+str r2 //upate carry
+mov r1 8 //FOR LOOP ON I
+shift r1 -4 // r1 = 128
+ldr r0 r1 2 //load in i from slot 130
+add1 r0
+str r0 r1 2 //r0=i += 1
+ldr r0 r1 3//let r0=shiftingOP
+ldr r1 //let r1 = Blomov r1 8
+cmp r0 r1 //compare i to 8
+mov r3 8
+shift -3
+blt r3//branch -64 lines (up 64 lines) if i<8
+
+
+
+for(i = 0; i < 64; i+= 4){
+    resltLowlo, carry = Low_mult(mem[i+1],mem[i+3]); //loop by 8 bit subroutine
+    resltLowhi  = High_mult(mem[i+1], mem[i+3], carry); //loop by 8 bit subroutine
+    mem[i+64] = resltLowlo; //First quarter done
+    resltLowlo, carry = Low_mult(mem[],mem[]);
+
+
+
+
+}
+
