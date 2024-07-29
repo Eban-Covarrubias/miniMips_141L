@@ -69,13 +69,13 @@ always_comb begin
             Rslt = DatB;
         end
         Add1_type: begin
-            Rslt = DatA + 8'b00000001;
+            Rslt = DatB + 8'b00000001;
         end
         Add2_type: begin
-            Rslt = DatA + 8'b00000010;
+            Rslt = DatB + 8'b00000010;
         end
         Sub1_type: begin
-            Rslt = DatA - 8'b00000001;
+            Rslt = DatB - 8'b00000001;
         end
         Mov_type: begin
             Rslt = DatB;

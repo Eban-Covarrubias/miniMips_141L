@@ -129,7 +129,7 @@ always_comb begin
             write_en2 = 1;
             if (data[3] == 1'b1) begin // If the most significant bit (sign bit) is 1, it's negative
                 alu_op = Leftshift_type; // Perform a left shift for negative values
-                imm = ~data[3:0] + 1'b1; // Convert to positive value (2's complement)
+                imm = {4'b0000, ~data[3:0] + 1'b1}; // Convert to positive value (2's complement)
             end else begin
                 alu_op = Rightshift_type; // Perform a right shift for positive values
                 imm = data[3:0]; // Use the value directly as it's positive
@@ -163,10 +163,10 @@ always_comb begin
                     alu_op = Copy_type;
                 end
                 3: begin // Abs operation
-                    R1 = data[5:4];
-                    R2 = data[3:2];
-                    W1 = data[5:4];
-                    W2 = data[3:2];
+                    R1 = data[3:2];
+                    R2 = data[1:0];
+                    W1 = data[3:2];
+                    W2 = data[1:0];
                     write_en1 = 1;
                     write_en2 = 1;
                     alu_op = Abs_type;
@@ -198,8 +198,9 @@ always_comb begin
                 // Branching or simple A
                 //R1 = data[3:2];
                 R2 = data[1:0];
+                W2 = data[1:0];
                 write_en1 = 0;
-                write_en2 = 0;
+                write_en2 = 0;//disable writing on branching
                 imm = 0;
                 //alu_op = B_type;
                 mem_write = 0;
@@ -214,9 +215,18 @@ always_comb begin
                     Bge: alu_op = Bge_type;
                     Bgt: alu_op = Bgt_type;
                     Br: alu_op = B_type;
-                    Add1: alu_op = Add1_type;
-                    Add2: alu_op = Add2_type;
-                    Sub1: alu_op = Sub1_type;
+                    Add1: begin
+                        alu_op = Add1_type;
+                        write_en2 = 1;
+                    end
+                    Add2: begin 
+                        alu_op = Add2_type;
+                        write_en2 = 1;
+                    end
+                    Sub1: begin 
+                        alu_op = Sub1_type;
+                        write_en2 = 1;
+                    end
                     Bof: alu_op = Bof_type;
                     default: alu_op = B_type;
                 endcase

@@ -80,6 +80,7 @@ module topLevel(
 	 
 	 //instance of data memory
 	 dataMem dataMemory(
+		.clk(clk),
 		.addr(alu_result),
 		.write_data(read_data2),
 		.mem_write(mem_write),
