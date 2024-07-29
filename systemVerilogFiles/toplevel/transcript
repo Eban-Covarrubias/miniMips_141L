@@ -1,0 +1,276 @@
+vsim work.tb3_topLevel
+# vsim work.tb3_topLevel 
+# Start time: 21:28:48 on Jul 28,2024
+# Loading sv_std.std
+# Loading work.tb3_topLevel
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'alu1'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /tb3_topLevel/uut/alu1 File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv Line: 72
+# ** Warning: (vsim-3722) C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv(72): [TFMPC] - Missing connection for port 'reset'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dataMemory'.  Expected 6, found 5.
+#    Time: 0 ps  Iteration: 0  Instance: /tb3_topLevel/uut/dataMemory File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv Line: 82
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (16) for port 'addr'. The port definition is at: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/dataMem.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /tb3_topLevel/uut/dataMemory File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv Line: 82
+# ** Warning: (vsim-3722) C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv(82): [TFMPC] - Missing connection for port 'clk'.
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/tb3_topLevel/uut/*
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/read_data1
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/read_data2
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/read_data3
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/read_reg1
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/read_reg2
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/write_reg1
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/write_reg2
+add wave -position insertpoint sim:/tb3_topLevel/uut/alu1/*
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/alu1/DatA
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/alu1/DatB
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/alu1/Alu_op
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/alu1/Rslt
+add wave sim:/tb3_topLevel/uut/dataMemory/*
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/read_reg1
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/read_reg2
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/write_reg1
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/write_reg2
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/write_data
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/write_en1
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/write_en2
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/read_data1
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/read_data2
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/read_data3
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/reg_array
+run -all
+# Test completed at time                   75
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_3.sv(56)
+#    Time: 75 ps  Iteration: 4  Instance: /tb3_topLevel
+# Break in Module tb3_topLevel at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_3.sv line 56
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# 13 compiles, 0 failed with no errors.
+vsim work.tb3_topLevel
+# End time: 21:35:14 on Jul 28,2024, Elapsed time: 0:06:26
+# Errors: 0, Warnings: 7
+# vsim work.tb3_topLevel 
+# Start time: 21:35:14 on Jul 28,2024
+# Loading sv_std.std
+# Loading work.tb3_topLevel
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'alu1'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /tb3_topLevel/uut/alu1 File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv Line: 72
+# ** Warning: (vsim-3722) C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv(72): [TFMPC] - Missing connection for port 'reset'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dataMemory'.  Expected 6, found 5.
+#    Time: 0 ps  Iteration: 0  Instance: /tb3_topLevel/uut/dataMemory File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv Line: 82
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (16) for port 'addr'. The port definition is at: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/dataMem.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /tb3_topLevel/uut/dataMemory File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv Line: 82
+# ** Warning: (vsim-3722) C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv(82): [TFMPC] - Missing connection for port 'clk'.
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/tb3_topLevel/uut/*
+add wave -position insertpoint sim:/tb3_topLevel/uut/rf/*
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/reg_array
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/read_data3
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/read_data2
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/read_data1
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/write_en2
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/write_en1
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/write_data
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/write_reg2
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/write_reg1
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/read_reg2
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/read_reg1
+add wave -position insertpoint sim:/tb3_topLevel/uut/alu1/*
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/alu1/DatA
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/alu1/DatB
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/alu1/Alu_op
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/alu1/Rslt
+add wave sim:/tb3_topLevel/uut/dataMemory/*
+run -all
+# Test completed at time                   75
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_3.sv(56)
+#    Time: 75 ps  Iteration: 4  Instance: /tb3_topLevel
+# Break in Module tb3_topLevel at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_3.sv line 56
+add dataflow  \
+sim:/tb3_topLevel/uut/instrMem1/Core
+add wave -position insertpoint /tb3_topLevel/uut/instrMem1/data
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'alu1'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /tb3_topLevel/uut/alu1 File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv Line: 72
+# ** Warning: (vsim-3722) C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv(72): [TFMPC] - Missing connection for port 'reset'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dataMemory'.  Expected 6, found 5.
+#    Time: 0 ps  Iteration: 0  Instance: /tb3_topLevel/uut/dataMemory File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv Line: 82
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (16) for port 'addr'. The port definition is at: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/dataMem.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /tb3_topLevel/uut/dataMemory File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv Line: 82
+# ** Warning: (vsim-3722) C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv(82): [TFMPC] - Missing connection for port 'clk'.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Test completed at time                   75
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_3.sv(56)
+#    Time: 75 ps  Iteration: 4  Instance: /tb3_topLevel
+# Break in Module tb3_topLevel at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_3.sv line 56
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'alu1'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /tb3_topLevel/uut/alu1 File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv Line: 72
+# ** Warning: (vsim-3722) C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv(72): [TFMPC] - Missing connection for port 'reset'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dataMemory'.  Expected 6, found 5.
+#    Time: 0 ps  Iteration: 0  Instance: /tb3_topLevel/uut/dataMemory File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv Line: 82
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (16) for port 'addr'. The port definition is at: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/dataMem.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /tb3_topLevel/uut/dataMemory File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv Line: 82
+# ** Warning: (vsim-3722) C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv(82): [TFMPC] - Missing connection for port 'clk'.
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/dataMemory/Core
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Test completed at time                   75
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_3.sv(56)
+#    Time: 75 ps  Iteration: 4  Instance: /tb3_topLevel
+# Break in Module tb3_topLevel at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_3.sv line 56
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv failed with 1 errors.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# 13 compiles, 1 failed with 1 error.
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv failed with 1 errors.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# 13 compiles, 1 failed with 1 error.
+# Compile of dataMem.sv was successful.
+vsim work.tb3_topLevel
+# End time: 21:42:27 on Jul 28,2024, Elapsed time: 0:07:13
+# Errors: 0, Warnings: 9
+# vsim work.tb3_topLevel 
+# Start time: 21:42:27 on Jul 28,2024
+# Loading sv_std.std
+# Loading work.tb3_topLevel
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'alu1'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /tb3_topLevel/uut/alu1 File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv Line: 72
+# ** Warning: (vsim-3722) C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv(72): [TFMPC] - Missing connection for port 'reset'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (16) for port 'addr'. The port definition is at: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/dataMem.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /tb3_topLevel/uut/dataMemory File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv Line: 82
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/tb3_topLevel/uut/rf/*
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/reg_array
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/read_reg1
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/rf/read_reg2 \
+sim:/tb3_topLevel/uut/rf/write_reg1 \
+sim:/tb3_topLevel/uut/rf/write_reg2 \
+sim:/tb3_topLevel/uut/rf/write_data \
+sim:/tb3_topLevel/uut/rf/write_en1 \
+sim:/tb3_topLevel/uut/rf/write_en2 \
+sim:/tb3_topLevel/uut/rf/read_data1 \
+sim:/tb3_topLevel/uut/rf/read_data2 \
+sim:/tb3_topLevel/uut/rf/read_data3
+add wave -position insertpoint sim:/tb3_topLevel/uut/alu1/*
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/alu1/DatA \
+sim:/tb3_topLevel/uut/alu1/DatB \
+sim:/tb3_topLevel/uut/alu1/Alu_op \
+sim:/tb3_topLevel/uut/alu1/Rslt
+add wave -position insertpoint sim:/tb3_topLevel/uut/dataMemory/*
+add wave -position insertpoint  \
+sim:/tb3_topLevel/uut/dataMemory/addr \
+sim:/tb3_topLevel/uut/dataMemory/write_data \
+sim:/tb3_topLevel/uut/dataMemory/mem_write \
+sim:/tb3_topLevel/uut/dataMemory/mem_read \
+sim:/tb3_topLevel/uut/dataMemory/data_out \
+sim:/tb3_topLevel/uut/dataMemory/Core \
+sim:/tb3_topLevel/uut/dataMemory/read_data
+run -all
+# Test completed at time                   75
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_3.sv(56)
+#    Time: 75 ps  Iteration: 4  Instance: /tb3_topLevel
+# Break in Module tb3_topLevel at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_3.sv line 56
+# End time: 21:46:30 on Jul 28,2024, Elapsed time: 0:04:03
+# Errors: 0, Warnings: 4

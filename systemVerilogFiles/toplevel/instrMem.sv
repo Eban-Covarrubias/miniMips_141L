@@ -6,11 +6,19 @@ module instrMem(
     // Memory array to store instructions
     logic [8:0] Core[255:0];
 
-    // Optional: Initialize the instruction memory from a file
-	 // I'm not sure how getting machine code into instrMem works, experiment with this.
-    //initial begin
-    //    $readmemb("mach_code.txt", Core);
-    //end
+    // Define the no-op instruction
+    localparam [8:0] NO_OP = 9'b101100100;
+
+    // Initialize the instruction memory
+    initial begin
+        integer i;
+        // Set each memory location to the no-op instruction
+        for (i = 0; i < 256; i = i + 1) begin
+            Core[i] = NO_OP;
+        end
+        // Optionally, load instructions from a file
+        // $readmemb("mach_code.txt", Core);
+    end
 
     // Combinational read logic
     always_comb begin
