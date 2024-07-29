@@ -46,13 +46,39 @@ blt r3//branch -64 lines (up 64 lines) if i<8
 
 
 for(i = 0; i < 64; i+= 4){
-    resltLowlo, carry = Low_mult(mem[i+1],mem[i+3]); //loop by 8 bit subroutine
-    resltLowhi  = High_mult(mem[i+1], mem[i+3], carry); //loop by 8 bit subroutine
-    mem[i+64] = resltLowlo; //First quarter done
-    resltLowlo, carry = Low_mult(mem[],mem[]);
+    //note, mem[i] = Ahi, mem[i+1] = Alo
+    // mem[i+2] = Bhi, mem[i+3] = Blo
+
+    resltLowlo1, carry = Low_mult(mem[i+1],mem[i+3]); //loop by 8 bit subroutine
+    mem[i+67] = resltLowhi1 //First quarter done
+
+    resltLowhi1  = High_mult(mem[i+1], mem[i+3]) + carry; //loop by 8 bit subroutine
+    mem[i+66] = resltLowhi1
 
 
+    resltMedlo2, carry = Low_mult(mem[i],mem[i+3]); //loop by 8 bit subroutine
+    mem[i+66] += resltMedlo2
+    carry += checkForCarry(); //check for any carry bits
+
+    resltMedhi2, carry  = High_mult(mem[i], mem[i+3]) + carry; //loop by 8 bit subroutine
+    mem[i+65] = resltMedhi2;
+    mem[i+64] = carry
 
 
+    resltLowlo3, carry = Low_mult(mem[i+1],mem[i+2]); //loop by 8 bit subroutine
+    mem[i+66] += resltLowlo3 //Done with second quarter
+    carry += checkForCarry(); //check for any carry bits
+
+    resltLowhi3, carry  = High_mult(mem[i+1], mem[i+2]) + carry; //loop by 8 bit subroutine
+    mem[i+65] += resltLowhi3
+    carry = checkForCarry(); //check for any carry bits
+    mem[i+64] += carry;
+
+
+    resltLowlo4, carry = Low_mult(mem[i],mem[i+2]); //loop by 8 bit subroutine
+    mem[i+65] += resltLowlo4; //Done with third quarter
+    carry += checkForCarry(); //Check for any carry
+    resltLowhi4 = High_mult(mem[i], mem[i+2]) + carry; //loop by 8 bit subroutine
+    mem[i+64] += resltLowhi4;
 }
 
