@@ -1,4 +1,11 @@
-mov r0 1
-mov r1 3
-and r2 r0 r1
-xor r3 r0 r1
+mov r0 0
+sub1 r0
+mov r1 0
+sub1 r1
+abs r0 r1
+copy r0 r1 //these two lines should get abs
+mov r0 0
+sub1 r0
+mov r1 0
+abs r0 r1
+copy r0 r1 //these two lines should get abs
