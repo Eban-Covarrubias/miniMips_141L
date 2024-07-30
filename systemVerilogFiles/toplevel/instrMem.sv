@@ -4,7 +4,7 @@ module instrMem(
 );
 
     // Memory array to store instructions
-    logic [8:0] Core[255:0];
+    logic [8:0] Core[1023:0];
 
     // Define the no-op instruction
     localparam [8:0] NO_OP = 9'b101100100;

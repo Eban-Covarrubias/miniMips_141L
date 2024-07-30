@@ -33,7 +33,7 @@ ldr r1 r1 1 //load in r1=j
 ldr r1 r1 1 //load in mem[j+1]
 mov r0 0
 sub1 r0 //setting r0=11111111
-xor r1 r0
+xor r1 r0 r1 //flip all bits
 add1 r1 //flipped sign of mem[j+1]
 bof r0 //if we have overflow, branch to overflow error handling
 mov r0 8 //if we have no overflow
