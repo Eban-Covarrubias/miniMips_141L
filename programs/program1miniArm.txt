@@ -47,6 +47,8 @@ add r0 r3//sum += and(part, mask)//check bit6
 shift r2 1
 and r3 r2 r1 //and(part, mask)
 add r0 r3//sum += and(part, mask)//check bit7
+mov r3 8
+shift r3 -3 //64
 ldr r2 r3 2 //load in i
 ldr r3 r3 3 //load in j
 ldr r2 r2 1 //load in arr[i+1]
