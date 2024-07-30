@@ -1,5 +1,5 @@
 // program 1    CSE141L   min & max Hamming distances in double precision data pairs
-module test_bench;
+module test_bench_program_1;
 
 // connections to DUT: clock, start (request), done (acknowledge) 
   bit  clk,
