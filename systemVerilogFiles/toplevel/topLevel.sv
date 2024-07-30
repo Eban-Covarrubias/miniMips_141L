@@ -7,7 +7,7 @@ module topLevel(
     logic [7:0] pc;
 	 logic [7:0] pc_next;
     logic [8:0] instruction;
-    logic [1:0] read_reg1, read_reg2, write_reg1, write_reg2;
+    logic [1:0] read_reg1, read_reg2, write_reg;
 	 logic [7:0] read_data1, read_data2, read_data3;
 	 logic write_en1, write_en2;
 	 logic alu_src;
@@ -19,7 +19,7 @@ module topLevel(
     logic mem_read, mem_write, c;
     logic [7:0] data_mem_out;
 	 logic [7:0] jump_amount;
-	 logic [15:0] write_data, alu_result;
+	 logic [7:0] write_data, alu_result;
 //    logic [8:0] instruction_memory [0:255]; // Instruction memory (ROM)
 	 
 	 
@@ -28,10 +28,8 @@ module topLevel(
 			.clk(clk),
         .read_reg1(read_reg1),
         .read_reg2(read_reg2),
-        .write_reg1(write_reg1),
-		  .write_reg2(write_reg2),
-		  .write_en1(write_en1),
-		  .write_en2(write_en2),
+		  .write_reg(write_reg),
+		  .write_en(write_en),
 		  .write_data(write_data),
         .read_data1(read_data1),
         .read_data2(read_data2),
@@ -57,10 +55,8 @@ module topLevel(
 		.data(instruction),
 		.R1(read_reg1),
 		.R2(read_reg2),
-		.W1(write_reg1),
-		.W2(write_reg2),
-		.write_en1(write_en1),
-		.write_en2(write_en2),
+		.W(write_reg),
+		.write_en(write_en),
 		.imm(immediate_data),
 		.alu_op(alu_op),
 		.mem_write(mem_write),

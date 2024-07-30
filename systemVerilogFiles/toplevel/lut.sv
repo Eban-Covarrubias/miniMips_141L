@@ -2,10 +2,8 @@ module lut(
     input logic [8:0] data,
     output logic [1:0] R1,
     output logic [1:0] R2,
-    output logic [1:0] W1,
-    output logic [1:0] W2,
-    output logic write_en1,
-    output logic write_en2,
+    output logic [1:0] W,
+    output logic write_en,
     output logic [7:0] imm,
     output logic [4:0] alu_op,
     output logic mem_write,
@@ -77,10 +75,8 @@ always_comb begin
     // Default values
     R1 = 2'b00;
     R2 = 2'b00;
-    W1 = 2'b00;
-    W2 = 2'b00;
-    write_en1 = 0;
-    write_en2 = 0;
+    W = 2'b00;
+    write_en = 0;
     imm = 8'b0;
     alu_op = 5'b0;
     mem_write = 0;
@@ -104,8 +100,8 @@ always_comb begin
         end
         Ldr_op: begin
             R1 = data[3:2];
-            W1 = data[5:4];
-            write_en1 = 1;
+            W = data[5:4];
+            write_en = 1;
             imm = {6'b000000, data[1:0]};
             alu_op = Add_type;
             mem_write = 0;
@@ -114,8 +110,8 @@ always_comb begin
             alu_src = 1;
         end
         Mov_op: begin
-            W2 = data[5:4];
-            write_en2 = 1;
+            W = data[5:4];
+            write_en = 1;
             imm = {4'b0000, data[3:0]};
             alu_op = Mov_type;
             mem_write = 0;
@@ -125,8 +121,8 @@ always_comb begin
         end
         Shift_op: begin
             R1 = data[5:4]; // Both read and write register
-            W2 = data[5:4];
-            write_en2 = 1;
+            W = data[5:4];
+            write_en = 1;
             if (data[3] == 1'b1) begin // If the most significant bit (sign bit) is 1, it's negative
                 alu_op = Leftshift_type; // Perform a left shift for negative values
                 imm = {4'b0000, ~data[3:0] + 1'b1}; // Convert to positive value (2's complement)
@@ -144,31 +140,30 @@ always_comb begin
                 0: begin // Add operation
                     R1 = data[3:2];
                     R2 = data[1:0];
-                    W2 = data[3:2];
-                    write_en2 = 1;
+                    W = data[3:2];
+                    write_en = 1;
                     alu_op = Add_type;
                 end
                 1: begin // Sub operation
                     R1 = data[3:2];
                     R2 = data[1:0];
-                    W2 = data[3:2];
-                    write_en2 = 1;
+                    W = data[3:2];
+                    write_en = 1;
                     alu_op = Sub_type;
                 end
                 2: begin // Copy operation
-                    R1 = data[1:0];
+                    R1 = data[3:2];
                     R2 = data[1:0];
-                    W2 = data[3:2];
-                    write_en2 = 1;
+                    W = data[3:2];
+                    write_en = 1;
                     alu_op = Copy_type;
                 end
                 3: begin // Abs operation
                     R1 = data[3:2];
                     R2 = data[1:0];
-                    W1 = data[3:2];
-                    W2 = data[1:0];
-                    write_en1 = 1;
-                    write_en2 = 1;
+                    // W1 = data[3:2];
+                    W = data[1:0];
+                    write_en = 1;
                     alu_op = Abs_type;
                 end
                 default: begin
@@ -186,8 +181,7 @@ always_comb begin
                 // Comparison
                 R1 = data[3:2];
                 R2 = data[1:0];
-                write_en1 = 0;
-                write_en2 = 0;
+                write_en = 0;
                 imm = 0;
                 alu_op = Cmp_type;
                 mem_write = 0;
@@ -198,9 +192,8 @@ always_comb begin
                 // Branching or simple A
                 //R1 = data[3:2];
                 R2 = data[1:0];
-                W2 = data[1:0];
-                write_en1 = 0;
-                write_en2 = 0;//disable writing on branching
+                W = data[1:0];
+                write_en = 0;
                 imm = 0;
                 //alu_op = B_type;
                 mem_write = 0;
@@ -217,15 +210,15 @@ always_comb begin
                     Br: alu_op = B_type;
                     Add1: begin
                         alu_op = Add1_type;
-                        write_en2 = 1;
+                        write_en = 1;
                     end
                     Add2: begin 
                         alu_op = Add2_type;
-                        write_en2 = 1;
+                        write_en = 1;
                     end
                     Sub1: begin 
                         alu_op = Sub1_type;
-                        write_en2 = 1;
+                        write_en = 1;
                     end
                     Bof: alu_op = Bof_type;
                     default: alu_op = B_type;
@@ -235,8 +228,8 @@ always_comb begin
         Xor_op: begin
             R1 = data[3:2];
             R2 = data[1:0];
-            W2 = data[5:4];
-            write_en2 = 1;
+            W = data[5:4];
+            write_en = 1;
             alu_op = Xor_type;
             mem_write = 0;
             mem_read = 0;
@@ -246,8 +239,8 @@ always_comb begin
         And_op: begin
             R1 = data[3:2];
             R2 = data[2:1];
-            W2 = data[5:4];
-            write_en2 = 1;
+            W = data[5:4];
+            write_en = 1;
             alu_op = And_type;
             mem_write = 0;
             mem_read = 0;

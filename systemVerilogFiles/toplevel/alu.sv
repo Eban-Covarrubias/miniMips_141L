@@ -1,14 +1,13 @@
 module alu(
     input logic Clk,
-    input logic reset,
     input logic [7:0] DatA,
     input logic [7:0] DatB,
     input logic [4:0] Alu_op,
-    output logic [15:0] Rslt,
+    output logic [7:0] Rslt,
     output logic branch
 );
 
-// Define an enumeration for the alu_op
+// Define an enumeration for the ALU operations
 typedef enum logic [4:0] {
     Add_type         = 5'b00000, // Addition
     Sub_type         = 5'b00001, // Subtraction
@@ -33,13 +32,8 @@ typedef enum logic [4:0] {
     Bof_type         = 5'b10100  // Branch on overflow
 } opcode_t;
 
-// Internal registers to hold flags
-logic less_than_flag_reg;
-logic equal_flag_reg;
-logic greater_than_flag_reg;
-logic overflow_flag_reg;
+logic less_than_flag_reg, equal_flag_reg, greater_than_flag_reg, overflow_flag_reg;
 
-// Assign internal flags to outputs
 assign branch = (Alu_op == Ble_type && (less_than_flag_reg || equal_flag_reg)) ||
                 (Alu_op == Blt_type && less_than_flag_reg) ||
                 (Alu_op == Beq_type && equal_flag_reg) ||
@@ -49,7 +43,6 @@ assign branch = (Alu_op == Ble_type && (less_than_flag_reg || equal_flag_reg)) |
                 (Alu_op == B_type) ||
                 (Alu_op == Bof_type && overflow_flag_reg);
 
-// Combinational logic for Rslt
 always_comb begin
     case (Alu_op)
         Add_type: begin
@@ -59,14 +52,21 @@ always_comb begin
             Rslt = DatA - DatB;
         end
         Abs_type: begin
-            // Combine DatA and DatB to form a 16-bit signed number
             logic signed [15:0] signed_val;
+            logic [15:0] negated_val;
             signed_val = {DatA, DatB}; // Concatenate DatA (MSB) and DatB (LSB)
-            // Compute the absolute value
-            Rslt = (signed_val < 0) ? -signed_val : signed_val;
+            if (signed_val < 0) begin
+                negated_val = ~signed_val + 1;
+                Rslt = negated_val[7:0];
+            end
+            else begin
+                Rslt = signed_val[7:0];
+            end
         end
         Copy_type: begin
-            Rslt = DatB;
+            if(DatA[7]) Rslt = ~DatA + overflow_flag_reg;
+            else Rslt = DatA;
+            
         end
         Add1_type: begin
             Rslt = DatB + 8'b00000001;
@@ -93,57 +93,40 @@ always_comb begin
             Rslt = DatA >> DatB;
         end
         Cmp_type: begin
-            Rslt = 16'b0; // CMP doesn't produce a result
+            Rslt = 8'b0; // Compare does not produce a result
         end
         default: begin
-            Rslt = 16'b0; // Default case
+            Rslt = 8'b0; // Default case for undefined operations
         end
     endcase
 end
 
-// Sequential logic for flags
-always_ff @(posedge Clk or posedge reset) begin
-    if (reset) begin
-        less_than_flag_reg <= 1'b0;
-        equal_flag_reg <= 1'b0;
-        greater_than_flag_reg <= 1'b0;
-        overflow_flag_reg <= 1'b0;
-    end else begin
+always_ff @(posedge Clk) begin
+    // if (reset) begin
+    //     less_than_flag_reg <= 0;
+    //     equal_flag_reg <= 0;
+    //     greater_than_flag_reg <= 0;
+    //     overflow_flag_reg <= 0;
+    // end else begin
         case (Alu_op)
-            Add_type: begin
-                overflow_flag_reg <= Rslt[8];
+            Add_type, Add1_type, Add2_type: begin
+                overflow_flag_reg <= (Rslt[7] != DatB[7]);
             end
-            Sub_type: begin
+            Sub_type, Sub1_type: begin
                 overflow_flag_reg <= (DatA[7] != DatB[7]) && (Rslt[7] != DatA[7]);
+            end
+            Abs_type: begin
+                // Overflow check specifically for abs_type
+                overflow_flag_reg <= (DatA[7])&(DatB == 0);
             end
             Cmp_type: begin
                 less_than_flag_reg <= (DatA < DatB);
                 equal_flag_reg <= (DatA == DatB);
                 greater_than_flag_reg <= (DatA > DatB);
             end
-            Ble_type: begin
-                less_than_flag_reg <= (DatA <= DatB);
-            end
-            Blt_type: begin
-                less_than_flag_reg <= (DatA < DatB);
-            end
-            Beq_type: begin
-                equal_flag_reg <= (DatA == DatB);
-            end
-            Bne_type: begin
-                equal_flag_reg <= (DatA != DatB);
-            end
-            Bge_type: begin
-                greater_than_flag_reg <= (DatA >= DatB);
-            end
-            Bgt_type: begin
-                greater_than_flag_reg <= (DatA > DatB);
-            end
-            default: begin
-                // Other operations do not affect flags
-            end
+            // No flag updates for other operations
         endcase
-    end
+    // end
 end
 
 endmodule
