@@ -77,8 +77,8 @@ add r0 r3//sum += and(part, mask)//check bit6
 shift r2 1
 and r3 r2 r1 //and(part, mask)
 add r0 r3//sum += and(part, mask)//check bit7, sum = r0
-mov r3 8 //at this point sum = r0
-shift r3 3 // 64
+mov r3 8 //at this point sum = r0 = 1000
+shift r3 -3 // 64 = 1000000
 ldr r1 r3 1 //load in max = r1
 mov r2 2
 cmp r0 r1

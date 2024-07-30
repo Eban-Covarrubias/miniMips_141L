@@ -1,16 +1,16 @@
-C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/dataMem.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/dataMem.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module dataMem
-
-Top level modules:
-	dataMem
-
-} {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_2.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_2.sv
+C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_2.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_2.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module tb2_topLevel
 
 Top level modules:
 	tb2_topLevel
+
+} {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/dataMem.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/dataMem.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module dataMem
+
+Top level modules:
+	dataMem
 
 } {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_4.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_4.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -25,6 +25,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	tb_processor
+
+} {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module test_bench_program_2
+
+Top level modules:
+	test_bench_program_2
 
 } {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/instrMem.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/instrMem.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -54,19 +61,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	topLevel
 
-} {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_5.sv {1 {vlog -work work -sv -stats=none {C:\Users\ewanc\OneDrive\Documents\summerone_24\CSE141L\modelSimFolder\topLevel\topLevel_tb_5.sv}
+} {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_5.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_5.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module tb5_topLevel
 
 Top level modules:
 	tb5_topLevel
 
-} {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/lut.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/lut.sv
+} {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module lut
+-- Compiling module test_bench_program_1
 
 Top level modules:
-	lut
+	test_bench_program_1
 
 } {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/regFile.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/regFile.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -75,22 +82,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	regFile
 
-} {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench.sv {1 {vlog -work work -sv -stats=none {C:\Users\ewanc\OneDrive\Documents\summerone_24\CSE141L\modelSimFolder\topLevel\test_bench.sv}
+} {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_3.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_3.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module test_bench
+-- Compiling module test_bench_program_3
 
 Top level modules:
-	test_bench
-
-} {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb.sv {1 {vlog -work work -sv -stats=none {C:\Users\ewanc\OneDrive\Documents\summerone_24\CSE141L\modelSimFolder\topLevel\topLevel_tb.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module tb_topLevel
-
-Top level modules:
-	tb_topLevel
-
-} {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/programCounter.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/programCounter.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+	test_bench_program_3
 
 } {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/adder.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/adder.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -98,5 +95,15 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	adder
+
+} {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/programCounter.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/programCounter.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+} {} {}} C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_topLevel
+
+Top level modules:
+	tb_topLevel
 
 } {} {}}
