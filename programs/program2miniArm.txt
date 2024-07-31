@@ -1,6 +1,7 @@
 mov r0 8 //Set min and max MSB and LSB
 shift r0 -3 //64
 mov r1 0
+sub1 r1 // set r1=1111111_1111111
 str r1 r0 2 //store minMSB in 66
 str r1 r0 3 //store minLSB in 67
 mov r1 4
@@ -9,95 +10,96 @@ mov r1 0
 str r1 r0 0 //store maxMSB in 68
 str r1 r0 1 //store maxLSB in 69
 str r1 r0 2 //i = 0 //Use memory slot 70 and 71 for i and j
-mov r0 9 //SETTING j = i+2
-shift r0 -3 // 68
-ldr r1 r0 2//get value of i
+ldr r1 r0 2//get value of i (NOTE r0=68 from the for loop or from fall thru) //SETTING j = i+2
 add2 r1
 str r1 r0 3 //j = i+2
-mov r0 8 //INSIDE J LOOP
-shift r0 -4 //create sign mask
-mov r1 9 //Loading in arr[i] arr[j]
-shift r1 -3 //68
-ldr r2 r1 0 //r2 holds I
-ldr r3 r1 1 //r3 holds j
+mov r1 8 //INSIDE J LOOP
+shift r1 -4 //create sign mask
+ldr r2 r0 2 //r2 holds I
+ldr r3 r0 3 //r3 holds j
 ldr r2 r2 0 //r2 holds arr[i]
 ldr r3 r3 0 //r3 holds arr[j]
-and r2 r2 r0 //signA
-and r3 r3 r0 //signB
-cmp r2 r3 //compare sign bits
-//gen jump number using r3 and r2
-//preserve the 68 in r1
-bne r3 //if signA != signB skip down ??? lines to line #91 
-add2 r1 //r1=70 IF THE SIGNS ARE EQUAL: //GOAL: subtract (16 bit subtraction) one from the other
-ldr r1 r1 1 //load in r1=j
+and r2 r2 r1 //signA
+and r3 r3 r1 //signB
+cmp r2 r3 //compare sign bits //gen jump number using r3 and r2
+mov r3 14
+shift r3 -2 //14*4=56
+add2 r3 //r3 = 58
+bne r3 //if signA != signB skip down 58 lines to line #87
+add2 r0 //r0=70 IF THE SIGNS ARE EQUAL: //GOAL: subtract (16 bit subtraction) one from the other
+ldr r1 r0 1 //load in r1=j
 ldr r1 r1 1 //load in mem[j+1]
 mov r0 0
 sub1 r0 //setting r0=11111111
 xor r1 r0 r1 //flip all bits
+mov r3 15
+add1 r3 //hold 16 for jump distance
 add1 r1 //flipped sign of mem[j+1]
-bof r0 //if we have overflow, branch to overflow error handling
+bof r3 //if we have overflow, branch to overflow error handling
 mov r0 8 //if we have no overflow
 shift r0 -3 //64
-mov r1 7
-add r0 r1//r0=71
+mov r1 6
+add r0 r1//r0=70
 ldr r1 r0 1 //load in r1=j
 ldr r2 r0 0 //load in r2=i
 ldr r1 r1 0 //load in r1=mem[j]
 ldr r2 r2 0 //load in r2=mem[i]
 mov r3 0
-sub1 r3 //setting r0=11111111
-xor r2 r3
-add1 r1 //flip mem[j]+1
+sub1 r3 //setting r3=11111111
+xor r1 r1 r3 //flip mem[j]
 add r2 r1
-str r2 r0 1 //mem[72]=result, aka diffMSB
+str r2 r0 2 //mem[72]=result, aka diffMSB
 mov r0 15
 b r0 //Forced branch to prevent fall thru
 mov r0 8 //if we have an overflow error
 shift r0 -3 //64
-mov r1 7
-add r0 r1//r0=71
+mov r1 6
+add r0 r1//r0=70
 ldr r1 r0 1 //load in r1=j
 ldr r2 r0 0 //load in r2=i
 ldr r1 r1 0 //load in r1=mem[j]
 ldr r2 r2 0 //load in r2=mem[i]
 mov r3 0
 sub1 r3 //setting r0=11111111
-xor r2 r3
-add1 r1 //flip mem[j]+2
+xor r1 r1 r3
+add1 r1 //flip mem[j]+1
 add r2 r1 //r2=diffMSB
-str r2 r0 1 //mem[72]=result, aka diffMSB
+str r2 r0 2 //mem[72]=result, aka diffMSB
 mov r0 8 //Run By both regardless of overflow
 shift r0 -3 //64
-mov r1 7
-add r0 r1//r0=71
+mov r1 6
+add r0 r1//r0=70
 ldr r1 r0 1 //load in r1=j
 ldr r2 r0 0 //load in r2=i
 ldr r1 r1 1 //load in r1=mem[j+1]
 ldr r2 r2 1 //load in r2=mem[i+1]
-sub1 r3 //setting r3=11111111
-xor r1 r3
-add1 r1 //flipped sign of mem[j+1]
+shift r3 0 //padding
+xor r1 r1 r3
+add1 r1 //flipped sign of mem[j+1] + 1
 add r1 r2 //r1 = mem[i+1]+mem[j+1] = diffLSB
-ldr r2 r0 1//load r2=mem[72]
+ldr r2 r0 2//load r2=mem[72]
 abs r2 r1 //get abs value of diffMSB, diffLSB
-str r1 r0 2//store new diffLSB
-str r2 r0 1//store new diffMSB//Done signs are Equal
+copy r2 r1 //Needed to finish abs value in hardware
+str r1 r0 3//store new diffLSB
+str r2 r0 2//store new diffMSB//Done signs are Equal
 mov r0 15
-shift r0 1 //r0=30
+shift r0 -1 //r0=30
 b r0 //CONTINUE
-mov r0 2//IF THE SIGNS ARE NOT EQUAL DO THIS:
-add r0 r1 //r0=70 (r1 was preserved at 68)
+mov r1 2//IF THE SIGNS ARE NOT EQUAL DO THIS: (From line ~28)
+add r0 r1 //r0=70 (r0 was preserved at 68)
 ldr r2 r0 0 //load in i
-ldr r3 r2 0//load in arr[i]
-ldr r2 r2 1 //load in arr[i+1]
+ldr r3 r2 0//load in arr[i] (msb)
+ldr r2 r2 1 //load in arr[i+1] (lsb)
 abs r3 r2 //get abs(arr[i].arr[i+1])
-mov r1 1
-add r0 r1 //r0 = 71
+copy r3 r2 //update copy to abs2
+shift r0 0 //padding
+add1 r0 //r0 = 71
 ldr r1 r0 0//load in j
 ldr r0 r0 0//load in j
-ldr r1 r1 0//load in arr[j]
-ldr r0 r0 1//load in arr[j+1]
+ldr r1 r1 0//load in arr[j] (msb)
+ldr r0 r0 1//load in arr[j+1] (lsb)
 abs r1 r0 //get abs(arr[j].arr[j+1])
+copy r1 r0 //update copy to abs2
 add r0 r2 //this addition may have had overflow
 mov r3 9
 shift r3 -3 //72
@@ -110,44 +112,45 @@ add r1 r3 //add MSB
 add r1 r0 //add overflow bit
 mov r3 9
 shift r3 -3//72
-str r1 r3 1//diffMSB=mem[72]
-mov r0 15
-shift r0 -1//r0=30
-sub1 r0//r0=29
-b r0//HELPER function, UPDATE min and max
-mov r0 9 //INNER LOOP IF J<64 
-shift r0 3 //r0 = 68
+str r1 r3 0//diffMSB=mem[72]
+mov r0 14
+shift r0 -1//r0=28
+b r0//HELPER function, UPDATE min and max  (branch to line ~144)
+mov r0 8 //INNER LOOP IF J<64 
+shift r0 -3 //r0 = 64
+mov r1 4
+add r0 r1 //r0 = 68
 ldr r1 r0 3 //load r1=j
 add2 r1
 str r1 r0 3 //j+=2 update j
 mov r2 8
 shift r2 -3 //r2=64
-cmp r1 r2
+cmp r1 r2 // compare j to 64
 mov r3 8
 shift r3 -4//-128
-mov r1 5
-add r3 r1//r3=-123
-blt r3//LOOP if j < 64
-mov r0 9 //OUTERLOOP IF I<64 
-shift r0 -3 //r0 = 68
-ldr r1 r0 2 //load r1=i
+mov r1 11
+add r3 r1//r3=-128+11=-117
+blt r3//LOOP if j < 64 // 
+ldr r1 r0 2 //load r1=i //OUTERLOOP IF I<64 
 add2 r1
-str r1 r0 0 //update i+=2
+str r1 r0 2 //update i+=2
 cmp r1 r2 //r2 will already be 64 since the only way to get here is fallthru from loop i
 mov r3 8
 shift r3 -4 //-128
+shift r3 0// does nothing. (padding for for loop jump)
 blt r3//LOOP if i < 64
-mov r3 7 //DONE WITH PROGRAM
-shift r3 -4//r3=0111000=112
+mov r3 14 //DONE WITH PROGRAM
+shift r3 -3//r3=0111000=112
 b r3 //Prevent fall thru into helper function
-mov r0 9 //Helper function Start, max updates first
+mov r0 9 //Helper function Start, max updates first (from force branch on line ~119)
+mov r0 9 //Padding for easy jump
 shift r0 -3 //r0=68
 ldr r3 r0 0//load r3=maxMSB
 mov r2 4
 add r0 r2 //r0=72
-ldr r2 r0 //load r2=diffMSB
+ldr r2 r0 0//load r2=diffMSB
 cmp r2 r3
-mov r1 11
+mov r1 10
 blt r1 //skip to min if diffMSB<maxLSB
 ldr r3 r0 1 //load r1=diffLSB
 mov r1 4
@@ -173,10 +176,10 @@ mov r3 5
 bgt r3//skip if diffLSB > minLSB
 mov r3 4
 sub r0 r3//r0=66
-str r1 1//update minLSB=diffLSB
-str r2 0//update minMSB=diffMSB
-mov r0 11
-shift r0 -4
-mov r1 12
-add r0 r1 //r0=-68
-b r0//Branch back up to main
+str r1 r0 1//update minLSB=diffLSB
+str r2 r0 0//update minMSB=diffMSB
+mov r0 9 //initializing the branching back up to main
+shift r0 -3//72
+mov r1 6
+sub r1 r0//r1=6-72=-66
+b r1//Branch back up to main
