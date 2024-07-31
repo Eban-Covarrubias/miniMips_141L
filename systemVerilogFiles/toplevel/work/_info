@@ -11,328 +11,328 @@ cModel Technology
 dC:/intelFPGA/20.1
 vadder
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1722382332
+Z1 !s110 1722399138
 !i10b 1
 !s100 dVn;:KddNQC<J4zU44_`30
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
 I5O16EzQAXk:H4Thk`;<G@2
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 S1
-Z3 dC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel
+Z4 dC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel
 w1721521066
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/adder.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/adder.sv
-!i122 554
+!i122 825
 L0 1 15
-Z4 OV;L;2020.1;71
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1722382332.000000
+Z6 !s108 1722399138.000000
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/adder.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/adder.sv|
 !i113 1
-Z6 o-work work -sv
-Z7 tCvgOpt 0
+Z7 o-work work -sv
+Z8 tCvgOpt 0
 valu
 R0
-Z8 !s110 1722382333
-!i10b 1
-!s100 YO?cBkWWl00:N3K]oKLjC3
 R1
-I@_Vk:?kNaNTllm7eX;>UA3
+!i10b 1
+!s100 Io<cL<o^?7<S32lYaNBDe2
 R2
-S1
+IHg>2FVBhH<Ng`M5I3`N_k3
 R3
-w1722323010
+S1
+R4
+w1722396952
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/alu.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/alu.sv
-!i122 555
-L0 1 132
-R4
+!i122 826
+L0 1 145
+R5
 r1
 !s85 0
 31
-R5
+R6
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/alu.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/alu.sv|
 !i113 1
-R6
 R7
+R8
 vdataMem
 R0
-R8
+Z9 !s110 1722399139
 !i10b 1
 !s100 B?L7m5EFaf8<:eTVmPR7z2
-R1
-IPQk`JZX^DC7c_HR6Xm4Bl0
 R2
-S1
+IPQk`JZX^DC7c_HR6Xm4Bl0
 R3
+S1
+R4
 w1722228127
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/dataMem.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/dataMem.sv
-!i122 556
+!i122 827
 L0 1 35
-R4
+R5
 r1
 !s85 0
 31
-Z9 !s108 1722382333.000000
+R6
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/dataMem.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/dataMem.sv|
 !i113 1
-R6
 R7
+R8
 ndata@mem
 vinstrMem
 R0
-R8
+R9
 !i10b 1
-!s100 LDO0^1EKDezD1l@@XzkK23
-R1
-I3:G<7<3_0Fo=_a[HOoWBk3
+!s100 L_DW@Yh<L]Wzah?I]zAaZ0
 R2
-S1
+IeChP<A7<HP77E:I^<VAmX3
 R3
-w1722200519
+S1
+R4
+w1722386816
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/instrMem.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/instrMem.sv
-!i122 557
+!i122 828
 L0 1 28
-R4
+R5
 r1
 !s85 0
 31
-R9
+Z10 !s108 1722399139.000000
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/instrMem.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/instrMem.sv|
 !i113 1
-R6
 R7
+R8
 ninstr@mem
 vlut
 R0
-R8
+Z11 !s110 1722399140
 !i10b 1
 !s100 [WYGloeE?6g^04[liLHWQ2
-R1
-I2Gj]iJCfIfj<FQi5V]L<D0
 R2
-S1
+I2Gj]iJCfIfj<FQi5V]L<D0
 R3
+S1
+R4
 w1722379065
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/lut.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/lut.sv
-!i122 558
+!i122 829
 L0 1 256
-R4
+R5
 r1
 !s85 0
 31
-R9
+R10
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/lut.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/lut.sv|
 !i113 1
-R6
 R7
+R8
 vregFile
 R0
-Z10 !s110 1722382334
+R11
 !i10b 1
 !s100 93AU`^AL_RYPH7@7a<`:O1
-R1
-IPkgB:oZIIBzS^_U_WaSOX0
 R2
-S1
+IPkgB:oZIIBzS^_U_WaSOX0
 R3
+S1
+R4
 w1722320837
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/regFile.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/regFile.sv
-!i122 559
+!i122 830
 L0 1 31
-R4
+R5
 r1
 !s85 0
 31
-Z11 !s108 1722382334.000000
+Z12 !s108 1722399140.000000
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/regFile.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/regFile.sv|
 !i113 1
-R6
 R7
+R8
 nreg@file
 vtb2_topLevel
 R0
-Z12 !s110 1722382335
+Z13 !s110 1722399142
 !i10b 1
 !s100 @`UD=H3J5Rgj4_3ZEF0zc0
-R1
-ISi88W9POe43^ze8P`>AdQ1
 R2
-S1
+ISi88W9POe43^ze8P`>AdQ1
 R3
+S1
+R4
 w1722374321
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_2.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_2.sv
-!i122 563
+!i122 834
 L0 1 59
-R4
+R5
 r1
 !s85 0
 31
-Z13 !s108 1722382335.000000
+Z14 !s108 1722399141.000000
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_2.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_2.sv|
 !i113 1
-R6
 R7
+R8
 ntb2_top@level
 vtb3_topLevel
 R0
-R12
+R13
 !i10b 1
 !s100 Y:DLb3nWCkg7PcV;9c?jP0
-R1
-IC3C<LjF2^^X?hKIjJPE^o3
 R2
-S1
+IC3C<LjF2^^X?hKIjJPE^o3
 R3
+S1
+R4
 w1722227686
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_3.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_3.sv
-!i122 564
+!i122 835
 L0 1 58
-R4
+R5
 r1
 !s85 0
 31
-R13
+Z15 !s108 1722399142.000000
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_3.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_3.sv|
 !i113 1
-R6
 R7
+R8
 ntb3_top@level
 vtb4_topLevel
 R0
-Z14 !s110 1722382336
+R13
 !i10b 1
 !s100 6?hIJhH2]o9`b>4[lOVE00
-R1
-I0HIJ`GfdgCEz<zi5?4dBX3
 R2
-S1
+I0HIJ`GfdgCEz<zi5?4dBX3
 R3
+S1
+R4
 w1722219593
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_4.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_4.sv
-!i122 565
-Z15 L0 1 56
-R4
+!i122 836
+Z16 L0 1 56
+R5
 r1
 !s85 0
 31
-Z16 !s108 1722382336.000000
+R15
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_4.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_4.sv|
 !i113 1
-R6
 R7
+R8
 ntb4_top@level
 vtb5_topLevel
 R0
-R14
+Z17 !s110 1722399143
 !i10b 1
 !s100 b2Ve2eMT1Tl_NF=`XIne_3
-R1
-I>V5m`;g_?5CSV[No;SACV2
 R2
-S1
+I>V5m`;g_?5CSV[No;SACV2
 R3
+S1
+R4
 w1722326214
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_5.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_5.sv
-!i122 566
+!i122 837
 L0 1 52
-R4
+R5
 r1
 !s85 0
 31
-R16
+R15
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_5.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_5.sv|
 !i113 1
-R6
 R7
+R8
 ntb5_top@level
 vtb_processor
 R0
-R10
+Z18 !s110 1722399141
 !i10b 1
 !s100 0iJhNQeac:?@E?QF_>1d=1
-R1
-ISc]eP`PUDNi8EiQXbAZfX1
 R2
-S1
+ISc]eP`PUDNi8EiQXbAZfX1
 R3
+S1
+R4
 w1722195963
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/tb_processor.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/tb_processor.sv
-!i122 560
-R15
-R4
+!i122 831
+R16
+R5
 r1
 !s85 0
 31
-R11
+R12
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/tb_processor.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/tb_processor.sv|
 !i113 1
-R6
 R7
+R8
 vtb_topLevel
 R0
-R12
+R18
 !i10b 1
 !s100 BW4Kzm`ko[5R?ZA6QT``B1
-R1
-I]NDLVZWR>DgkPcQEEJ]J03
 R2
-S1
+I]NDLVZWR>DgkPcQEEJ]J03
 R3
+S1
+R4
 w1722208938
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb.sv
-!i122 562
+!i122 833
 L0 1 55
-R4
+R5
 r1
 !s85 0
 31
-R13
+R14
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb.sv|
 !i113 1
-R6
 R7
+R8
 ntb_top@level
 vtest_bench
 R0
 !s110 1722327799
 !i10b 1
 !s100 YhlDgCDn@a3ZKInUI^CS`2
-R1
-I9MZH2JnaA[h<:j]Zc38VV1
 R2
-S1
+I9MZH2JnaA[h<:j]Zc38VV1
 R3
+S1
+R4
 w1722327691
 8C:\Users\ewanc\OneDrive\Documents\summerone_24\CSE141L\modelSimFolder\topLevel\test_bench.sv
 FC:\Users\ewanc\OneDrive\Documents\summerone_24\CSE141L\modelSimFolder\topLevel\test_bench.sv
 !i122 489
-Z17 L0 2 84
-R4
+Z19 L0 2 84
+R5
 r1
 !s85 0
 31
@@ -340,106 +340,106 @@ r1
 !s107 C:\Users\ewanc\OneDrive\Documents\summerone_24\CSE141L\modelSimFolder\topLevel\test_bench.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:\Users\ewanc\OneDrive\Documents\summerone_24\CSE141L\modelSimFolder\topLevel\test_bench.sv|
 !i113 1
-R6
 R7
+R8
 vtest_bench_program_1
 R0
-R14
+R17
 !i10b 1
 !s100 10>z1I`ndK?S`l@;^T6MA3
-R1
-IR0OFA?[j==HdB19zIO:U82
 R2
-S1
+IR0OFA?[j==HdB19zIO:U82
 R3
+S1
+R4
 w1722374337
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv
-!i122 567
-R17
-R4
+!i122 838
+R19
+R5
 r1
 !s85 0
 31
-R16
+Z20 !s108 1722399143.000000
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv|
 !i113 1
-R6
 R7
+R8
 vtest_bench_program_2
 R0
-Z18 !s110 1722382337
+!s110 1722399144
 !i10b 1
-!s100 611JK6_Y^^>?X6@;BJnLQ1
-R1
-I]3b>Q^@CcF3[ehEhNzOHB0
+!s100 ;a1UfNO1QJE[i3;5J^Z?81
 R2
-S1
+I16O7j5ZL_eJHAdkUhfA;B1
 R3
-w1722374460
+S1
+R4
+w1722398785
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv
-!i122 569
-L0 2 121
-R4
+!i122 840
+L0 2 123
+R5
 r1
 !s85 0
 31
-!s108 1722382337.000000
+R20
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv|
 !i113 1
-R6
 R7
+R8
 vtest_bench_program_3
 R0
-R18
+R17
 !i10b 1
 !s100 nAodediI^>QMgV8:Wi3Fd0
-R1
-I4M3E]ROchfhCgLZC`1;[Q2
 R2
-S1
+I4M3E]ROchfhCgLZC`1;[Q2
 R3
+S1
+R4
 w1722374317
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_3.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_3.sv
-!i122 568
+!i122 839
 L0 2 80
-R4
+R5
 r1
 !s85 0
 31
-R16
+R20
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_3.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_3.sv|
 !i113 1
-R6
 R7
+R8
 vtopLevel
 R0
-R12
+R18
 !i10b 1
 !s100 >mlfzfMMMKaT9LTbiQ8ES0
-R1
-IL5B0[Q^acP?X@NCWa^=4N2
 R2
-S1
+IL5B0[Q^acP?X@NCWa^=4N2
 R3
+S1
+R4
 w1722323337
 8C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv
 FC:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv
-!i122 561
+!i122 832
 L0 1 117
-R4
+R5
 r1
 !s85 0
 31
-R11
+R14
 !s107 C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel.sv|
 !i113 1
-R6
 R7
+R8
 ntop@level

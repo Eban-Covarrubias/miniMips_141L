@@ -34,6 +34,8 @@ typedef enum logic [4:0] {
 
 logic less_than_flag_reg, equal_flag_reg, greater_than_flag_reg, overflow_flag_reg;
 
+logic [7:0] Rslt_prev;
+
 assign branch = (Alu_op == Ble_type && (less_than_flag_reg || equal_flag_reg)) ||
                 (Alu_op == Blt_type && less_than_flag_reg) ||
                 (Alu_op == Beq_type && equal_flag_reg) ||
@@ -109,11 +111,22 @@ always_ff @(posedge Clk) begin
     //     overflow_flag_reg <= 0;
     // end else begin
         case (Alu_op)
-            Add_type, Add1_type, Add2_type: begin
-                overflow_flag_reg <= (Rslt[7] != DatB[7]);
+            Add_type: begin
+                overflow_flag_reg <= (((DatA + DatB) < DatA) || ((DatA + DatB) < DatB)) ;
             end
-            Sub_type, Sub1_type: begin
-                overflow_flag_reg <= (DatA[7] != DatB[7]) && (Rslt[7] != DatA[7]);
+            Add1_type: begin
+                overflow_flag_reg  <= (((1 + DatB) < 1) || ((1 + DatB) < DatB));
+            end
+            Add2_type: begin
+                overflow_flag_reg  <= (((2 + DatB) < 2) || ((2 + DatB) < DatB));
+            end
+            Sub_type: begin
+                Rslt_prev = DatA - DatB;
+                overflow_flag_reg <= (DatA[7] != DatB[7]) && (Rslt_prev[7] != DatA[7]);
+            end
+            Sub1_type: begin
+                Rslt_prev = DatB - 1;
+                overflow_flag_reg <= (DatA[7] != DatB[7]) && (Rslt_prev[7] != DatA[7]);
             end
             Abs_type: begin
                 // Overflow check specifically for abs_type
