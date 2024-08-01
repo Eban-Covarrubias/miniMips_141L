@@ -4,8 +4,8 @@ module topLevel(
 	output logic done
 );
 	// Internal signals
-    logic [7:0] pc;
-	 logic [7:0] pc_next;
+    logic [9:0] pc;
+	 logic [9:0] pc_next;
     logic [8:0] instruction;
     logic [1:0] read_reg1, read_reg2, write_reg;
 	 logic [7:0] read_data1, read_data2, read_data3;

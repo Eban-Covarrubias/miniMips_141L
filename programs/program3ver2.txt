@@ -376,7 +376,16 @@ shift r2 -3//64
 add r2 r3 //r2=i+64
 ldr r3 r2 1// r3 = mem[i+65]
 add r0 r3 //r0 =  carry + mem[i+65]
+mov r1 1 //be certain to preserve r0 and r2=(i+64), let r1 = overflow, for now assume overflow
+mov r3 2 //jump distance
+bof r3 //we must check for overflow here
+mov r1 0 //if no overflow, delete overflow bit
+ldr r3 r2 0//r3=mem[i+64]
+add r3 r1 //r3=mem[i+64]+overflow
+str r3 r2 0 //mem[i+64]=mem[i+64]+overflow
 str r0 r2 1//mem[i+65] = carry + mem[i+65]
+mov r1 8
+shift r1 -4 //r1=128
 mov r0 0
 str r0 r1 0//Set carry = 0
 str r0 r1 2//set j = 0
@@ -440,11 +449,11 @@ sub r0 r2 //r0=1-52=-51
 add1 r0 //r0=-50
 blt r0//branch -50 lines (up 50 lines) if j<8 #end of 6th J loop
 cmp r2 r2 //force skip, r2 = r2 //#Range extender #6
-mov r3 11 //Range extender hit
-shift r3 -3 //88
-mov r2 6
-sub r2 r3 // r2 = 6 - 88 = -82 
-blt r2 //END of #Range extender 6, up 82 lines
+mov r3 12 //Range extender hit
+shift r3 -3 //96
+mov r2 5
+sub r2 r3 // r2 = 5 - 96 = -91 
+blt r2 //END of #Range extender 6, up 91 lines
 mov r1 8 //Intialize values for #7th J loop 
 shift r1 -4 //r1=128
 mov r0 0
@@ -589,3 +598,17 @@ shift r2 -2 // r2=52
 mov r0 3
 sub r0 r2 //r0=3-52=-49
 blt r0//branch -49 lines (up 49 lines) if j<8 #end of 8th J loop
+mov r1 8 //For loop on I from 0 to 64 by increments of 4
+shift r1 -4 //128
+ldr r0 r1 1 //r0 = i
+add2 r0
+add2 r0 //r0= i + 4
+str r0 r1 1 //Update i = i+4
+mov r1 8
+shift r1 -3 // r1 = 64
+cmp r0 r1 // i vs 64
+mov r3 12
+shift r3 -3 = 96
+mov r2 7
+sub r2 r3 // r2 = -89
+blt r2 //branch up -89 lines to extender if i < 64

@@ -29,7 +29,11 @@ for(i = 0; i < 64; i+= 4){
     mem[i+66] += Low_mult(mem[i+1],mem[i+2]); //loop by 8 bit subroutine 5
     carry = Low_mult_carry(mem[i+1],mem[i+2]); //Done with second quarter
     mem[i+65] += carry //add any carry bits
+    carry = overflow?//check for overflow
+    if(carry)
+        mem[i+64] += 1;
 
+        
     mem[i+65] += High_mult(mem[i+1], mem[i+2]); //loop by 8 bit subroutine 6
     carry = High_mult_carry(mem[i+1], mem[i+2]);
     mem[i+64] += carry;

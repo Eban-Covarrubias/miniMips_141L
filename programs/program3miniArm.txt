@@ -1,14 +1,14 @@
 mov r1 8 //let mem[128]=carry, mem[129]=i, mem[130]=j, mem[131]=shiftingOpA, mem[132]=shiftingOpB
 shift r1 -4 //128
 mov r0 0
-str r0 r1 1//set i = 0
+str r0 r1 1//set i = 0 mem[129] = 0
 mov r1 8 //OUTER LOOP BACK UP TO HERE
 shift r1 -4 //128
-ldr r1 r1 1//r1 = i 
+ldr r1 r1 1//load r1 = i = mem[129]
 mov r0 0//r0=0
 mov r3 8
-mov r3 -3//r3=64
-add r1 r1 r3 //r1 = i+64
+shift r3 -3//r3=64
+add r1 r3 //r1 = i+64
 str r0 r1 0 //    mem[i+64] = 0;
 str r0 r1 1 //    mem[i+65] = 0;
 str r0 r1 2 //    mem[i+66] = 0;
@@ -33,7 +33,7 @@ ldr r1 r1 2//let r1 = mem[132] = shiftingOpB
 mov r2 1 //Create the mask
 and r3 r2 r0 //Get the far right bit of shiftingOpA
 mov r2 0 //Determine if we are going to use the next shift or set to zero
-sub r2 r2 r3//subtract 1 or 0 based on the mask to get 11111111 or 00000000
+sub r2 r3//subtract 1 or 0 based on the mask to get 11111111 or 00000000
 and r0 r1 r2//r0 = shiftingOpB & with our 00000000 or 11111111
 mov r2 8
 shift r2 -4 //r2=128
@@ -44,9 +44,9 @@ shift r1 -4 //r1=128
 ldr r1 r1 1 //r1 = i = mem[129]
 mov r3 8
 shift r3 -3//r3=64
-add r3 r3 r1 //r3=i+64
+add r3 r1 //r3=i+64
 ldr r1 r3 3//r1=mem[i+67] 
-add r0 r0 r1//mem[i+67] += r0
+add r0 r1//mem[i+67] += r0
 mov r1 2
 bof r1 //If we have overflow, continue
 sub1 r2 //if we dont have overflow, deduct 1 from carry
@@ -84,7 +84,7 @@ ldr r0 r1 0//r0 = carry
 ldr r3 r1 1//r3 = i
 mov r2 8
 shift r2 -3//64
-add r2 r3 r2 //r2=i+64
+add r2 r3 //r2=i+64
 str r0 r2 2//mem[i+66] = carry
 mov r0 0
 str r0 r1 0//Set carry = 0
@@ -105,9 +105,9 @@ ldr r1 r1 2//let r1 = mem[132] = shiftingOpB
 mov r2 8 //Create the mask
 shift r2 -4 //r2=10000000
 and r3 r2 r0 //Get the far left bit of shiftingOpA
-shift r3 -3 
-shift r3 -3
-shift r3 -1 //r3 >> 7 , in order to get the far left bit of shiftingOpA in slot 0
+shift r3 3 
+shift r3 3
+shift r3 1 //r3 >> 7 , in order to get the far left bit of shiftingOpA in slot 0
 mov r2 0 //Determine if we are going to use the next shift or set to zero
 sub r2 r3//subtract 1 or 0 based on the mask to get 11111111 or 00000000
 and r0 r1 r2//r0 = shiftingOpB & with our 00000000 or 11111111
@@ -120,9 +120,9 @@ shift r1 -4 //r1=128
 ldr r1 r1 1 //r1 = i = mem[129]
 mov r3 8
 shift r3 -3//r3=64
-add r3 r3 r1 //r3=i+64
+add r3 r1 //r3=i+64
 ldr r1 r3 2//r1=mem[i+66] 
-add r0 r0 r1//mem[i+66] += r0
+add r0 r1//mem[i+66] += r0
 mov r1 2
 bof r1 //If we have overflow, continue
 sub1 r2 //if we dont have overflow, deduct 1 from carry
@@ -142,12 +142,12 @@ shift r3 1 //r3 = shiftingOpB >> 1
 str r3 r1 2 //Update mem[132] = r3
 mov r1 8 //8
 cmp r0 r1 //compare j to 8
-mov r2 9
-shift r2 -4 // r2=68
-mov r0 0
-sub r0 r2 //r0=-68
-sub1 r0 //r0=-69
-blt r0//branch -69 lines (up 69 lines) if j<8 #end of 2nd J loop
+mov r2 7
+shift r2 -3 // r2=56
+mov r0 7
+sub r0 r2 //r0=7-56=-49
+sub1 r0 //r0=-50
+blt r0//branch -50 lines (up 50 lines) if j<8 #end of 2nd J loop
 cmp r2 r2 //force skip, r2 = r2 //#Range extender #2
 mov r3 10 //Range extender hit
 shift r3 -3 //80
@@ -185,9 +185,9 @@ shift r1 -4 //r1=128
 ldr r1 r1 1 //r1 = i = mem[129]
 mov r3 8
 shift r3 -3//r3=64
-add r3 r3 r1 //r3=i+64
+add r3 r1 //r3=i+64
 ldr r1 r3 2//r1=mem[i+66] 
-add r0 r0 r1//mem[i+66] += r0
+add r0 r1//mem[i+66] += r0
 mov r1 2
 bof r1 //If we have overflow, continue
 sub1 r2 //if we dont have overflow, deduct 1 from carry
@@ -207,12 +207,12 @@ shift r3 -1 //r3 = shiftingOpB << 1
 str r3 r1 2 //Update mem[132] = r3
 mov r1 8 //8
 cmp r0 r1 //compare j to 8
-mov r2 15
-shift r2 -2 // r2=60
+mov r2 12
+shift r2 -2 // r2=48
 mov r0 0
-sub r0 r2 //r0=-60
-add2 r0 //r0=-58
-blt r0//branch -58 lines (up 58 lines) if j<8 #end of 3rd J loop
+sub r0 r2 //r0=0-48=-48
+add2 r0 //r0=-46
+blt r0//branch -46 lines (up 46 lines) if j<8 #end of 3rd J loop
 cmp r2 r2 //force skip, r2 = r2 //#Range extender #3
 mov r3 9 //Range extender hit
 shift r3 -3 //72
@@ -225,7 +225,7 @@ ldr r0 r1 0//r0 = carry
 ldr r3 r1 1//r3 = i
 mov r2 8
 shift r2 -3//64
-add r2 r3 r2 //r2=i+64
+add r2 r3//r2=i+64
 str r0 r2 1//mem[i+65] = carry
 mov r0 0
 str r0 r1 0//Set carry = 0
@@ -246,9 +246,9 @@ ldr r1 r1 2//let r1 = mem[132] = shiftingOpB
 mov r2 8 //Create the mask
 shift r2 -4 //r2=10000000
 and r3 r2 r0 //Get the far left bit of shiftingOpA
-shift r3 -3 
-shift r3 -3
-shift r3 -1 //r3 >> 7 , in order to get the far left bit of shiftingOpA in slot 0
+shift r3 3 
+shift r3 3
+shift r3 1 //r3 >> 7 , in order to get the far left bit of shiftingOpA in slot 0
 mov r2 0 //Determine if we are going to use the next shift or set to zero
 sub r2 r3//subtract 1 or 0 based on the mask to get 11111111 or 00000000
 and r0 r1 r2//r0 = shiftingOpB & with our 00000000 or 11111111
@@ -261,9 +261,9 @@ shift r1 -4 //r1=128
 ldr r1 r1 1 //r1 = i = mem[129]
 mov r3 8
 shift r3 -3//r3=64
-add r3 r3 r1 //r3=i+64
+add r3 r1 //r3=i+64
 ldr r1 r3 1//r1=mem[i+65] 
-add r0 r0 r1//mem[i+65] += r0
+add r0 r1//mem[i+65] += r0
 mov r1 2
 bof r1 //If we have overflow, continue
 sub1 r2 //if we dont have overflow, deduct 1 from carry
@@ -283,12 +283,12 @@ shift r3 1 //r3 = shiftingOpB >> 1
 str r3 r1 2 //Update mem[132] = r3
 mov r1 8 //8
 cmp r0 r1 //compare j to 8
-mov r2 9
-shift r2 -4 // r2=68
-mov r0 0
-sub r0 r2 //r0=-68
-sub1 r0 //r0=-69
-blt r0//branch -69 lines (up 69 lines) if j<8 #end of 4th J loop
+mov r2 13
+shift r2 -2 // r2=52
+mov r0 3
+sub r0 r2 //r0=3-52=-49
+sub1 r0 //r0=-50
+blt r0//branch -50 lines (up 50 lines) if j<8 #end of 4th J loop
 cmp r2 r2 //force skip, r2 = r2 //#Range extender #4
 mov r3 10 //Range extender hit
 shift r3 -3 // 80
@@ -302,7 +302,7 @@ ldr r0 r1 0//Load in old carry
 ldr r3 r1 1//r3 = i
 mov r2 8
 shift r2 -3//64
-add r2 r3 r2 //r2=i+64
+add r2 r3 //r2=i+64
 str r0 r2 0// mem[i+64] = carry
 mov r0 0
 str r0 r1 0//set carry = 0
@@ -333,9 +333,9 @@ shift r1 -4 //r1=128
 ldr r1 r1 1 //r1 = i = mem[129]
 mov r3 8
 shift r3 -3//r3=64
-add r3 r3 r1 //r3=i+64
+add r3 r1 //r3=i+64
 ldr r1 r3 2//r1=mem[i+66] 
-add r0 r0 r1//mem[i+66] += r0
+add r0 r1//mem[i+66] += r0
 mov r1 2
 bof r1 //If we have overflow, continue
 sub1 r2 //if we dont have overflow, deduct 1 from carry
@@ -355,12 +355,12 @@ shift r3 -1 //r3 = shiftingOpB << 1
 str r3 r1 2 //Update mem[132] = r3
 mov r1 8 //8
 cmp r0 r1 //compare j to 8
-mov r2 8
-shift r2 -3 // r2=64
-mov r0 0
-sub r0 r2 //r0=-64
-sub1 r0 //r0=-65
-blt r0//branch -65 lines (up 65 lines) if j<8 #end of 5th J loop
+mov r2 12
+shift r2 -2 // r2=48
+mov r0 3
+sub r0 r2 //r0=3-48=-45
+sub1 r0 //r0=-45
+blt r0//branch -46 lines (up 46 lines) if j<8 #end of 5th J loop
 cmp r2 r2 //force skip, r2 = r2 //#Range extender #5
 mov r3 10 //Range extender hit
 shift r3 -3 //80
@@ -373,10 +373,19 @@ ldr r0 r1 0//r0 = carry
 ldr r3 r1 1//r3 = i
 mov r2 8
 shift r2 -3//64
-add r2 r3 r2 //r2=i+64
+add r2 r3 //r2=i+64
 ldr r3 r2 1// r3 = mem[i+65]
-add r0 r3 r0 //r0 =  carry + mem[i+65]
+add r0 r3 //r0 =  carry + mem[i+65]
+mov r1 1 //be certain to preserve r0 and r2=(i+64), let r1 = overflow, for now assume overflow
+mov r3 2 //jump distance
+bof r3 //we must check for overflow here
+mov r1 0 //if no overflow, delete overflow bit
+ldr r3 r2 0//r3=mem[i+64]
+add r3 r1 //r3=mem[i+64]+overflow
+str r3 r2 0 //mem[i+64]=mem[i+64]+overflow
 str r0 r2 1//mem[i+65] = carry + mem[i+65]
+mov r1 8
+shift r1 -4 //r1=128
 mov r0 0
 str r0 r1 0//Set carry = 0
 str r0 r1 2//set j = 0
@@ -396,9 +405,9 @@ ldr r1 r1 2//let r1 = mem[132] = shiftingOpB
 mov r2 8 //Create the mask
 shift r2 -4 //r2=10000000
 and r3 r2 r0 //Get the far left bit of shiftingOpA
-shift r3 -3 
-shift r3 -3
-shift r3 -1 //r3 >> 7 , in order to get the far left bit of shiftingOpA in slot 0
+shift r3 3 
+shift r3 3
+shift r3 1 //r3 >> 7 , in order to get the far left bit of shiftingOpA in slot 0
 mov r2 0 //Determine if we are going to use the next shift or set to zero
 sub r2 r3//subtract 1 or 0 based on the mask to get 11111111 or 00000000
 and r0 r1 r2//r0 = shiftingOpB & with our 00000000 or 11111111
@@ -411,9 +420,9 @@ shift r1 -4 //r1=128
 ldr r1 r1 1 //r1 = i = mem[129]
 mov r3 8
 shift r3 -3//r3=64
-add r3 r3 r1 //r3=i+64
+add r3 r1 //r3=i+64
 ldr r1 r3 1//r1=mem[i+65]
-add r0 r0 r1//mem[i+65] += r0
+add r0 r1//mem[i+65] += r0
 mov r1 2
 bof r1 //If we have overflow, continue
 sub1 r2 //if we dont have overflow, deduct 1 from carry
@@ -433,18 +442,18 @@ shift r3 1 //r3 = shiftingOpB >> 1
 str r3 r1 2 //Update mem[132] = r3
 mov r1 8 //8
 cmp r0 r1 //compare j to 8
-mov r2 9
-shift r2 -3 // r2=72
-mov r0 0
-sub r0 r2 //r0=-72
-add1 r0 //r0=-71
-blt r0//branch -71 lines (up 71 lines) if j<8 #end of 6th J loop
+mov r2 13
+shift r2 -2 // r2=52
+mov r0 1
+sub r0 r2 //r0=1-52=-51
+add1 r0 //r0=-50
+blt r0//branch -50 lines (up 50 lines) if j<8 #end of 6th J loop
 cmp r2 r2 //force skip, r2 = r2 //#Range extender #6
-mov r3 11 //Range extender hit
-shift r3 -3 //88
-mov r2 6
-sub r2 r3 // r2 = 6 - 88 = -82 
-blt r2 //END of #Range extender 6, up 82 lines
+mov r3 12 //Range extender hit
+shift r3 -3 //96
+mov r2 5
+sub r2 r3 // r2 = 5 - 96 = -91 
+blt r2 //END of #Range extender 6, up 91 lines
 mov r1 8 //Intialize values for #7th J loop 
 shift r1 -4 //r1=128
 mov r0 0
@@ -452,9 +461,9 @@ ldr r0 r1 0//Load in r0= carry
 ldr r3 r1 1//r3 = i
 mov r2 8
 shift r2 -3//64
-add r2 r3 r2 //r2=i+64
+add r2 r3 //r2=i+64
 ldr r3 r2 0 //r3 = mem[i+64]
-add r0 r3 r0 //r0 = mem[i+64] + carry
+add r0 r3 //r0 = mem[i+64] + carry
 str r0 r2 0// mem[i+64] = mem[i+64] + carry
 mov r0 0
 str r0 r1 0//set carry = 0
@@ -485,9 +494,9 @@ shift r1 -4 //r1=128
 ldr r1 r1 1 //r1 = i = mem[129]
 mov r3 8
 shift r3 -3//r3=64
-add r3 r3 r1 //r3=i+64
+add r3 r1 //r3=i+64
 ldr r1 r3 1//r1=mem[i+65] 
-add r0 r0 r1//mem[i+65] += r0
+add r0 r1//mem[i+65] += r0
 mov r1 2
 bof r1 //If we have overflow, continue
 sub1 r2 //if we dont have overflow, deduct 1 from carry
@@ -507,11 +516,11 @@ shift r3 -1 //r3 = shiftingOpB << 1
 str r3 r1 2 //Update mem[132] = r3
 mov r1 8 //8
 cmp r0 r1 //compare j to 8
-mov r2 9
-shift r2 -3 // r2=72
-mov r0 6
-sub r0 r2 //r0=6-72=-66
-blt r0//branch -66 lines (up 66 lines) if j<8 #end of 7th J loop
+mov r2 12
+shift r2 -2 // r2=48
+mov r0 3
+sub r0 r2 //r0=3-48=-45
+blt r0//branch -45 lines (up 45 lines) if j<8 #end of 7th J loop
 cmp r2 r2 //force skip, r2 = r2 //#Range extender #7 
 mov r3 10 //Range extender hit
 shift r3 -3 //80
@@ -524,9 +533,9 @@ ldr r0 r1 0//r0 = carry
 ldr r3 r1 1//r3 = i
 mov r2 8
 shift r2 -3//64
-add r2 r3 r2 //r2=i+64
+add r2 r3 //r2=i+64
 ldr r3 r2 0// r3 = mem[i+64]
-add r0 r3 r0 //r0 =  carry + mem[i+64]
+add r0 r3 //r0 =  carry + mem[i+64]
 str r0 r2 0//mem[i+64] = carry + mem[i+64]
 mov r0 0
 str r0 r1 0//Set carry = 0
@@ -547,9 +556,9 @@ ldr r1 r1 2//let r1 = mem[132] = shiftingOpB
 mov r2 8 //Create the mask
 shift r2 -4 //r2=10000000
 and r3 r2 r0 //Get the far left bit of shiftingOpA
-shift r3 -3 
-shift r3 -3
-shift r3 -1 //r3 >> 7 , in order to get the far left bit of shiftingOpA in slot 0
+shift r3 3 
+shift r3 3
+shift r3 1 //r3 >> 7 , in order to get the far left bit of shiftingOpA in slot 0
 mov r2 0 //Determine if we are going to use the next shift or set to zero
 sub r2 r3//subtract 1 or 0 based on the mask to get 11111111 or 00000000
 and r0 r1 r2//r0 = shiftingOpB & with our 00000000 or 11111111
@@ -562,9 +571,9 @@ shift r1 -4 //r1=128
 ldr r1 r1 1 //r1 = i = mem[129]
 mov r3 8
 shift r3 -3//r3=64
-add r3 r3 r1 //r3=i+64
+add r3 r1 //r3=i+64
 ldr r1 r3 0//r1=mem[i+64]
-add r0 r0 r1//mem[i+64] += r0
+add r0 r1//mem[i+64] += r0
 mov r1 2
 bof r1 //If we have overflow, continue
 sub1 r2 //if we dont have overflow, deduct 1 from carry
@@ -584,11 +593,11 @@ shift r3 1 //r3 = shiftingOpB >> 1
 str r3 r1 2 //Update mem[132] = r3
 mov r1 8 //8
 cmp r0 r1 //compare j to 8
-mov r2 9
-shift r2 -3 // r2=72
-mov r0 2
-sub r0 r2 //r0=2-72=-70
-blt r0//branch -70 lines (up 70 lines) if j<8 #end of 8th J loop
+mov r2 13
+shift r2 -2 // r2=52
+mov r0 3
+sub r0 r2 //r0=3-52=-49
+blt r0//branch -49 lines (up 49 lines) if j<8 #end of 8th J loop
 mov r1 8 //For loop on I from 0 to 64 by increments of 4
 shift r1 -4 //128
 ldr r0 r1 1 //r0 = i

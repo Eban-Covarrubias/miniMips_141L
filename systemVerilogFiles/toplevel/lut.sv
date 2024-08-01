@@ -47,7 +47,9 @@ typedef enum logic [4:0] {
     Bge_type         = 5'b10001, // Branch if greater or equal
     Bgt_type         = 5'b10010, // Branch if greater than
     B_type           = 5'b10011, // Branch
-    Bof_type         = 5'b10100  // Branch on overflow
+    Bof_type         = 5'b10100,  // Branch on overflow
+    Add_no_of        = 5'b10101 //normal add, doesnt have overflow
+
 } alu_t;
 
 typedef enum logic [3:0] {
@@ -92,7 +94,7 @@ always_comb begin
             R1 = data[3:2]; //This is going into ALU
             R2 = data[5:4]; //This is going into dataMem
             imm = {6'b000000, data[1:0]};//This is going into alu
-            alu_op = Add_type;
+            alu_op = Add_no_of;
             mem_write = 1;
             mem_read = 0;
             use_alu_bypass = 0;
@@ -103,7 +105,7 @@ always_comb begin
             W = data[5:4];
             write_en = 1;
             imm = {6'b000000, data[1:0]};
-            alu_op = Add_type;
+            alu_op = Add_no_of;
             mem_write = 0;
             mem_read = 1;
             use_alu_bypass = 0;

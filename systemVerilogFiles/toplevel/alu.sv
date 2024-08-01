@@ -29,12 +29,14 @@ typedef enum logic [4:0] {
     Bge_type         = 5'b10001, // Branch if greater or equal
     Bgt_type         = 5'b10010, // Branch if greater than
     B_type           = 5'b10011, // Branch
-    Bof_type         = 5'b10100  // Branch on overflow
+    Bof_type         = 5'b10100,  // Branch on overflow
+    Add_no_of        = 5'b10101 //normal add, doesnt have overflow
 } opcode_t;
 
 logic less_than_flag_reg, equal_flag_reg, greater_than_flag_reg, overflow_flag_reg;
 
 logic [7:0] Rslt_prev;
+logic [8:0] Overflow_detect;
 
 assign branch = (Alu_op == Ble_type && (less_than_flag_reg || equal_flag_reg)) ||
                 (Alu_op == Blt_type && less_than_flag_reg) ||
@@ -47,6 +49,9 @@ assign branch = (Alu_op == Ble_type && (less_than_flag_reg || equal_flag_reg)) |
 
 always_comb begin
     case (Alu_op)
+        Add_no_of: begin
+            Rslt = DatA + DatB;
+        end
         Add_type: begin
             Rslt = DatA + DatB;
         end
@@ -103,43 +108,39 @@ always_comb begin
     endcase
 end
 
-always_ff @(posedge Clk) begin
-    // if (reset) begin
-    //     less_than_flag_reg <= 0;
-    //     equal_flag_reg <= 0;
-    //     greater_than_flag_reg <= 0;
-    //     overflow_flag_reg <= 0;
-    // end else begin
-        case (Alu_op)
-            Add_type: begin
-                overflow_flag_reg <= (((DatA + DatB) < DatA) || ((DatA + DatB) < DatB)) ;
-            end
-            Add1_type: begin
-                overflow_flag_reg  <= (((1 + DatB) < 1) || ((1 + DatB) < DatB));
-            end
-            Add2_type: begin
-                overflow_flag_reg  <= (((2 + DatB) < 2) || ((2 + DatB) < DatB));
-            end
-            Sub_type: begin
-                Rslt_prev = DatA - DatB;
-                overflow_flag_reg <= (DatA[7] != DatB[7]) && (Rslt_prev[7] != DatA[7]);
-            end
-            Sub1_type: begin
-                Rslt_prev = DatB - 1;
-                overflow_flag_reg <= (DatA[7] != DatB[7]) && (Rslt_prev[7] != DatA[7]);
-            end
-            Abs_type: begin
-                // Overflow check specifically for abs_type
-                overflow_flag_reg <= (DatA[7])&(DatB == 0);
-            end
-            Cmp_type: begin
-                less_than_flag_reg <= (DatA < DatB);
-                equal_flag_reg <= (DatA == DatB);
-                greater_than_flag_reg <= (DatA > DatB);
-            end
-            // No flag updates for other operations
-        endcase
-    // end
+always_ff @(negedge Clk) begin
+    case (Alu_op)
+        Add_type: begin
+            Overflow_detect = DatA + DatB;
+            overflow_flag_reg <= Overflow_detect[8];
+        end
+        Add1_type: begin
+            Overflow_detect = 1 + DatB;
+            overflow_flag_reg  <= Overflow_detect[8];
+        end
+        Add2_type: begin
+            Overflow_detect = 2 + DatB;
+            overflow_flag_reg  <= Overflow_detect[8];
+        end
+        Sub_type: begin
+            Rslt_prev = DatA - DatB;
+            overflow_flag_reg <= (DatA[7] != DatB[7]) && (Rslt_prev[7] != DatA[7]);
+        end
+        Sub1_type: begin
+            Rslt_prev = DatB - 1;
+            overflow_flag_reg <= (DatA[7] != DatB[7]) && (Rslt_prev[7] != DatA[7]);
+        end
+        Abs_type: begin
+            // Overflow check specifically for abs_type
+            overflow_flag_reg <= (DatA[7])&(DatB == 0);
+        end
+        Cmp_type: begin
+            less_than_flag_reg <= (DatA < DatB);
+            equal_flag_reg <= (DatA == DatB);
+            greater_than_flag_reg <= (DatA > DatB);
+        end
+        // No flag updates for other operations
+    endcase
 end
 
 endmodule
