@@ -47,6 +47,8 @@ add r0 r3//sum += and(part, mask)//check bit6
 shift r2 1
 and r3 r2 r1 //and(part, mask)
 add r0 r3//sum += and(part, mask)//check bit7
+mov r3 8
+shift r3 -3 //64
 ldr r2 r3 2 //load in i
 ldr r3 r3 3 //load in j
 ldr r2 r2 1 //load in arr[i+1]
@@ -75,8 +77,8 @@ add r0 r3//sum += and(part, mask)//check bit6
 shift r2 1
 and r3 r2 r1 //and(part, mask)
 add r0 r3//sum += and(part, mask)//check bit7, sum = r0
-mov r3 8 //at this point sum = r0
-shift r3 3 // 64
+mov r3 8 //at this point sum = r0 = 1000
+shift r3 -3 // 64 = 1000000
 ldr r1 r3 1 //load in max = r1
 mov r2 2
 cmp r0 r1
@@ -93,18 +95,19 @@ mov r3 2 //r3 = 2
 add r0 r3
 str r0 r1 3 //j += 2
 mov r3 11
-shift r3 -4 //get 10110000 in r3 aka -128+32+16 = -80
-sub1 r3//r3 = -80-1=-81
+shift r3 -3 //88
+mov r2 4
+sub r2 r3 // 4 - 88 = -84
 cmp r0 r1
-blt r3//branch -81 lines (up 81 lines) if j<64 
+blt r2//branch -84 lines (up 84 lines) if j<64 
 mov r1 8 //OUTER FOR LOOP ON I
 shift r1 -3 // r1 = 64
 ldr r0 r1 2 //load in i from slot 66
 add2 r0
 str r0 r1 2 //i += 2 
-mov r3 10
-shift r3 -4 //get 10100000 in r3 aka -96
-mov r1 4
-sub r3 r1 //-96-4=-100
+mov r3 13
+shift r3 -3 //get 104
+mov r2 1
+sub r2 r3 //r3 = 1 - 104 = -103
 cmp r0 r1
-blt r3//branch -100 lines (up 100 lines) if i<64 
+blt r2//branch -103 lines (up 103 lines) if i<64 

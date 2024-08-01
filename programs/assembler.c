@@ -145,12 +145,6 @@ int parseInstruction(char *instruction, unsigned int *machineCode) {
         *machineCode = (op << 6) | (getRegister(reg1, &error) << 4) | (getRegister(reg2, &error) << 2) | getRegister(reg3, &error);
     } else if (strcmp(opcode, "nop") == 0) {
         *machineCode = NOP;
-    } else if (strcmp(opcode, "bof") == 0) {
-        token = strtok(NULL, " ,");
-        if (!token) return ERROR_MISSING_OPERAND;
-        strcpy(reg1, token);
-
-        *machineCode = (BOF << 9) | getRegister(reg1, &error);
     } else if (strcmp(opcode, "add") == 0 || strcmp(opcode, "sub") == 0 || strcmp(opcode, "copy") == 0 || strcmp(opcode, "abs") == 0) {
         int op = (strcmp(opcode, "add") == 0) ? ADD :
                  (strcmp(opcode, "sub") == 0) ? SUB :
@@ -204,13 +198,14 @@ int parseInstruction(char *instruction, unsigned int *machineCode) {
 
         *machineCode = (op << 6) | (getRegister(reg1, &error) << 4) | (getRegister(reg2, &error) << 2) | parseImmediate(immediate, &error);
     } else if (strcmp(opcode, "ble") == 0 || strcmp(opcode, "blt") == 0 || strcmp(opcode, "beq") == 0 || strcmp(opcode, "bne") == 0 ||
-               strcmp(opcode, "bge") == 0 || strcmp(opcode, "bgt") == 0 || strcmp(opcode, "b") == 0) {
+               strcmp(opcode, "bge") == 0 || strcmp(opcode, "bgt") == 0 || strcmp(opcode, "bof") == 0 ||strcmp(opcode, "b") == 0) {
         int op = (strcmp(opcode, "ble") == 0) ? BLE :
                  (strcmp(opcode, "blt") == 0) ? BLT :
                  (strcmp(opcode, "beq") == 0) ? BEQ :
                  (strcmp(opcode, "bne") == 0) ? BNE :
                  (strcmp(opcode, "bge") == 0) ? BGE :
-                 (strcmp(opcode, "bgt") == 0) ? BGT : B;
+                 (strcmp(opcode, "bgt") == 0) ? BGT :
+                 (strcmp(opcode, "bof") == 0) ? BOF : B;
         token = strtok(NULL, " ,");
         if (!token) return ERROR_MISSING_OPERAND;
         strcpy(reg1, token);

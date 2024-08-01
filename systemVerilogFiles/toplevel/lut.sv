@@ -238,7 +238,7 @@ always_comb begin
         end
         And_op: begin
             R1 = data[3:2];
-            R2 = data[2:1];
+            R2 = data[1:0];
             W = data[5:4];
             write_en = 1;
             alu_op = And_type;

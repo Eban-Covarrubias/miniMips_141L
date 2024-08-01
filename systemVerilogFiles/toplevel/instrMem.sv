@@ -4,7 +4,7 @@ module instrMem(
 );
 
     // Memory array to store instructions
-    logic [8:0] Core[255:0];
+    logic [8:0] Core[1023:0];
 
     // Define the no-op instruction
     localparam [8:0] NO_OP = 9'b101100100;
@@ -13,7 +13,7 @@ module instrMem(
     initial begin
         integer i;
         // Set each memory location to the no-op instruction
-        for (i = 0; i < 256; i = i + 1) begin
+        for (i = 0; i < 1023; i = i + 1) begin
             Core[i] = NO_OP;
         end
         // Optionally, load instructions from a file

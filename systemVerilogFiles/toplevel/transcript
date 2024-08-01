@@ -12,28 +12,15 @@
 # Compile of topLevel_tb_3.sv was successful.
 # Compile of topLevel_tb_4.sv was successful.
 # Compile of topLevel_tb_5.sv was successful.
-# 14 compiles, 0 failed with no errors.
-# Load canceled
-# Compile of adder.sv was successful.
-# Compile of alu.sv was successful.
-# Compile of dataMem.sv was successful.
-# Compile of instrMem.sv was successful.
-# Compile of lut.sv was successful.
-# Compile of programCounter.sv was successful.
-# Compile of regFile.sv was successful.
-# Compile of tb_processor.sv was successful.
-# Compile of topLevel.sv was successful.
-# Compile of topLevel_tb.sv was successful.
-# Compile of topLevel_tb_2.sv was successful.
-# Compile of topLevel_tb_3.sv was successful.
-# Compile of topLevel_tb_4.sv was successful.
-# Compile of topLevel_tb_5.sv was successful.
-# 14 compiles, 0 failed with no errors.
-vsim work.tb5_topLevel
-# vsim work.tb5_topLevel 
-# Start time: 00:36:04 on Jul 30,2024
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 1 failed with no errors.
+vsim work.test_bench_program_1
+# vsim work.test_bench_program_1 
+# Start time: 14:21:47 on Jul 30,2024
 # Loading sv_std.std
-# Loading work.tb5_topLevel
+# Loading work.test_bench_program_1
 # Loading work.topLevel
 # Loading work.regFile
 # Loading work.instrMem
@@ -41,50 +28,184 @@ vsim work.tb5_topLevel
 # Loading work.lut
 # Loading work.alu
 # Loading work.dataMem
-# WARNING: No extended dataflow license exists
-add wave -position insertpoint sim:/tb5_topLevel/uut/*
-add wave -position insertpoint sim:/tb5_topLevel/uut/rf/*
+add wave -position insertpoint sim:/test_bench_program_1/*
+add wave -position insertpoint sim:/test_bench_program_1/D1/*
 add wave -position insertpoint  \
-sim:/tb5_topLevel/uut/rf/read_reg1 \
-sim:/tb5_topLevel/uut/rf/read_reg2 \
-sim:/tb5_topLevel/uut/rf/write_reg \
-sim:/tb5_topLevel/uut/rf/write_data \
-sim:/tb5_topLevel/uut/rf/write_en \
-sim:/tb5_topLevel/uut/rf/read_data1 \
-sim:/tb5_topLevel/uut/rf/read_data2 \
-sim:/tb5_topLevel/uut/rf/read_data3 \
-sim:/tb5_topLevel/uut/rf/reg_array
-add wave -position insertpoint sim:/tb5_topLevel/uut/alu1/*
+sim:/test_bench_program_1/D1/pc
 add wave -position insertpoint  \
-sim:/tb5_topLevel/uut/alu1/DatA \
-sim:/tb5_topLevel/uut/alu1/DatB \
-sim:/tb5_topLevel/uut/alu1/Alu_op \
-sim:/tb5_topLevel/uut/alu1/Rslt \
-sim:/tb5_topLevel/uut/alu1/branch \
-sim:/tb5_topLevel/uut/alu1/less_than_flag_reg \
-sim:/tb5_topLevel/uut/alu1/equal_flag_reg \
-sim:/tb5_topLevel/uut/alu1/greater_than_flag_reg \
-sim:/tb5_topLevel/uut/alu1/overflow_flag_reg
+sim:/test_bench_program_1/D1/instruction
+add wave -position insertpoint sim:/test_bench_program_1/D1/dataMemory/*
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/dataMemory/addr \
+sim:/test_bench_program_1/D1/dataMemory/write_data \
+sim:/test_bench_program_1/D1/dataMemory/mem_write \
+sim:/test_bench_program_1/D1/dataMemory/mem_read \
+sim:/test_bench_program_1/D1/dataMemory/data_out \
+sim:/test_bench_program_1/D1/dataMemory/Core \
+sim:/test_bench_program_1/D1/dataMemory/read_data
 run -all
-# Test completed at time                  125
-# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_5.sv(58)
-#    Time: 125 ps  Iteration: 4  Instance: /tb5_topLevel
-# Break in Module tb5_topLevel at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_5.sv line 58
-# Compile of adder.sv was successful.
-# Compile of alu.sv was successful.
-# Compile of dataMem.sv was successful.
-# Compile of instrMem.sv was successful.
-# Compile of lut.sv was successful.
-# Compile of programCounter.sv was successful.
-# Compile of regFile.sv was successful.
-# Compile of tb_processor.sv was successful.
-# Compile of topLevel.sv was successful.
-# Compile of topLevel_tb.sv was successful.
-# Compile of topLevel_tb_2.sv was successful.
-# Compile of topLevel_tb_3.sv was successful.
-# Compile of topLevel_tb_4.sv was successful.
-# Compile of topLevel_tb_5.sv failed with 5 errors.
-# 14 compiles, 1 failed with 5 errors.
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# Resulting min =  30
+# fail Min =  2
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# Resulting min =   0
+# MAD  Max = 14
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv(75)
+#    Time: 499950 ns  Iteration: 0  Instance: /test_bench_program_1
+# Break in Module test_bench_program_1 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv line 75
+add wave -position insertpoint sim:/test_bench_program_1/D1/rf/*
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/rf/read_reg1 \
+sim:/test_bench_program_1/D1/rf/read_reg2 \
+sim:/test_bench_program_1/D1/rf/write_reg \
+sim:/test_bench_program_1/D1/rf/write_data \
+sim:/test_bench_program_1/D1/rf/write_en \
+sim:/test_bench_program_1/D1/rf/read_data1 \
+sim:/test_bench_program_1/D1/rf/read_data2 \
+sim:/test_bench_program_1/D1/rf/read_data3 \
+sim:/test_bench_program_1/D1/rf/reg_array
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# Resulting min =  30
+# fail Min =  2
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# Resulting min =   0
+# MAD  Max = 14
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv(75)
+#    Time: 499950 ns  Iteration: 0  Instance: /test_bench_program_1
+# Break in Module test_bench_program_1 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv line 75
+add wave -position insertpoint sim:/test_bench_program_1/D1/instrMem1/*
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/instrMem1/Core
+restart
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# Resulting min =  30
+# fail Min =  2
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# Resulting min =   0
+# MAD  Max = 14
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv(75)
+#    Time: 499950 ns  Iteration: 0  Instance: /test_bench_program_1
+# Break in Module test_bench_program_1 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv line 75
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/test_bench_program_1/D1/controlBlock/*
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/controlBlock/R1
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/controlBlock/R2
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/controlBlock/W
 # Compile of adder.sv was successful.
 # Compile of alu.sv was successful.
 # Compile of dataMem.sv was successful.
@@ -99,66 +220,17 @@ run -all
 # Compile of topLevel_tb_3.sv was successful.
 # Compile of topLevel_tb_4.sv was successful.
 # Compile of topLevel_tb_5.sv was successful.
-# 14 compiles, 0 failed with no errors.
-vsim work.tb5_topLevel
-# End time: 00:51:11 on Jul 30,2024, Elapsed time: 0:15:07
-# Errors: 0, Warnings: 5
-# vsim work.tb5_topLevel 
-# Start time: 00:51:11 on Jul 30,2024
-# Loading sv_std.std
-# Loading work.tb5_topLevel
-# Loading work.topLevel
-# Loading work.regFile
-# Loading work.instrMem
-# Loading work.adder
-# Loading work.lut
-# Loading work.alu
-# Loading work.dataMem
-# WARNING: No extended dataflow license exists
-add wave -position insertpoint sim:/tb5_topLevel/uut/*
-add wave -position insertpoint sim:/tb5_topLevel/uut/rf/*
-add wave -position insertpoint  \
-sim:/tb5_topLevel/uut/rf/read_reg1 \
-sim:/tb5_topLevel/uut/rf/read_reg2 \
-sim:/tb5_topLevel/uut/rf/write_reg \
-sim:/tb5_topLevel/uut/rf/write_data \
-sim:/tb5_topLevel/uut/rf/write_en \
-sim:/tb5_topLevel/uut/rf/read_data1 \
-sim:/tb5_topLevel/uut/rf/read_data2 \
-sim:/tb5_topLevel/uut/rf/read_data3 \
-sim:/tb5_topLevel/uut/rf/reg_array
-add wave -position insertpoint sim:/tb5_topLevel/uut/instrMem1/*
-add wave -position insertpoint  \
-sim:/tb5_topLevel/uut/instrMem1/pc \
-sim:/tb5_topLevel/uut/instrMem1/data \
-sim:/tb5_topLevel/uut/instrMem1/Core
-run -all
-# Test completed at time                  125
-# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_5.sv(55)
-#    Time: 125 ps  Iteration: 4  Instance: /tb5_topLevel
-# Break in Module tb5_topLevel at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_5.sv line 55
-# Compile of adder.sv was successful.
-# Compile of alu.sv was successful.
-# Compile of dataMem.sv was successful.
-# Compile of instrMem.sv was successful.
-# Compile of lut.sv was successful.
-# Compile of programCounter.sv was successful.
-# Compile of regFile.sv was successful.
-# Compile of tb_processor.sv was successful.
-# Compile of topLevel.sv was successful.
-# Compile of topLevel_tb.sv was successful.
-# Compile of topLevel_tb_2.sv was successful.
-# Compile of topLevel_tb_3.sv was successful.
-# Compile of topLevel_tb_4.sv was successful.
-# Compile of topLevel_tb_5.sv was successful.
-# 14 compiles, 0 failed with no errors.
-vsim work.tb5_topLevel
-# End time: 00:56:14 on Jul 30,2024, Elapsed time: 0:05:03
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_1
+# End time: 15:39:40 on Jul 30,2024, Elapsed time: 1:17:53
 # Errors: 0, Warnings: 2
-# vsim work.tb5_topLevel 
-# Start time: 00:56:14 on Jul 30,2024
+# vsim work.test_bench_program_1 
+# Start time: 15:39:41 on Jul 30,2024
 # Loading sv_std.std
-# Loading work.tb5_topLevel
+# Loading work.test_bench_program_1
 # Loading work.topLevel
 # Loading work.regFile
 # Loading work.instrMem
@@ -167,54 +239,697 @@ vsim work.tb5_topLevel
 # Loading work.alu
 # Loading work.dataMem
 # WARNING: No extended dataflow license exists
-# Compile of topLevel_tb_5.sv was successful.
-vsim work.tb5_topLevel
-# End time: 00:57:47 on Jul 30,2024, Elapsed time: 0:01:33
-# Errors: 0, Warnings: 2
-# vsim work.tb5_topLevel 
-# Start time: 00:57:47 on Jul 30,2024
-# Loading sv_std.std
-# Loading work.tb5_topLevel
-# Loading work.topLevel
-# Loading work.regFile
-# Loading work.instrMem
-# Loading work.adder
-# Loading work.lut
-# Loading work.alu
-# Loading work.dataMem
-# WARNING: No extended dataflow license exists
-add wave -position insertpoint sim:/tb5_topLevel/uut/*
-add wave -position insertpoint sim:/tb5_topLevel/uut/rf/*
+add wave -position insertpoint sim:/test_bench_program_1/D1/*
 add wave -position insertpoint  \
-sim:/tb5_topLevel/uut/rf/clk \
-sim:/tb5_topLevel/uut/rf/read_reg1 \
-sim:/tb5_topLevel/uut/rf/read_reg2 \
-sim:/tb5_topLevel/uut/rf/write_reg \
-sim:/tb5_topLevel/uut/rf/write_data \
-sim:/tb5_topLevel/uut/rf/write_en \
-sim:/tb5_topLevel/uut/rf/read_data1 \
-sim:/tb5_topLevel/uut/rf/read_data2 \
-sim:/tb5_topLevel/uut/rf/read_data3 \
-sim:/tb5_topLevel/uut/rf/reg_array
-add wave -position insertpoint sim:/tb5_topLevel/uut/instrMem1/*
+sim:/test_bench_program_1/D1/pc \
+sim:/test_bench_program_1/D1/pc_next \
+sim:/test_bench_program_1/D1/instruction \
+sim:/test_bench_program_1/D1/read_reg1 \
+sim:/test_bench_program_1/D1/read_reg2 \
+sim:/test_bench_program_1/D1/write_reg \
+sim:/test_bench_program_1/D1/read_data1 \
+sim:/test_bench_program_1/D1/read_data2 \
+sim:/test_bench_program_1/D1/read_data3 \
+sim:/test_bench_program_1/D1/write_en1 \
+sim:/test_bench_program_1/D1/write_en2 \
+sim:/test_bench_program_1/D1/alu_src \
+sim:/test_bench_program_1/D1/alu_bypass \
+sim:/test_bench_program_1/D1/branch \
+sim:/test_bench_program_1/D1/overflow_flag \
+sim:/test_bench_program_1/D1/memory_data \
+sim:/test_bench_program_1/D1/immediate_data \
+sim:/test_bench_program_1/D1/alu_input_b \
+sim:/test_bench_program_1/D1/alu_input_a \
+sim:/test_bench_program_1/D1/alu_op \
+sim:/test_bench_program_1/D1/mem_read
+add wave -position insertpoint sim:/test_bench_program_1/D1/rf/*
 add wave -position insertpoint  \
-sim:/tb5_topLevel/uut/instrMem1/NO_OP \
-sim:/tb5_topLevel/uut/instrMem1/pc \
-sim:/tb5_topLevel/uut/instrMem1/data \
-sim:/tb5_topLevel/uut/instrMem1/Core
+sim:/test_bench_program_1/D1/rf/read_reg1 \
+sim:/test_bench_program_1/D1/rf/read_reg2 \
+sim:/test_bench_program_1/D1/rf/write_reg \
+sim:/test_bench_program_1/D1/rf/write_data \
+sim:/test_bench_program_1/D1/rf/write_en \
+sim:/test_bench_program_1/D1/rf/read_data1 \
+sim:/test_bench_program_1/D1/rf/read_data2 \
+sim:/test_bench_program_1/D1/rf/read_data3 \
+sim:/test_bench_program_1/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/controlBlock/R1 \
+sim:/test_bench_program_1/D1/controlBlock/R2 \
+sim:/test_bench_program_1/D1/controlBlock/W \
+sim:/test_bench_program_1/D1/controlBlock/write_en \
+sim:/test_bench_program_1/D1/controlBlock/imm \
+sim:/test_bench_program_1/D1/controlBlock/alu_op \
+sim:/test_bench_program_1/D1/controlBlock/mem_write \
+sim:/test_bench_program_1/D1/controlBlock/mem_read \
+sim:/test_bench_program_1/D1/controlBlock/use_alu_bypass \
+sim:/test_bench_program_1/D1/controlBlock/alu_src \
+sim:/test_bench_program_1/D1/controlBlock/op \
+sim:/test_bench_program_1/D1/controlBlock/temp_data \
+sim:/test_bench_program_1/D1/controlBlock/alu_op_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/alu1/DatA \
+sim:/test_bench_program_1/D1/alu1/DatB \
+sim:/test_bench_program_1/D1/alu1/Alu_op \
+sim:/test_bench_program_1/D1/alu1/Rslt \
+sim:/test_bench_program_1/D1/alu1/branch \
+sim:/test_bench_program_1/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_1/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_1/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_1/D1/alu1/overflow_flag_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/dataMemory/addr \
+sim:/test_bench_program_1/D1/dataMemory/write_data \
+sim:/test_bench_program_1/D1/dataMemory/mem_write \
+sim:/test_bench_program_1/D1/dataMemory/mem_read \
+sim:/test_bench_program_1/D1/dataMemory/data_out \
+sim:/test_bench_program_1/D1/dataMemory/Core \
+sim:/test_bench_program_1/D1/dataMemory/read_data
 run -all
-# Test completed at time                  125
-# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_5.sv(50)
-#    Time: 125 ps  Iteration: 4  Instance: /tb5_topLevel
-# Break in Module tb5_topLevel at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/topLevel_tb_5.sv line 50
-# Compile of test_bench.sv was successful.
-vsim work.test_bench
-# End time: 01:08:36 on Jul 30,2024, Elapsed time: 0:10:49
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# Resulting min =  30
+# fail Min =  2
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# Resulting min =   0
+# MAD  Max = 14
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv(75)
+#    Time: 493850 ns  Iteration: 0  Instance: /test_bench_program_1
+# Break in Module test_bench_program_1 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv line 75
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_1
+# End time: 16:00:20 on Jul 30,2024, Elapsed time: 0:20:39
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_1 
+# Start time: 16:00:20 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_1
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/pc \
+sim:/test_bench_program_1/D1/pc_next \
+sim:/test_bench_program_1/D1/instruction \
+sim:/test_bench_program_1/D1/read_reg1 \
+sim:/test_bench_program_1/D1/read_reg2 \
+sim:/test_bench_program_1/D1/write_reg \
+sim:/test_bench_program_1/D1/read_data1 \
+sim:/test_bench_program_1/D1/read_data2 \
+sim:/test_bench_program_1/D1/read_data3 \
+sim:/test_bench_program_1/D1/write_en1 \
+sim:/test_bench_program_1/D1/write_en2 \
+sim:/test_bench_program_1/D1/alu_src \
+sim:/test_bench_program_1/D1/alu_bypass \
+sim:/test_bench_program_1/D1/branch \
+sim:/test_bench_program_1/D1/overflow_flag \
+sim:/test_bench_program_1/D1/memory_data \
+sim:/test_bench_program_1/D1/immediate_data \
+sim:/test_bench_program_1/D1/alu_input_b \
+sim:/test_bench_program_1/D1/alu_input_a \
+sim:/test_bench_program_1/D1/alu_op \
+sim:/test_bench_program_1/D1/mem_read \
+sim:/test_bench_program_1/D1/mem_write \
+sim:/test_bench_program_1/D1/c \
+sim:/test_bench_program_1/D1/data_mem_out \
+sim:/test_bench_program_1/D1/jump_amount \
+sim:/test_bench_program_1/D1/write_data \
+sim:/test_bench_program_1/D1/alu_result \
+sim:/test_bench_program_1/D1/write_en \
+sim:/test_bench_program_1/D1/overflow
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/rf/read_reg1 \
+sim:/test_bench_program_1/D1/rf/read_reg2 \
+sim:/test_bench_program_1/D1/rf/write_reg \
+sim:/test_bench_program_1/D1/rf/write_data \
+sim:/test_bench_program_1/D1/rf/write_en \
+sim:/test_bench_program_1/D1/rf/read_data1 \
+sim:/test_bench_program_1/D1/rf/read_data2 \
+sim:/test_bench_program_1/D1/rf/read_data3 \
+sim:/test_bench_program_1/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/instrMem1/pc \
+sim:/test_bench_program_1/D1/instrMem1/data \
+sim:/test_bench_program_1/D1/instrMem1/Core
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/alu1/DatA \
+sim:/test_bench_program_1/D1/alu1/DatB \
+sim:/test_bench_program_1/D1/alu1/Alu_op \
+sim:/test_bench_program_1/D1/alu1/Rslt \
+sim:/test_bench_program_1/D1/alu1/branch \
+sim:/test_bench_program_1/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_1/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_1/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_1/D1/alu1/overflow_flag_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/dataMemory/addr \
+sim:/test_bench_program_1/D1/dataMemory/write_data \
+sim:/test_bench_program_1/D1/dataMemory/mem_write \
+sim:/test_bench_program_1/D1/dataMemory/mem_read \
+sim:/test_bench_program_1/D1/dataMemory/data_out \
+sim:/test_bench_program_1/D1/dataMemory/Core \
+sim:/test_bench_program_1/D1/dataMemory/read_data
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# Resulting min =  30
+# fail Min =  2
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# Resulting min =   0
+# MAD  Max = 14
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv(75)
+#    Time: 11250 ns  Iteration: 0  Instance: /test_bench_program_1
+# Break in Module test_bench_program_1 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv line 75
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_1
+# End time: 16:19:44 on Jul 30,2024, Elapsed time: 0:19:24
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_1 
+# Start time: 16:19:45 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_1
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/test_bench_program_1/D1/*
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/pc \
+sim:/test_bench_program_1/D1/pc_next \
+sim:/test_bench_program_1/D1/instruction \
+sim:/test_bench_program_1/D1/read_reg1 \
+sim:/test_bench_program_1/D1/read_reg2 \
+sim:/test_bench_program_1/D1/write_reg \
+sim:/test_bench_program_1/D1/read_data1 \
+sim:/test_bench_program_1/D1/read_data2 \
+sim:/test_bench_program_1/D1/read_data3 \
+sim:/test_bench_program_1/D1/write_en1 \
+sim:/test_bench_program_1/D1/write_en2 \
+sim:/test_bench_program_1/D1/alu_src \
+sim:/test_bench_program_1/D1/alu_bypass \
+sim:/test_bench_program_1/D1/branch \
+sim:/test_bench_program_1/D1/overflow_flag \
+sim:/test_bench_program_1/D1/memory_data \
+sim:/test_bench_program_1/D1/immediate_data \
+sim:/test_bench_program_1/D1/alu_input_b \
+sim:/test_bench_program_1/D1/alu_input_a \
+sim:/test_bench_program_1/D1/alu_op \
+sim:/test_bench_program_1/D1/mem_read \
+sim:/test_bench_program_1/D1/mem_write \
+sim:/test_bench_program_1/D1/c \
+sim:/test_bench_program_1/D1/data_mem_out \
+sim:/test_bench_program_1/D1/jump_amount \
+sim:/test_bench_program_1/D1/write_data \
+sim:/test_bench_program_1/D1/alu_result \
+sim:/test_bench_program_1/D1/write_en \
+sim:/test_bench_program_1/D1/overflow
+add wave -position insertpoint sim:/test_bench_program_1/D1/rf/*
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/rf/read_reg1 \
+sim:/test_bench_program_1/D1/rf/read_reg2 \
+sim:/test_bench_program_1/D1/rf/write_reg \
+sim:/test_bench_program_1/D1/rf/write_data \
+sim:/test_bench_program_1/D1/rf/write_en \
+sim:/test_bench_program_1/D1/rf/read_data1 \
+sim:/test_bench_program_1/D1/rf/read_data2 \
+sim:/test_bench_program_1/D1/rf/read_data3 \
+sim:/test_bench_program_1/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/alu1/DatA \
+sim:/test_bench_program_1/D1/alu1/DatB \
+sim:/test_bench_program_1/D1/alu1/Alu_op \
+sim:/test_bench_program_1/D1/alu1/Rslt \
+sim:/test_bench_program_1/D1/alu1/branch \
+sim:/test_bench_program_1/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_1/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_1/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_1/D1/alu1/overflow_flag_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/dataMemory/addr \
+sim:/test_bench_program_1/D1/dataMemory/write_data \
+sim:/test_bench_program_1/D1/dataMemory/mem_write \
+sim:/test_bench_program_1/D1/dataMemory/mem_read \
+sim:/test_bench_program_1/D1/dataMemory/data_out \
+sim:/test_bench_program_1/D1/dataMemory/Core \
+sim:/test_bench_program_1/D1/dataMemory/read_data
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# Resulting min =  30
+# fail Min =  2
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# Resulting min =   0
+# MAD  Max = 14
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv(75)
+#    Time: 4189050 ns  Iteration: 0  Instance: /test_bench_program_1
+# Break in Module test_bench_program_1 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv line 75
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_1
+# End time: 16:32:25 on Jul 30,2024, Elapsed time: 0:12:40
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_1 
+# Start time: 16:32:25 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_1
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/pc \
+sim:/test_bench_program_1/D1/pc_next \
+sim:/test_bench_program_1/D1/instruction \
+sim:/test_bench_program_1/D1/read_reg1 \
+sim:/test_bench_program_1/D1/read_reg2 \
+sim:/test_bench_program_1/D1/write_reg \
+sim:/test_bench_program_1/D1/read_data1 \
+sim:/test_bench_program_1/D1/read_data2 \
+sim:/test_bench_program_1/D1/read_data3 \
+sim:/test_bench_program_1/D1/write_en1 \
+sim:/test_bench_program_1/D1/write_en2 \
+sim:/test_bench_program_1/D1/alu_src \
+sim:/test_bench_program_1/D1/alu_bypass \
+sim:/test_bench_program_1/D1/branch \
+sim:/test_bench_program_1/D1/overflow_flag \
+sim:/test_bench_program_1/D1/memory_data \
+sim:/test_bench_program_1/D1/immediate_data \
+sim:/test_bench_program_1/D1/alu_input_b \
+sim:/test_bench_program_1/D1/alu_input_a \
+sim:/test_bench_program_1/D1/alu_op \
+sim:/test_bench_program_1/D1/mem_read \
+sim:/test_bench_program_1/D1/mem_write \
+sim:/test_bench_program_1/D1/c \
+sim:/test_bench_program_1/D1/data_mem_out \
+sim:/test_bench_program_1/D1/jump_amount \
+sim:/test_bench_program_1/D1/write_data \
+sim:/test_bench_program_1/D1/alu_result \
+sim:/test_bench_program_1/D1/write_en \
+sim:/test_bench_program_1/D1/overflow
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/rf/read_reg1 \
+sim:/test_bench_program_1/D1/rf/read_reg2 \
+sim:/test_bench_program_1/D1/rf/write_reg \
+sim:/test_bench_program_1/D1/rf/write_data \
+sim:/test_bench_program_1/D1/rf/write_en \
+sim:/test_bench_program_1/D1/rf/read_data1 \
+sim:/test_bench_program_1/D1/rf/read_data2 \
+sim:/test_bench_program_1/D1/rf/read_data3 \
+sim:/test_bench_program_1/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/instrMem1/pc \
+sim:/test_bench_program_1/D1/instrMem1/data \
+sim:/test_bench_program_1/D1/instrMem1/Core
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/alu1/DatA \
+sim:/test_bench_program_1/D1/alu1/DatB \
+sim:/test_bench_program_1/D1/alu1/Alu_op \
+sim:/test_bench_program_1/D1/alu1/Rslt \
+sim:/test_bench_program_1/D1/alu1/branch \
+sim:/test_bench_program_1/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_1/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_1/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_1/D1/alu1/overflow_flag_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_1/D1/dataMemory/addr \
+sim:/test_bench_program_1/D1/dataMemory/write_data \
+sim:/test_bench_program_1/D1/dataMemory/mem_write \
+sim:/test_bench_program_1/D1/dataMemory/mem_read \
+sim:/test_bench_program_1/D1/dataMemory/data_out \
+sim:/test_bench_program_1/D1/dataMemory/Core \
+sim:/test_bench_program_1/D1/dataMemory/read_data
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# good Min =  2
+# fail Min =  2
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# good Max = 14
+# MAD  Max = 14
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv(75)
+#    Time: 4190350 ns  Iteration: 0  Instance: /test_bench_program_1
+# Break in Module test_bench_program_1 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv line 75
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 17:07:39 on Jul 30,2024, Elapsed time: 0:35:14
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_2 
+# Start time: 17:07:39 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+add wave -position insertpoint sim:/test_bench_program_2/D1/*
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/pc \
+sim:/test_bench_program_2/D1/pc_next \
+sim:/test_bench_program_2/D1/instruction \
+sim:/test_bench_program_2/D1/read_reg1 \
+sim:/test_bench_program_2/D1/read_reg2 \
+sim:/test_bench_program_2/D1/write_reg \
+sim:/test_bench_program_2/D1/read_data1 \
+sim:/test_bench_program_2/D1/read_data2 \
+sim:/test_bench_program_2/D1/read_data3 \
+sim:/test_bench_program_2/D1/write_en1 \
+sim:/test_bench_program_2/D1/write_en2 \
+sim:/test_bench_program_2/D1/alu_src \
+sim:/test_bench_program_2/D1/alu_bypass \
+sim:/test_bench_program_2/D1/branch \
+sim:/test_bench_program_2/D1/overflow_flag \
+sim:/test_bench_program_2/D1/memory_data \
+sim:/test_bench_program_2/D1/immediate_data \
+sim:/test_bench_program_2/D1/alu_input_b \
+sim:/test_bench_program_2/D1/alu_input_a \
+sim:/test_bench_program_2/D1/alu_op \
+sim:/test_bench_program_2/D1/mem_read \
+sim:/test_bench_program_2/D1/mem_write \
+sim:/test_bench_program_2/D1/c \
+sim:/test_bench_program_2/D1/data_mem_out \
+sim:/test_bench_program_2/D1/jump_amount \
+sim:/test_bench_program_2/D1/write_data \
+sim:/test_bench_program_2/D1/alu_result \
+sim:/test_bench_program_2/D1/write_en \
+sim:/test_bench_program_2/D1/overflow
+add wave -position insertpoint sim:/test_bench_program_2/D1/rf/*
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/rf/read_reg1 \
+sim:/test_bench_program_2/D1/rf/read_reg2 \
+sim:/test_bench_program_2/D1/rf/write_reg \
+sim:/test_bench_program_2/D1/rf/write_data \
+sim:/test_bench_program_2/D1/rf/write_en \
+sim:/test_bench_program_2/D1/rf/read_data1 \
+sim:/test_bench_program_2/D1/rf/read_data2 \
+sim:/test_bench_program_2/D1/rf/read_data3 \
+sim:/test_bench_program_2/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/instrMem1/NO_OP \
+sim:/test_bench_program_2/D1/instrMem1/pc \
+sim:/test_bench_program_2/D1/instrMem1/data \
+sim:/test_bench_program_2/D1/instrMem1/Core
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/alu1/Clk \
+sim:/test_bench_program_2/D1/alu1/DatA \
+sim:/test_bench_program_2/D1/alu1/DatB \
+sim:/test_bench_program_2/D1/alu1/Alu_op \
+sim:/test_bench_program_2/D1/alu1/Rslt \
+sim:/test_bench_program_2/D1/alu1/branch \
+sim:/test_bench_program_2/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_2/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/overflow_flag_reg
+add wave -position insertpoint sim:/test_bench_program_2/D1/dataMemory/*
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "test0.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv(45)
+#    Time: 300 ns  Iteration: 0  Instance: /test_bench_program_2
+#           0:       x
+#           1:       x
+#           2:       x
+#           3:       x
+#           4:       x
+#           5:       x
+#           6:       x
+#           7:       x
+#           8:       x
+#           9:       x
+#          10:       x
+#          11:       x
+#          12:       x
+#          13:       x
+#          14:       x
+#          15:       x
+#          16:       x
+#          17:       x
+#          18:       x
+#          19:       x
+#          20:       x
+#          21:       x
+#          22:       x
+#          23:       x
+#          24:       x
+#          25:       x
+#          26:       x
+#          27:       x
+#          28:       x
+#          29:       x
+#          30:       x
+#          31:       x
+# Break key hit
+# Simulation stop requested.
+run
+run
+run
+run
+run
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 17:27:04 on Jul 30,2024, Elapsed time: 0:19:25
 # Errors: 0, Warnings: 3
-# vsim work.test_bench 
-# Start time: 01:08:36 on Jul 30,2024
+# vsim work.test_bench_program_2 
+# Start time: 17:27:04 on Jul 30,2024
 # Loading sv_std.std
-# Loading work.test_bench
+# Loading work.test_bench_program_2
 # Loading work.topLevel
 # Loading work.regFile
 # Loading work.instrMem
@@ -222,108 +937,103 @@ vsim work.test_bench
 # Loading work.lut
 # Loading work.alu
 # Loading work.dataMem
-# ** Warning: (vsim-3008) [CNNODP] - Component name (core) is not on a downward path.
-#    Time: 0 ps  Iteration: 0  Instance: /test_bench File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench.sv Line: 34
-# ** Error: (vsim-3043) Unresolved reference to 'core' in D1.dataMemory.core.
-#    Time: 0 ps  Iteration: 0  Instance: /test_bench File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench.sv Line: 34
-# Error loading design
-# End time: 01:08:37 on Jul 30,2024, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 2
-# Compile of test_bench.sv was successful.
-vsim work.test_bench
-# vsim work.test_bench 
-# Start time: 01:11:04 on Jul 30,2024
-# Loading sv_std.std
-# Loading work.test_bench
-# Loading work.topLevel
-# Loading work.regFile
-# Loading work.instrMem
-# Loading work.adder
-# Loading work.lut
-# Loading work.alu
-# Loading work.dataMem
-add wave -position insertpoint sim:/test_bench/D1/*
-add wave -position insertpoint sim:/test_bench/D1/rf/*
-add wave -position insertpoint sim:/test_bench/D1/dataMemory/*
+add wave -position insertpoint sim:/test_bench_program_2/D1/*
 add wave -position insertpoint  \
-sim:/test_bench/D1/dataMemory/addr \
-sim:/test_bench/D1/dataMemory/write_data \
-sim:/test_bench/D1/dataMemory/mem_write \
-sim:/test_bench/D1/dataMemory/mem_read \
-sim:/test_bench/D1/dataMemory/data_out \
-sim:/test_bench/D1/dataMemory/Core \
-sim:/test_bench/D1/dataMemory/read_data
-add wave -position insertpoint sim:/test_bench/D1/alu1/*
+sim:/test_bench_program_2/D1/pc \
+sim:/test_bench_program_2/D1/pc_next \
+sim:/test_bench_program_2/D1/instruction \
+sim:/test_bench_program_2/D1/read_reg1 \
+sim:/test_bench_program_2/D1/read_reg2 \
+sim:/test_bench_program_2/D1/write_reg \
+sim:/test_bench_program_2/D1/read_data1 \
+sim:/test_bench_program_2/D1/read_data2 \
+sim:/test_bench_program_2/D1/read_data3 \
+sim:/test_bench_program_2/D1/write_en1 \
+sim:/test_bench_program_2/D1/write_en2 \
+sim:/test_bench_program_2/D1/alu_src \
+sim:/test_bench_program_2/D1/alu_bypass \
+sim:/test_bench_program_2/D1/branch \
+sim:/test_bench_program_2/D1/overflow_flag \
+sim:/test_bench_program_2/D1/memory_data \
+sim:/test_bench_program_2/D1/immediate_data \
+sim:/test_bench_program_2/D1/alu_input_b \
+sim:/test_bench_program_2/D1/alu_input_a \
+sim:/test_bench_program_2/D1/alu_op \
+sim:/test_bench_program_2/D1/mem_read \
+sim:/test_bench_program_2/D1/mem_write \
+sim:/test_bench_program_2/D1/c \
+sim:/test_bench_program_2/D1/data_mem_out \
+sim:/test_bench_program_2/D1/jump_amount \
+sim:/test_bench_program_2/D1/write_data \
+sim:/test_bench_program_2/D1/alu_result \
+sim:/test_bench_program_2/D1/write_en \
+sim:/test_bench_program_2/D1/overflow
 add wave -position insertpoint  \
-sim:/test_bench/D1/alu1/DatA \
-sim:/test_bench/D1/alu1/DatB \
-sim:/test_bench/D1/alu1/Alu_op \
-sim:/test_bench/D1/alu1/Rslt \
-sim:/test_bench/D1/alu1/branch \
-sim:/test_bench/D1/alu1/less_than_flag_reg \
-sim:/test_bench/D1/alu1/equal_flag_reg \
-sim:/test_bench/D1/alu1/greater_than_flag_reg \
-sim:/test_bench/D1/alu1/overflow_flag_reg
+sim:/test_bench_program_2/D1/rf/read_reg1 \
+sim:/test_bench_program_2/D1/rf/read_reg2 \
+sim:/test_bench_program_2/D1/rf/write_reg \
+sim:/test_bench_program_2/D1/rf/write_data \
+sim:/test_bench_program_2/D1/rf/write_en \
+sim:/test_bench_program_2/D1/rf/read_data1 \
+sim:/test_bench_program_2/D1/rf/read_data2 \
+sim:/test_bench_program_2/D1/rf/read_data3 \
+sim:/test_bench_program_2/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/alu1/DatA \
+sim:/test_bench_program_2/D1/alu1/DatB \
+sim:/test_bench_program_2/D1/alu1/Alu_op \
+sim:/test_bench_program_2/D1/alu1/Rslt \
+sim:/test_bench_program_2/D1/alu1/branch \
+sim:/test_bench_program_2/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_2/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/overflow_flag_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
 run -all
-# ** Warning: (vsim-7) Failed to open readmem file "instructions.txt" in read mode.
-# No such file or directory. (errno = ENOENT)    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench.sv(25)
-#    Time: 0 ps  Iteration: 0  Instance: /test_bench
-#           0:  0011010100100100
-#           1:  0101111010000001
-#           2:  1101011000001001
-#           3:  0101011001100011
-#           4:  0111101100001101
-#           5:  1001100110001101
-#           6:  1000010001100101
-#           7:  0101001000010010
-#           8:  1110001100000001
-#           9:  1100110100001101
-#          10:  1111000101110110
-#          11:  1100110100111101
-#          12:  0101011111101101
-#          13:  1111011110001100
-#          14:  1110100111111001
-#          15:  0010010011000110
-#          16:  1000010011000101
-#          17:  1101001010101010
-#          18:  1111011111100101
-#          19:  0111001001110111
-#          20:  1101011000010010
-#          21:  1101101110001111
-#          22:  0110100111110010
-#          23:  1001011011001110
-#          24:  0111101011101000
-#          25:  0100111011000101
-#          26:  0100100101011100
-#          27:  0010100010111101
-#          28:  0101100000101101
-#          29:  0010011001100101
-#          30:  0110001001100011
-#          31:  1000011100001010
-# fail Min =  2
-# Min addr = 16,  6
-# Min valu = 1000010011000101, 1000010001100101
-# MAD  Max = 14
-# Max pair = 22,  2
-# Max valu = 0110100111110010, 1101011000001001
-# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench.sv(73)
-#    Time: 1396 ns  Iteration: 0  Instance: /test_bench
-# Break in Module test_bench at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench.sv line 73
-# Compile of test_bench.sv was successful.
-vsim work.test_bench
-# End time: 01:14:28 on Jul 30,2024, Elapsed time: 0:03:24
-# Errors: 0, Warnings: 4
-# vsim work.test_bench 
-# Start time: 01:14:28 on Jul 30,2024
-# Loading sv_std.std
-# Loading work.test_bench
-# Loading work.topLevel
-# Loading work.regFile
-# Loading work.instrMem
-# Loading work.adder
-# Loading work.lut
-# Loading work.alu
-# Loading work.dataMem
+# ** Warning: (vsim-7) Failed to open readmem file "test0.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv(45)
+#    Time: 300 ns  Iteration: 0  Instance: /test_bench_program_2
+#           0:       x
+#           1:       x
+#           2:       x
+#           3:       x
+#           4:       x
+#           5:       x
+#           6:       x
+#           7:       x
+#           8:       x
+#           9:       x
+#          10:       x
+#          11:       x
+#          12:       x
+#          13:       x
+#          14:       x
+#          15:       x
+#          16:       x
+#          17:       x
+#          18:       x
+#          19:       x
+#          20:       x
+#          21:       x
+#          22:       x
+#          23:       x
+#          24:       x
+#          25:       x
+#          26:       x
+#          27:       x
+#          28:       x
+#          29:       x
+#          30:       x
+#          31:       x
+# Break key hit
+# Simulation stop requested.
 # Compile of adder.sv was successful.
 # Compile of alu.sv was successful.
 # Compile of dataMem.sv was successful.
@@ -338,15 +1048,17 @@ vsim work.test_bench
 # Compile of topLevel_tb_3.sv was successful.
 # Compile of topLevel_tb_4.sv was successful.
 # Compile of topLevel_tb_5.sv was successful.
-# Compile of test_bench.sv was successful.
-# 15 compiles, 0 failed with no errors.
-vsim work.test_bench
-# End time: 01:15:49 on Jul 30,2024, Elapsed time: 0:01:21
-# Errors: 0, Warnings: 2
-# vsim work.test_bench 
-# Start time: 01:15:49 on Jul 30,2024
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 17:36:06 on Jul 30,2024, Elapsed time: 0:09:02
+# Errors: 0, Warnings: 3
+# vsim work.test_bench_program_2 
+# Start time: 17:36:07 on Jul 30,2024
 # Loading sv_std.std
-# Loading work.test_bench
+# Loading work.test_bench_program_2
 # Loading work.topLevel
 # Loading work.regFile
 # Loading work.instrMem
@@ -354,89 +1066,119 @@ vsim work.test_bench
 # Loading work.lut
 # Loading work.alu
 # Loading work.dataMem
-add wave -position insertpoint sim:/test_bench/D1/*
-add wave -position insertpoint sim:/test_bench/D1/rf/*
 add wave -position insertpoint  \
-sim:/test_bench/D1/rf/read_reg1 \
-sim:/test_bench/D1/rf/read_reg2 \
-sim:/test_bench/D1/rf/write_reg \
-sim:/test_bench/D1/rf/write_data \
-sim:/test_bench/D1/rf/write_en \
-sim:/test_bench/D1/rf/read_data1 \
-sim:/test_bench/D1/rf/read_data2 \
-sim:/test_bench/D1/rf/read_data3 \
-sim:/test_bench/D1/rf/reg_array
-add wave -position insertpoint sim:/test_bench/D1/instrMem1/*
-add wave -position insertpoint sim:/test_bench/D1/alu1/*
+sim:/test_bench_program_2/D1/pc \
+sim:/test_bench_program_2/D1/pc_next \
+sim:/test_bench_program_2/D1/instruction \
+sim:/test_bench_program_2/D1/read_reg1 \
+sim:/test_bench_program_2/D1/read_reg2 \
+sim:/test_bench_program_2/D1/write_reg \
+sim:/test_bench_program_2/D1/read_data1 \
+sim:/test_bench_program_2/D1/read_data2 \
+sim:/test_bench_program_2/D1/read_data3 \
+sim:/test_bench_program_2/D1/write_en1 \
+sim:/test_bench_program_2/D1/write_en2 \
+sim:/test_bench_program_2/D1/alu_src \
+sim:/test_bench_program_2/D1/alu_bypass \
+sim:/test_bench_program_2/D1/branch \
+sim:/test_bench_program_2/D1/overflow_flag \
+sim:/test_bench_program_2/D1/memory_data \
+sim:/test_bench_program_2/D1/immediate_data \
+sim:/test_bench_program_2/D1/alu_input_b \
+sim:/test_bench_program_2/D1/alu_input_a \
+sim:/test_bench_program_2/D1/alu_op \
+sim:/test_bench_program_2/D1/mem_read \
+sim:/test_bench_program_2/D1/mem_write \
+sim:/test_bench_program_2/D1/c \
+sim:/test_bench_program_2/D1/data_mem_out \
+sim:/test_bench_program_2/D1/jump_amount \
+sim:/test_bench_program_2/D1/write_data \
+sim:/test_bench_program_2/D1/alu_result \
+sim:/test_bench_program_2/D1/write_en \
+sim:/test_bench_program_2/D1/overflow
 add wave -position insertpoint  \
-sim:/test_bench/D1/alu1/DatA \
-sim:/test_bench/D1/alu1/DatB \
-sim:/test_bench/D1/alu1/Alu_op \
-sim:/test_bench/D1/alu1/Rslt \
-sim:/test_bench/D1/alu1/branch \
-sim:/test_bench/D1/alu1/less_than_flag_reg \
-sim:/test_bench/D1/alu1/equal_flag_reg \
-sim:/test_bench/D1/alu1/greater_than_flag_reg \
-sim:/test_bench/D1/alu1/overflow_flag_reg
-add wave -position insertpoint sim:/test_bench/D1/dataMemory/*
+sim:/test_bench_program_2/D1/rf/read_reg1 \
+sim:/test_bench_program_2/D1/rf/read_reg2 \
+sim:/test_bench_program_2/D1/rf/write_reg \
+sim:/test_bench_program_2/D1/rf/write_data \
+sim:/test_bench_program_2/D1/rf/write_en \
+sim:/test_bench_program_2/D1/rf/read_data1 \
+sim:/test_bench_program_2/D1/rf/read_data2 \
+sim:/test_bench_program_2/D1/rf/read_data3 \
+sim:/test_bench_program_2/D1/rf/reg_array
 add wave -position insertpoint  \
-sim:/test_bench/D1/dataMemory/addr \
-sim:/test_bench/D1/dataMemory/write_data \
-sim:/test_bench/D1/dataMemory/mem_write \
-sim:/test_bench/D1/dataMemory/mem_read \
-sim:/test_bench/D1/dataMemory/data_out \
-sim:/test_bench/D1/dataMemory/Core \
-sim:/test_bench/D1/dataMemory/read_data
+sim:/test_bench_program_2/D1/instrMem1/NO_OP \
+sim:/test_bench_program_2/D1/instrMem1/pc \
+sim:/test_bench_program_2/D1/instrMem1/data \
+sim:/test_bench_program_2/D1/instrMem1/Core
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
 run -all
-#           0:  0011010100100100
-#           1:  0101111010000001
-#           2:  1101011000001001
-#           3:  0101011001100011
-#           4:  0111101100001101
-#           5:  1001100110001101
-#           6:  1000010001100101
-#           7:  0101001000010010
-#           8:  1110001100000001
-#           9:  1100110100001101
-#          10:  1111000101110110
-#          11:  1100110100111101
-#          12:  0101011111101101
-#          13:  1111011110001100
-#          14:  1110100111111001
-#          15:  0010010011000110
-#          16:  1000010011000101
-#          17:  1101001010101010
-#          18:  1111011111100101
-#          19:  0111001001110111
-#          20:  1101011000010010
-#          21:  1101101110001111
-#          22:  0110100111110010
-#          23:  1001011011001110
-#          24:  0111101011101000
-#          25:  0100111011000101
-#          26:  0100100101011100
-#          27:  0010100010111101
-#          28:  0101100000101101
-#          29:  0010011001100101
-#          30:  0110001001100011
-#          31:  1000011100001010
-# fail Min =  2
-# Min addr = 16,  6
-# Min valu = 1000010011000101, 1000010001100101
-# MAD  Max = 14
-# Max pair = 22,  2
-# Max valu = 0110100111110010, 1101011000001001
-# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench.sv(73)
-#    Time: 499950 ns  Iteration: 0  Instance: /test_bench
-# Break in Module test_bench at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench.sv line 73
-# Compile of test_bench.sv was successful.
-vsim work.test_bench
-# End time: 01:23:32 on Jul 30,2024, Elapsed time: 0:07:43
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# Break key hit
+# Simulation stop requested.
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 17:47:32 on Jul 30,2024, Elapsed time: 0:11:25
 # Errors: 0, Warnings: 2
-# vsim work.test_bench 
-# Start time: 01:23:32 on Jul 30,2024
+# vsim work.test_bench_program_2 
+# Start time: 17:47:32 on Jul 30,2024
 # Loading sv_std.std
-# Loading work.test_bench
+# Loading work.test_bench_program_2
 # Loading work.topLevel
 # Loading work.regFile
 # Loading work.instrMem
@@ -444,4 +1186,3125 @@ vsim work.test_bench
 # Loading work.lut
 # Loading work.alu
 # Loading work.dataMem
-add wave -position insertpoint sim:/test_bench/D1/*
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/pc \
+sim:/test_bench_program_2/D1/pc_next \
+sim:/test_bench_program_2/D1/instruction \
+sim:/test_bench_program_2/D1/read_reg1 \
+sim:/test_bench_program_2/D1/read_reg2 \
+sim:/test_bench_program_2/D1/write_reg \
+sim:/test_bench_program_2/D1/read_data1 \
+sim:/test_bench_program_2/D1/read_data2 \
+sim:/test_bench_program_2/D1/read_data3 \
+sim:/test_bench_program_2/D1/write_en1 \
+sim:/test_bench_program_2/D1/write_en2 \
+sim:/test_bench_program_2/D1/alu_src \
+sim:/test_bench_program_2/D1/alu_bypass \
+sim:/test_bench_program_2/D1/branch \
+sim:/test_bench_program_2/D1/overflow_flag \
+sim:/test_bench_program_2/D1/memory_data \
+sim:/test_bench_program_2/D1/immediate_data \
+sim:/test_bench_program_2/D1/alu_input_b \
+sim:/test_bench_program_2/D1/alu_input_a \
+sim:/test_bench_program_2/D1/alu_op \
+sim:/test_bench_program_2/D1/mem_read \
+sim:/test_bench_program_2/D1/mem_write \
+sim:/test_bench_program_2/D1/c \
+sim:/test_bench_program_2/D1/data_mem_out \
+sim:/test_bench_program_2/D1/jump_amount \
+sim:/test_bench_program_2/D1/write_data \
+sim:/test_bench_program_2/D1/alu_result \
+sim:/test_bench_program_2/D1/write_en \
+sim:/test_bench_program_2/D1/overflow
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/rf/read_reg1 \
+sim:/test_bench_program_2/D1/rf/read_reg2 \
+sim:/test_bench_program_2/D1/rf/write_reg \
+sim:/test_bench_program_2/D1/rf/write_data \
+sim:/test_bench_program_2/D1/rf/write_en \
+sim:/test_bench_program_2/D1/rf/read_data1 \
+sim:/test_bench_program_2/D1/rf/read_data2 \
+sim:/test_bench_program_2/D1/rf/read_data3 \
+sim:/test_bench_program_2/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/instrMem1/pc \
+sim:/test_bench_program_2/D1/instrMem1/data \
+sim:/test_bench_program_2/D1/instrMem1/Core
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/alu1/DatA \
+sim:/test_bench_program_2/D1/alu1/DatB \
+sim:/test_bench_program_2/D1/alu1/Alu_op \
+sim:/test_bench_program_2/D1/alu1/Rslt \
+sim:/test_bench_program_2/D1/alu1/branch \
+sim:/test_bench_program_2/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_2/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/overflow_flag_reg
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# Break key hit
+# Simulation stop requested.
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 18:49:25 on Jul 30,2024, Elapsed time: 1:01:53
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_2 
+# Start time: 18:49:25 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+add wave -position insertpoint sim:/test_bench_program_2/D1/*
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/pc \
+sim:/test_bench_program_2/D1/pc_next \
+sim:/test_bench_program_2/D1/instruction \
+sim:/test_bench_program_2/D1/read_reg1 \
+sim:/test_bench_program_2/D1/read_reg2 \
+sim:/test_bench_program_2/D1/write_reg \
+sim:/test_bench_program_2/D1/read_data1 \
+sim:/test_bench_program_2/D1/read_data2 \
+sim:/test_bench_program_2/D1/read_data3 \
+sim:/test_bench_program_2/D1/write_en1 \
+sim:/test_bench_program_2/D1/write_en2 \
+sim:/test_bench_program_2/D1/alu_src \
+sim:/test_bench_program_2/D1/alu_bypass \
+sim:/test_bench_program_2/D1/branch \
+sim:/test_bench_program_2/D1/overflow_flag \
+sim:/test_bench_program_2/D1/memory_data \
+sim:/test_bench_program_2/D1/immediate_data \
+sim:/test_bench_program_2/D1/alu_input_b \
+sim:/test_bench_program_2/D1/alu_input_a \
+sim:/test_bench_program_2/D1/alu_op \
+sim:/test_bench_program_2/D1/mem_read \
+sim:/test_bench_program_2/D1/mem_write \
+sim:/test_bench_program_2/D1/c \
+sim:/test_bench_program_2/D1/data_mem_out \
+sim:/test_bench_program_2/D1/jump_amount \
+sim:/test_bench_program_2/D1/write_data \
+sim:/test_bench_program_2/D1/alu_result \
+sim:/test_bench_program_2/D1/write_en \
+sim:/test_bench_program_2/D1/overflow
+add wave -position insertpoint sim:/test_bench_program_2/D1/rf/*
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/rf/read_reg1 \
+sim:/test_bench_program_2/D1/rf/read_reg2 \
+sim:/test_bench_program_2/D1/rf/write_reg \
+sim:/test_bench_program_2/D1/rf/write_data \
+sim:/test_bench_program_2/D1/rf/write_en \
+sim:/test_bench_program_2/D1/rf/read_data1 \
+sim:/test_bench_program_2/D1/rf/read_data2 \
+sim:/test_bench_program_2/D1/rf/read_data3 \
+sim:/test_bench_program_2/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/alu1/DatA \
+sim:/test_bench_program_2/D1/alu1/DatB \
+sim:/test_bench_program_2/D1/alu1/Alu_op \
+sim:/test_bench_program_2/D1/alu1/Rslt \
+sim:/test_bench_program_2/D1/alu1/branch \
+sim:/test_bench_program_2/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_2/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/overflow_flag_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# Break key hit
+# Break in Module lut at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/lut.sv line 74
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 19:00:27 on Jul 30,2024, Elapsed time: 0:11:02
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_2 
+# Start time: 19:00:27 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/pc \
+sim:/test_bench_program_2/D1/pc_next \
+sim:/test_bench_program_2/D1/instruction \
+sim:/test_bench_program_2/D1/read_reg1 \
+sim:/test_bench_program_2/D1/read_reg2 \
+sim:/test_bench_program_2/D1/write_reg \
+sim:/test_bench_program_2/D1/read_data1 \
+sim:/test_bench_program_2/D1/read_data2 \
+sim:/test_bench_program_2/D1/read_data3 \
+sim:/test_bench_program_2/D1/write_en1 \
+sim:/test_bench_program_2/D1/write_en2 \
+sim:/test_bench_program_2/D1/alu_src \
+sim:/test_bench_program_2/D1/alu_bypass \
+sim:/test_bench_program_2/D1/branch \
+sim:/test_bench_program_2/D1/overflow_flag \
+sim:/test_bench_program_2/D1/memory_data \
+sim:/test_bench_program_2/D1/immediate_data \
+sim:/test_bench_program_2/D1/alu_input_b \
+sim:/test_bench_program_2/D1/alu_input_a \
+sim:/test_bench_program_2/D1/alu_op \
+sim:/test_bench_program_2/D1/mem_read \
+sim:/test_bench_program_2/D1/mem_write \
+sim:/test_bench_program_2/D1/c \
+sim:/test_bench_program_2/D1/data_mem_out \
+sim:/test_bench_program_2/D1/jump_amount \
+sim:/test_bench_program_2/D1/write_data \
+sim:/test_bench_program_2/D1/alu_result \
+sim:/test_bench_program_2/D1/write_en \
+sim:/test_bench_program_2/D1/overflow
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/rf/read_reg1 \
+sim:/test_bench_program_2/D1/rf/read_reg2 \
+sim:/test_bench_program_2/D1/rf/write_reg \
+sim:/test_bench_program_2/D1/rf/write_data \
+sim:/test_bench_program_2/D1/rf/write_en \
+sim:/test_bench_program_2/D1/rf/read_data1 \
+sim:/test_bench_program_2/D1/rf/read_data2 \
+sim:/test_bench_program_2/D1/rf/read_data3 \
+sim:/test_bench_program_2/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/instrMem1/pc \
+sim:/test_bench_program_2/D1/instrMem1/data \
+sim:/test_bench_program_2/D1/instrMem1/Core
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/controlBlock/R1 \
+sim:/test_bench_program_2/D1/controlBlock/R2 \
+sim:/test_bench_program_2/D1/controlBlock/W \
+sim:/test_bench_program_2/D1/controlBlock/write_en \
+sim:/test_bench_program_2/D1/controlBlock/imm \
+sim:/test_bench_program_2/D1/controlBlock/alu_op \
+sim:/test_bench_program_2/D1/controlBlock/mem_write \
+sim:/test_bench_program_2/D1/controlBlock/mem_read \
+sim:/test_bench_program_2/D1/controlBlock/use_alu_bypass \
+sim:/test_bench_program_2/D1/controlBlock/alu_src \
+sim:/test_bench_program_2/D1/controlBlock/op \
+sim:/test_bench_program_2/D1/controlBlock/temp_data \
+sim:/test_bench_program_2/D1/controlBlock/alu_op_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/alu1/DatA \
+sim:/test_bench_program_2/D1/alu1/DatB \
+sim:/test_bench_program_2/D1/alu1/Alu_op \
+sim:/test_bench_program_2/D1/alu1/Rslt \
+sim:/test_bench_program_2/D1/alu1/branch \
+sim:/test_bench_program_2/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_2/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/overflow_flag_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# Break key hit
+# Simulation stop requested.
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 19:11:57 on Jul 30,2024, Elapsed time: 0:11:30
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_2 
+# Start time: 19:11:57 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/pc \
+sim:/test_bench_program_2/D1/pc_next \
+sim:/test_bench_program_2/D1/instruction \
+sim:/test_bench_program_2/D1/read_reg1 \
+sim:/test_bench_program_2/D1/read_reg2 \
+sim:/test_bench_program_2/D1/write_reg \
+sim:/test_bench_program_2/D1/read_data1 \
+sim:/test_bench_program_2/D1/read_data2 \
+sim:/test_bench_program_2/D1/read_data3 \
+sim:/test_bench_program_2/D1/write_en1 \
+sim:/test_bench_program_2/D1/write_en2 \
+sim:/test_bench_program_2/D1/alu_src \
+sim:/test_bench_program_2/D1/alu_bypass \
+sim:/test_bench_program_2/D1/branch \
+sim:/test_bench_program_2/D1/overflow_flag \
+sim:/test_bench_program_2/D1/memory_data \
+sim:/test_bench_program_2/D1/immediate_data \
+sim:/test_bench_program_2/D1/alu_input_b \
+sim:/test_bench_program_2/D1/alu_input_a \
+sim:/test_bench_program_2/D1/alu_op \
+sim:/test_bench_program_2/D1/mem_read \
+sim:/test_bench_program_2/D1/mem_write \
+sim:/test_bench_program_2/D1/c \
+sim:/test_bench_program_2/D1/data_mem_out \
+sim:/test_bench_program_2/D1/jump_amount \
+sim:/test_bench_program_2/D1/write_data \
+sim:/test_bench_program_2/D1/alu_result \
+sim:/test_bench_program_2/D1/write_en \
+sim:/test_bench_program_2/D1/overflow
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/rf/read_reg1 \
+sim:/test_bench_program_2/D1/rf/read_reg2 \
+sim:/test_bench_program_2/D1/rf/write_reg \
+sim:/test_bench_program_2/D1/rf/write_data \
+sim:/test_bench_program_2/D1/rf/write_en \
+sim:/test_bench_program_2/D1/rf/read_data1 \
+sim:/test_bench_program_2/D1/rf/read_data2 \
+sim:/test_bench_program_2/D1/rf/read_data3 \
+sim:/test_bench_program_2/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/instrMem1/pc \
+sim:/test_bench_program_2/D1/instrMem1/data \
+sim:/test_bench_program_2/D1/instrMem1/Core
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/alu1/DatA \
+sim:/test_bench_program_2/D1/alu1/DatB \
+sim:/test_bench_program_2/D1/alu1/Alu_op \
+sim:/test_bench_program_2/D1/alu1/Rslt \
+sim:/test_bench_program_2/D1/alu1/branch \
+sim:/test_bench_program_2/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_2/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/overflow_flag_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# Break key hit
+# Simulation stop requested.
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 19:17:02 on Jul 30,2024, Elapsed time: 0:05:05
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_2 
+# Start time: 19:17:02 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+vsim work.test_bench_program_2
+# End time: 19:17:31 on Jul 30,2024, Elapsed time: 0:00:29
+# Errors: 0, Warnings: 1
+# vsim work.test_bench_program_2 
+# Start time: 19:17:31 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/pc \
+sim:/test_bench_program_2/D1/pc_next \
+sim:/test_bench_program_2/D1/instruction \
+sim:/test_bench_program_2/D1/read_reg1 \
+sim:/test_bench_program_2/D1/read_reg2 \
+sim:/test_bench_program_2/D1/write_reg \
+sim:/test_bench_program_2/D1/read_data1 \
+sim:/test_bench_program_2/D1/read_data2 \
+sim:/test_bench_program_2/D1/read_data3 \
+sim:/test_bench_program_2/D1/write_en1 \
+sim:/test_bench_program_2/D1/write_en2 \
+sim:/test_bench_program_2/D1/alu_src \
+sim:/test_bench_program_2/D1/alu_bypass \
+sim:/test_bench_program_2/D1/branch \
+sim:/test_bench_program_2/D1/overflow_flag \
+sim:/test_bench_program_2/D1/memory_data \
+sim:/test_bench_program_2/D1/immediate_data \
+sim:/test_bench_program_2/D1/alu_input_b \
+sim:/test_bench_program_2/D1/alu_input_a \
+sim:/test_bench_program_2/D1/alu_op \
+sim:/test_bench_program_2/D1/mem_read \
+sim:/test_bench_program_2/D1/mem_write \
+sim:/test_bench_program_2/D1/c \
+sim:/test_bench_program_2/D1/data_mem_out \
+sim:/test_bench_program_2/D1/jump_amount \
+sim:/test_bench_program_2/D1/write_data \
+sim:/test_bench_program_2/D1/alu_result \
+sim:/test_bench_program_2/D1/write_en \
+sim:/test_bench_program_2/D1/overflow
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/rf/read_reg1 \
+sim:/test_bench_program_2/D1/rf/read_reg2 \
+sim:/test_bench_program_2/D1/rf/write_reg \
+sim:/test_bench_program_2/D1/rf/write_data \
+sim:/test_bench_program_2/D1/rf/write_en \
+sim:/test_bench_program_2/D1/rf/read_data1 \
+sim:/test_bench_program_2/D1/rf/read_data2 \
+sim:/test_bench_program_2/D1/rf/read_data3 \
+sim:/test_bench_program_2/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/instrMem1/pc \
+sim:/test_bench_program_2/D1/instrMem1/data \
+sim:/test_bench_program_2/D1/instrMem1/Core
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/alu1/DatA \
+sim:/test_bench_program_2/D1/alu1/DatB \
+sim:/test_bench_program_2/D1/alu1/Alu_op \
+sim:/test_bench_program_2/D1/alu1/Rslt \
+sim:/test_bench_program_2/D1/alu1/branch \
+sim:/test_bench_program_2/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_2/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/overflow_flag_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# Break key hit
+# Simulation stop requested.
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 19:43:20 on Jul 30,2024, Elapsed time: 0:25:49
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_2 
+# Start time: 19:43:20 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/pc \
+sim:/test_bench_program_2/D1/pc_next \
+sim:/test_bench_program_2/D1/instruction \
+sim:/test_bench_program_2/D1/read_reg1 \
+sim:/test_bench_program_2/D1/read_reg2 \
+sim:/test_bench_program_2/D1/write_reg \
+sim:/test_bench_program_2/D1/read_data1 \
+sim:/test_bench_program_2/D1/read_data2 \
+sim:/test_bench_program_2/D1/read_data3 \
+sim:/test_bench_program_2/D1/write_en1 \
+sim:/test_bench_program_2/D1/write_en2 \
+sim:/test_bench_program_2/D1/alu_src \
+sim:/test_bench_program_2/D1/alu_bypass \
+sim:/test_bench_program_2/D1/branch \
+sim:/test_bench_program_2/D1/overflow_flag \
+sim:/test_bench_program_2/D1/memory_data \
+sim:/test_bench_program_2/D1/immediate_data \
+sim:/test_bench_program_2/D1/alu_input_b \
+sim:/test_bench_program_2/D1/alu_input_a \
+sim:/test_bench_program_2/D1/alu_op \
+sim:/test_bench_program_2/D1/mem_read \
+sim:/test_bench_program_2/D1/mem_write \
+sim:/test_bench_program_2/D1/c \
+sim:/test_bench_program_2/D1/data_mem_out \
+sim:/test_bench_program_2/D1/jump_amount \
+sim:/test_bench_program_2/D1/write_data \
+sim:/test_bench_program_2/D1/alu_result \
+sim:/test_bench_program_2/D1/write_en \
+sim:/test_bench_program_2/D1/overflow
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/rf/read_reg1 \
+sim:/test_bench_program_2/D1/rf/read_reg2 \
+sim:/test_bench_program_2/D1/rf/write_reg \
+sim:/test_bench_program_2/D1/rf/write_data \
+sim:/test_bench_program_2/D1/rf/write_en \
+sim:/test_bench_program_2/D1/rf/read_data1 \
+sim:/test_bench_program_2/D1/rf/read_data2 \
+sim:/test_bench_program_2/D1/rf/read_data3 \
+sim:/test_bench_program_2/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/instrMem1/pc \
+sim:/test_bench_program_2/D1/instrMem1/data \
+sim:/test_bench_program_2/D1/instrMem1/Core
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/controlBlock/R1 \
+sim:/test_bench_program_2/D1/controlBlock/R2 \
+sim:/test_bench_program_2/D1/controlBlock/W \
+sim:/test_bench_program_2/D1/controlBlock/write_en \
+sim:/test_bench_program_2/D1/controlBlock/imm \
+sim:/test_bench_program_2/D1/controlBlock/alu_op \
+sim:/test_bench_program_2/D1/controlBlock/mem_write \
+sim:/test_bench_program_2/D1/controlBlock/mem_read \
+sim:/test_bench_program_2/D1/controlBlock/use_alu_bypass \
+sim:/test_bench_program_2/D1/controlBlock/alu_src \
+sim:/test_bench_program_2/D1/controlBlock/op \
+sim:/test_bench_program_2/D1/controlBlock/temp_data \
+sim:/test_bench_program_2/D1/controlBlock/alu_op_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/alu1/DatA \
+sim:/test_bench_program_2/D1/alu1/DatB \
+sim:/test_bench_program_2/D1/alu1/Alu_op \
+sim:/test_bench_program_2/D1/alu1/Rslt \
+sim:/test_bench_program_2/D1/alu1/branch \
+sim:/test_bench_program_2/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_2/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/overflow_flag_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# Break key hit
+# Simulation stop requested.
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 20:11:35 on Jul 30,2024, Elapsed time: 0:28:15
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_2 
+# Start time: 20:11:35 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/pc \
+sim:/test_bench_program_2/D1/pc_next \
+sim:/test_bench_program_2/D1/instruction \
+sim:/test_bench_program_2/D1/read_reg1 \
+sim:/test_bench_program_2/D1/read_reg2 \
+sim:/test_bench_program_2/D1/write_reg \
+sim:/test_bench_program_2/D1/read_data1 \
+sim:/test_bench_program_2/D1/read_data2 \
+sim:/test_bench_program_2/D1/read_data3 \
+sim:/test_bench_program_2/D1/write_en1 \
+sim:/test_bench_program_2/D1/write_en2 \
+sim:/test_bench_program_2/D1/alu_src \
+sim:/test_bench_program_2/D1/alu_bypass \
+sim:/test_bench_program_2/D1/branch \
+sim:/test_bench_program_2/D1/overflow_flag \
+sim:/test_bench_program_2/D1/memory_data \
+sim:/test_bench_program_2/D1/immediate_data \
+sim:/test_bench_program_2/D1/alu_input_b \
+sim:/test_bench_program_2/D1/alu_input_a \
+sim:/test_bench_program_2/D1/alu_op \
+sim:/test_bench_program_2/D1/mem_read \
+sim:/test_bench_program_2/D1/mem_write \
+sim:/test_bench_program_2/D1/c \
+sim:/test_bench_program_2/D1/data_mem_out \
+sim:/test_bench_program_2/D1/jump_amount \
+sim:/test_bench_program_2/D1/write_data \
+sim:/test_bench_program_2/D1/alu_result \
+sim:/test_bench_program_2/D1/write_en \
+sim:/test_bench_program_2/D1/overflow
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/rf/read_reg1 \
+sim:/test_bench_program_2/D1/rf/read_reg2 \
+sim:/test_bench_program_2/D1/rf/write_reg \
+sim:/test_bench_program_2/D1/rf/write_data \
+sim:/test_bench_program_2/D1/rf/write_en \
+sim:/test_bench_program_2/D1/rf/read_data1 \
+sim:/test_bench_program_2/D1/rf/read_data2 \
+sim:/test_bench_program_2/D1/rf/read_data3 \
+sim:/test_bench_program_2/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/alu1/DatA \
+sim:/test_bench_program_2/D1/alu1/DatB \
+sim:/test_bench_program_2/D1/alu1/Alu_op \
+sim:/test_bench_program_2/D1/alu1/Rslt \
+sim:/test_bench_program_2/D1/alu1/branch \
+sim:/test_bench_program_2/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_2/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/overflow_flag_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# Break key hit
+# Break in Module regFile at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/regFile.sv line 24
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 20:23:10 on Jul 30,2024, Elapsed time: 0:11:35
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_2 
+# Start time: 20:23:10 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/rf/read_reg1 \
+sim:/test_bench_program_2/D1/rf/read_reg2 \
+sim:/test_bench_program_2/D1/rf/write_reg \
+sim:/test_bench_program_2/D1/rf/write_data \
+sim:/test_bench_program_2/D1/rf/write_en \
+sim:/test_bench_program_2/D1/rf/read_data1 \
+sim:/test_bench_program_2/D1/rf/read_data2 \
+sim:/test_bench_program_2/D1/rf/read_data3 \
+sim:/test_bench_program_2/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/instrMem1/pc \
+sim:/test_bench_program_2/D1/instrMem1/data \
+sim:/test_bench_program_2/D1/instrMem1/Core
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/controlBlock/R1 \
+sim:/test_bench_program_2/D1/controlBlock/R2 \
+sim:/test_bench_program_2/D1/controlBlock/W \
+sim:/test_bench_program_2/D1/controlBlock/write_en \
+sim:/test_bench_program_2/D1/controlBlock/imm \
+sim:/test_bench_program_2/D1/controlBlock/alu_op \
+sim:/test_bench_program_2/D1/controlBlock/mem_write \
+sim:/test_bench_program_2/D1/controlBlock/mem_read \
+sim:/test_bench_program_2/D1/controlBlock/use_alu_bypass \
+sim:/test_bench_program_2/D1/controlBlock/alu_src \
+sim:/test_bench_program_2/D1/controlBlock/op \
+sim:/test_bench_program_2/D1/controlBlock/temp_data \
+sim:/test_bench_program_2/D1/controlBlock/alu_op_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/alu1/DatA \
+sim:/test_bench_program_2/D1/alu1/DatB \
+sim:/test_bench_program_2/D1/alu1/Alu_op \
+sim:/test_bench_program_2/D1/alu1/Rslt \
+sim:/test_bench_program_2/D1/alu1/branch \
+sim:/test_bench_program_2/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_2/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/overflow_flag_reg \
+sim:/test_bench_program_2/D1/alu1/Rslt_prev
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# Break key hit
+# Simulation stop requested.
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 20:36:20 on Jul 30,2024, Elapsed time: 0:13:10
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_2 
+# Start time: 20:36:20 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/pc \
+sim:/test_bench_program_2/D1/pc_next \
+sim:/test_bench_program_2/D1/instruction \
+sim:/test_bench_program_2/D1/read_reg1 \
+sim:/test_bench_program_2/D1/read_reg2 \
+sim:/test_bench_program_2/D1/write_reg \
+sim:/test_bench_program_2/D1/read_data1 \
+sim:/test_bench_program_2/D1/read_data2 \
+sim:/test_bench_program_2/D1/read_data3 \
+sim:/test_bench_program_2/D1/write_en1 \
+sim:/test_bench_program_2/D1/write_en2 \
+sim:/test_bench_program_2/D1/alu_src \
+sim:/test_bench_program_2/D1/alu_bypass \
+sim:/test_bench_program_2/D1/branch \
+sim:/test_bench_program_2/D1/overflow_flag \
+sim:/test_bench_program_2/D1/memory_data \
+sim:/test_bench_program_2/D1/immediate_data \
+sim:/test_bench_program_2/D1/alu_input_b \
+sim:/test_bench_program_2/D1/alu_input_a \
+sim:/test_bench_program_2/D1/alu_op \
+sim:/test_bench_program_2/D1/mem_read \
+sim:/test_bench_program_2/D1/mem_write \
+sim:/test_bench_program_2/D1/c \
+sim:/test_bench_program_2/D1/data_mem_out \
+sim:/test_bench_program_2/D1/jump_amount \
+sim:/test_bench_program_2/D1/write_data \
+sim:/test_bench_program_2/D1/alu_result \
+sim:/test_bench_program_2/D1/write_en \
+sim:/test_bench_program_2/D1/overflow
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/rf/read_reg1 \
+sim:/test_bench_program_2/D1/rf/read_reg2 \
+sim:/test_bench_program_2/D1/rf/write_reg \
+sim:/test_bench_program_2/D1/rf/write_data \
+sim:/test_bench_program_2/D1/rf/write_en \
+sim:/test_bench_program_2/D1/rf/read_data1 \
+sim:/test_bench_program_2/D1/rf/read_data2 \
+sim:/test_bench_program_2/D1/rf/read_data3 \
+sim:/test_bench_program_2/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/instrMem1/pc \
+sim:/test_bench_program_2/D1/instrMem1/data \
+sim:/test_bench_program_2/D1/instrMem1/Core
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/controlBlock/R1 \
+sim:/test_bench_program_2/D1/controlBlock/R2 \
+sim:/test_bench_program_2/D1/controlBlock/W \
+sim:/test_bench_program_2/D1/controlBlock/write_en \
+sim:/test_bench_program_2/D1/controlBlock/imm \
+sim:/test_bench_program_2/D1/controlBlock/alu_op \
+sim:/test_bench_program_2/D1/controlBlock/mem_write \
+sim:/test_bench_program_2/D1/controlBlock/mem_read \
+sim:/test_bench_program_2/D1/controlBlock/use_alu_bypass \
+sim:/test_bench_program_2/D1/controlBlock/alu_src \
+sim:/test_bench_program_2/D1/controlBlock/op \
+sim:/test_bench_program_2/D1/controlBlock/temp_data \
+sim:/test_bench_program_2/D1/controlBlock/alu_op_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/alu1/DatA \
+sim:/test_bench_program_2/D1/alu1/DatB \
+sim:/test_bench_program_2/D1/alu1/Alu_op \
+sim:/test_bench_program_2/D1/alu1/Rslt \
+sim:/test_bench_program_2/D1/alu1/branch \
+sim:/test_bench_program_2/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_2/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/overflow_flag_reg \
+sim:/test_bench_program_2/D1/alu1/Rslt_prev
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# Break key hit
+# Break in Module test_bench_program_2 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv line 24
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 20:42:32 on Jul 30,2024, Elapsed time: 0:06:12
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_2 
+# Start time: 20:42:32 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/pc \
+sim:/test_bench_program_2/D1/pc_next \
+sim:/test_bench_program_2/D1/instruction \
+sim:/test_bench_program_2/D1/read_reg1 \
+sim:/test_bench_program_2/D1/read_reg2 \
+sim:/test_bench_program_2/D1/write_reg \
+sim:/test_bench_program_2/D1/read_data1 \
+sim:/test_bench_program_2/D1/read_data2 \
+sim:/test_bench_program_2/D1/read_data3 \
+sim:/test_bench_program_2/D1/write_en1 \
+sim:/test_bench_program_2/D1/write_en2 \
+sim:/test_bench_program_2/D1/alu_src \
+sim:/test_bench_program_2/D1/alu_bypass \
+sim:/test_bench_program_2/D1/branch \
+sim:/test_bench_program_2/D1/overflow_flag \
+sim:/test_bench_program_2/D1/memory_data \
+sim:/test_bench_program_2/D1/immediate_data \
+sim:/test_bench_program_2/D1/alu_input_b \
+sim:/test_bench_program_2/D1/alu_input_a \
+sim:/test_bench_program_2/D1/alu_op \
+sim:/test_bench_program_2/D1/mem_read \
+sim:/test_bench_program_2/D1/mem_write \
+sim:/test_bench_program_2/D1/c \
+sim:/test_bench_program_2/D1/data_mem_out \
+sim:/test_bench_program_2/D1/jump_amount \
+sim:/test_bench_program_2/D1/write_data \
+sim:/test_bench_program_2/D1/alu_result \
+sim:/test_bench_program_2/D1/write_en \
+sim:/test_bench_program_2/D1/overflow
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/rf/read_reg1 \
+sim:/test_bench_program_2/D1/rf/read_reg2 \
+sim:/test_bench_program_2/D1/rf/write_reg \
+sim:/test_bench_program_2/D1/rf/write_data \
+sim:/test_bench_program_2/D1/rf/write_en \
+sim:/test_bench_program_2/D1/rf/read_data1 \
+sim:/test_bench_program_2/D1/rf/read_data2 \
+sim:/test_bench_program_2/D1/rf/read_data3 \
+sim:/test_bench_program_2/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/instrMem1/pc \
+sim:/test_bench_program_2/D1/instrMem1/data \
+sim:/test_bench_program_2/D1/instrMem1/Core
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/alu1/DatA \
+sim:/test_bench_program_2/D1/alu1/DatB \
+sim:/test_bench_program_2/D1/alu1/Alu_op \
+sim:/test_bench_program_2/D1/alu1/Rslt \
+sim:/test_bench_program_2/D1/alu1/branch \
+sim:/test_bench_program_2/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_2/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/overflow_flag_reg \
+sim:/test_bench_program_2/D1/alu1/Rslt_prev
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# Break key hit
+# Simulation stop requested.
+# WARNING: No extended dataflow license exists
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 21:00:42 on Jul 30,2024, Elapsed time: 0:18:10
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_2 
+# Start time: 21:00:42 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/pc \
+sim:/test_bench_program_2/D1/pc_next \
+sim:/test_bench_program_2/D1/instruction \
+sim:/test_bench_program_2/D1/read_reg1 \
+sim:/test_bench_program_2/D1/read_reg2 \
+sim:/test_bench_program_2/D1/write_reg \
+sim:/test_bench_program_2/D1/read_data1 \
+sim:/test_bench_program_2/D1/read_data2 \
+sim:/test_bench_program_2/D1/read_data3 \
+sim:/test_bench_program_2/D1/write_en1 \
+sim:/test_bench_program_2/D1/write_en2 \
+sim:/test_bench_program_2/D1/alu_src \
+sim:/test_bench_program_2/D1/alu_bypass \
+sim:/test_bench_program_2/D1/branch \
+sim:/test_bench_program_2/D1/overflow_flag \
+sim:/test_bench_program_2/D1/memory_data \
+sim:/test_bench_program_2/D1/immediate_data \
+sim:/test_bench_program_2/D1/alu_input_b \
+sim:/test_bench_program_2/D1/alu_input_a \
+sim:/test_bench_program_2/D1/alu_op \
+sim:/test_bench_program_2/D1/mem_read \
+sim:/test_bench_program_2/D1/mem_write \
+sim:/test_bench_program_2/D1/c \
+sim:/test_bench_program_2/D1/data_mem_out \
+sim:/test_bench_program_2/D1/jump_amount \
+sim:/test_bench_program_2/D1/write_data \
+sim:/test_bench_program_2/D1/alu_result \
+sim:/test_bench_program_2/D1/write_en \
+sim:/test_bench_program_2/D1/overflow
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/rf/read_reg1 \
+sim:/test_bench_program_2/D1/rf/read_reg2 \
+sim:/test_bench_program_2/D1/rf/write_reg \
+sim:/test_bench_program_2/D1/rf/write_data \
+sim:/test_bench_program_2/D1/rf/write_en \
+sim:/test_bench_program_2/D1/rf/read_data1 \
+sim:/test_bench_program_2/D1/rf/read_data2 \
+sim:/test_bench_program_2/D1/rf/read_data3 \
+sim:/test_bench_program_2/D1/rf/reg_array
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/instrMem1/pc \
+sim:/test_bench_program_2/D1/instrMem1/data \
+sim:/test_bench_program_2/D1/instrMem1/Core
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/controlBlock/R1 \
+sim:/test_bench_program_2/D1/controlBlock/R2 \
+sim:/test_bench_program_2/D1/controlBlock/W \
+sim:/test_bench_program_2/D1/controlBlock/write_en \
+sim:/test_bench_program_2/D1/controlBlock/imm \
+sim:/test_bench_program_2/D1/controlBlock/alu_op \
+sim:/test_bench_program_2/D1/controlBlock/mem_write \
+sim:/test_bench_program_2/D1/controlBlock/mem_read \
+sim:/test_bench_program_2/D1/controlBlock/use_alu_bypass \
+sim:/test_bench_program_2/D1/controlBlock/alu_src \
+sim:/test_bench_program_2/D1/controlBlock/op \
+sim:/test_bench_program_2/D1/controlBlock/temp_data \
+sim:/test_bench_program_2/D1/controlBlock/alu_op_reg
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/alu1/DatA \
+sim:/test_bench_program_2/D1/alu1/DatB \
+sim:/test_bench_program_2/D1/alu1/Alu_op \
+sim:/test_bench_program_2/D1/alu1/Rslt \
+sim:/test_bench_program_2/D1/alu1/branch \
+sim:/test_bench_program_2/D1/alu1/less_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/equal_flag_reg \
+sim:/test_bench_program_2/D1/alu1/greater_than_flag_reg \
+sim:/test_bench_program_2/D1/alu1/overflow_flag_reg \
+sim:/test_bench_program_2/D1/alu1/Rslt_prev
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# fail Min =     1
+# Min addr =  1,  0
+# Min valu =      1      0
+# MAD  Max = 65535
+# Max pair = 31, 15
+# Max valu = -32768,  32767
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -1
+#          18:   32767
+#          19:   16383
+#          20:    8191
+#          21:    4095
+#          22:    2047
+#          23:    1023
+#          24:     511
+#          25:     255
+#          26:     127
+#          27:      63
+#          28:      31
+#          29:      15
+#          30:       7
+#          31:       3
+# fail Min =     0
+# Min addr = 31,  2
+# Min valu =      3      3
+# MAD  Max = 32768
+# Max pair = 16, 15
+# Max valu =     -1,  32767
+#           0:  -32768
+#           1:  -32768
+#           2:  -32768
+#           3:   32767
+#           4:   32767
+#           5:  -32768
+#           6:       0
+#           7:  -32640
+#           8:  -32768
+#           9:       0
+#          10:   32767
+#          11:       0
+#          12:       0
+#          13:   32767
+#          14:     255
+#          15:     255
+#          16:  -32257
+#          17:  -32257
+#          18:   32512
+#          19:   32767
+#          20:   32767
+#          21:   32512
+#          22:      -1
+#          23:    -256
+#          24:    -256
+#          25:      -1
+#          26:     255
+#          27:     256
+#          28:     256
+#          29:     255
+#          30:  -32768
+#          31:     255
+# fail Min =     0
+# Min addr =  1,  0
+# Min valu = -32768 -32768
+# MAD  Max = 65535
+# Max pair =  3,  0
+# Max valu =  32767, -32768
+#           0:   13604
+#           1:   24193
+#           2:  -10743
+#           3:   22115
+#           4:   31501
+#           5:  -26227
+#           6:  -31643
+#           7:   21010
+#           8:   -7423
+#           9:  -13043
+#          10:   -3722
+#          11:  -12995
+#          12:   22509
+#          13:   -2164
+#          14:   -5639
+#          15:    9414
+#          16:  -31547
+#          17:  -11606
+#          18:   -2075
+#          19:   29303
+#          20:  -10734
+#          21:   -9329
+#          22:   27122
+#          23:  -26930
+#          24:   31464
+#          25:   20165
+#          26:   18780
+#          27:   10429
+#          28:   22573
+#          29:    9829
+#          30:   25187
+#          31:  -30966
+# fail Min =     9
+# Min addr = 20,  2
+# Min valu = -10734 -10743
+# MAD  Max = 63144
+# Max pair =  6,  4
+# Max valu = -31643,  31501
+#           0:  -17920
+#           1:  -10986
+#           2:     504
+#           3:  -30155
+#           4:   28320
+#           5:   -4360
+#           6:   19353
+#           7:   -3977
+#           8:    4339
+#           9:  -28367
+#          10:  -10403
+#          11:  -17505
+#          12:  -18664
+#          13:   10603
+#          14:    9029
+#          15:   14556
+#          16:   17208
+#          17:   -7818
+#          18:   26171
+#          19:   30436
+#          20:   20469
+#          21:  -23276
+#          22:  -24887
+#          23:   16022
+#          24:   13990
+#          25:    8714
+#          26:  -29760
+#          27:    7440
+#          28:    5257
+#          29:  -15283
+#          30:  -23351
+#          31:   23777
+# fail Min =    75
+# Min addr = 30, 21
+# Min valu = -23351 -23276
+# MAD  Max = 60591
+# Max pair = 19,  3
+# Max valu =  30436, -30155
+#           0:  -22876
+#           1:   11216
+#           2:  -25919
+#           3:    2764
+#           4:   12129
+#           5:   -3279
+#           6:   20620
+#           7:   -5566
+#           8:   31840
+#           9:   -1631
+#          10:   32302
+#          11:  -18009
+#          12:  -29955
+#          13:  -16655
+#          14:  -17089
+#          15:   -7016
+#          16:   -3944
+#          17:   31317
+#          18:    -260
+#          19:   20046
+#          20:   23234
+#          21:  -25743
+#          22:    3390
+#          23:  -11559
+#          24:    3933
+#          25:   18904
+#          26:    2347
+#          27:  -15081
+#          28:   27397
+#          29:   -6964
+#          30:   -5044
+#          31:   28897
+# fail Min =    52
+# Min addr = 29, 15
+# Min valu =  -6964  -7016
+# MAD  Max = 62257
+# Max pair = 12, 10
+# Max valu = -29955,  32302
+#           0:  -22521
+#           1:   10740
+#           2:   32724
+#           3:  -14989
+#           4:   30705
+#           5:   19402
+#           6:   -2671
+#           7:   -5995
+#           8:   -6333
+#           9:   -6408
+#          10:  -21803
+#          11:    3199
+#          12:   -6903
+#          13:   -1810
+#          14:   26768
+#          15:  -30138
+#          16:    6239
+#          17:   15458
+#          18:  -16809
+#          19:  -32157
+#          20:   -3316
+#          21:   11675
+#          22:   -1657
+#          23:  -13102
+#          24:  -24946
+#          25:    2323
+#          26:    8592
+#          27:    1567
+#          28:    1647
+#          29:  -13957
+#          30:     517
+#          31:  -29415
+# fail Min =    75
+# Min addr =  9,  8
+# Min valu =  -6408  -6333
+# MAD  Max = 64881
+# Max pair = 19,  2
+# Max valu = -32157,  32724
+#           0:   16960
+#           1:  -24010
+#           2:  -24908
+#           3:     500
+#           4:  -26535
+#           5:   -1276
+#           6:  -24378
+#           7:  -29693
+#           8:   14276
+#           9:   21441
+#          10:  -14684
+#          11:   -8009
+#          12:  -30692
+#          13:   10646
+#          14:   24809
+#          15:   -9823
+#          16:  -17305
+#          17:  -18037
+#          18:   31698
+#          19:    3869
+#          20:  -16793
+#          21:    -429
+#          22:   -9201
+#          23:   -7325
+#          24:   14232
+#          25:  -19057
+#          26:    6299
+#          27:   27669
+#          28:  -26661
+#          29:   23160
+#          30:   29982
+#          31:  -29433
+# fail Min =    44
+# Min addr = 24,  8
+# Min valu =  14232  14276
+# MAD  Max = 62390
+# Max pair = 18, 12
+# Max valu =  31698, -30692
+#           0:   10240
+#           1:  -25843
+#           2:  -25426
+#           3:  -28742
+#           4:  -27217
+#           5:    7116
+#           6:  -26536
+#           7:   29816
+#           8:    1411
+#           9:   10884
+#          10:  -10206
+#          11:  -29604
+#          12:  -23279
+#          13:     889
+#          14:   26492
+#          15:   29950
+#          16:   25370
+#          17:  -24032
+#          18:    3765
+#          19:  -30536
+#          20:   -5782
+#          21:  -15632
+#          22:   24510
+#          23:   -6756
+#          24:  -23302
+#          25:   -7999
+#          26:  -24297
+#          27:   25783
+#          28:  -15980
+#          29:   14635
+#          30:   -8176
+#          31:  -23058
+# fail Min =    23
+# Min addr = 24, 12
+# Min valu = -23302 -23279
+# MAD  Max = 60486
+# Max pair = 19, 15
+# Max valu = -30536,  29950
+#           0:   -6143
+#           1:    9304
+#           2:   28984
+#           3:  -32192
+#           4:  -25748
+#           5:  -23945
+#           6:   26894
+#           7:   15754
+#           8:    6387
+#           9:    3451
+#          10:  -32168
+#          11:  -16727
+#          12:   32453
+#          13:  -14285
+#          14:   14915
+#          15:   21079
+#          16:  -22485
+#          17:    1932
+#          18:  -12992
+#          19:    1499
+#          20:   12664
+#          21:  -19802
+#          22:   13456
+#          23:  -23595
+#          24:   30587
+#          25:   30199
+#          26:   12172
+#          27:  -18623
+#          28:  -27726
+#          29:  -17096
+#          30:   13971
+#          31:  -29614
+# fail Min =    24
+# Min addr = 10,  3
+# Min valu = -32168 -32192
+# MAD  Max = 64645
+# Max pair = 12,  3
+# Max valu =  32453, -32192
+# Minimum correct           0/         10
+# Maximum correct           0/         10
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv(110)
+#    Time: 316050 ns  Iteration: 0  Instance: /test_bench_program_2
+# Break in Module test_bench_program_2 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv line 110
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv failed with 2 errors.
+# 17 compiles, 1 failed with 2 errors.
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 21:06:52 on Jul 30,2024, Elapsed time: 0:06:10
+# Errors: 0, Warnings: 3
+# vsim work.test_bench_program_2 
+# Start time: 21:06:52 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+# WARNING: No extended dataflow license exists
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# fail Min =     1
+# Your answer was: 65535
+# Min addr =  1,  0
+# Min valu =      1      0
+# MAD  Max = 65535
+# Your answer was :     0
+# Max pair = 31, 15
+# Max valu = -32768,  32767
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -1
+#          18:   32767
+#          19:   16383
+#          20:    8191
+#          21:    4095
+#          22:    2047
+#          23:    1023
+#          24:     511
+#          25:     255
+#          26:     127
+#          27:      63
+#          28:      31
+#          29:      15
+#          30:       7
+#          31:       3
+# fail Min =     0
+# Your answer was: 65535
+# Min addr = 31,  2
+# Min valu =      3      3
+# MAD  Max = 32768
+# Your answer was :     0
+# Max pair = 16, 15
+# Max valu =     -1,  32767
+#           0:  -32768
+#           1:  -32768
+#           2:  -32768
+#           3:   32767
+#           4:   32767
+#           5:  -32768
+#           6:       0
+#           7:  -32640
+#           8:  -32768
+#           9:       0
+#          10:   32767
+#          11:       0
+#          12:       0
+#          13:   32767
+#          14:     255
+#          15:     255
+#          16:  -32257
+#          17:  -32257
+#          18:   32512
+#          19:   32767
+#          20:   32767
+#          21:   32512
+#          22:      -1
+#          23:    -256
+#          24:    -256
+#          25:      -1
+#          26:     255
+#          27:     256
+#          28:     256
+#          29:     255
+#          30:  -32768
+#          31:     255
+# fail Min =     0
+# Your answer was: 65535
+# Min addr =  1,  0
+# Min valu = -32768 -32768
+# MAD  Max = 65535
+# Your answer was :     0
+# Max pair =  3,  0
+# Max valu =  32767, -32768
+#           0:   13604
+#           1:   24193
+#           2:  -10743
+#           3:   22115
+#           4:   31501
+#           5:  -26227
+#           6:  -31643
+#           7:   21010
+#           8:   -7423
+#           9:  -13043
+#          10:   -3722
+#          11:  -12995
+#          12:   22509
+#          13:   -2164
+#          14:   -5639
+#          15:    9414
+#          16:  -31547
+#          17:  -11606
+#          18:   -2075
+#          19:   29303
+#          20:  -10734
+#          21:   -9329
+#          22:   27122
+#          23:  -26930
+#          24:   31464
+#          25:   20165
+#          26:   18780
+#          27:   10429
+#          28:   22573
+#          29:    9829
+#          30:   25187
+#          31:  -30966
+# fail Min =     9
+# Your answer was: 65535
+# Min addr = 20,  2
+# Min valu = -10734 -10743
+# MAD  Max = 63144
+# Your answer was :     0
+# Max pair =  6,  4
+# Max valu = -31643,  31501
+#           0:  -17920
+#           1:  -10986
+#           2:     504
+#           3:  -30155
+#           4:   28320
+#           5:   -4360
+#           6:   19353
+#           7:   -3977
+#           8:    4339
+#           9:  -28367
+#          10:  -10403
+#          11:  -17505
+#          12:  -18664
+#          13:   10603
+#          14:    9029
+#          15:   14556
+#          16:   17208
+#          17:   -7818
+#          18:   26171
+#          19:   30436
+#          20:   20469
+#          21:  -23276
+#          22:  -24887
+#          23:   16022
+#          24:   13990
+#          25:    8714
+#          26:  -29760
+#          27:    7440
+#          28:    5257
+#          29:  -15283
+#          30:  -23351
+#          31:   23777
+# fail Min =    75
+# Your answer was: 65535
+# Min addr = 30, 21
+# Min valu = -23351 -23276
+# MAD  Max = 60591
+# Your answer was :     0
+# Max pair = 19,  3
+# Max valu =  30436, -30155
+#           0:  -22876
+#           1:   11216
+#           2:  -25919
+#           3:    2764
+#           4:   12129
+#           5:   -3279
+#           6:   20620
+#           7:   -5566
+#           8:   31840
+#           9:   -1631
+#          10:   32302
+#          11:  -18009
+#          12:  -29955
+#          13:  -16655
+#          14:  -17089
+#          15:   -7016
+#          16:   -3944
+#          17:   31317
+#          18:    -260
+#          19:   20046
+#          20:   23234
+#          21:  -25743
+#          22:    3390
+#          23:  -11559
+#          24:    3933
+#          25:   18904
+#          26:    2347
+#          27:  -15081
+#          28:   27397
+#          29:   -6964
+#          30:   -5044
+#          31:   28897
+# fail Min =    52
+# Your answer was: 65535
+# Min addr = 29, 15
+# Min valu =  -6964  -7016
+# MAD  Max = 62257
+# Your answer was :     0
+# Max pair = 12, 10
+# Max valu = -29955,  32302
+#           0:  -22521
+#           1:   10740
+#           2:   32724
+#           3:  -14989
+#           4:   30705
+#           5:   19402
+#           6:   -2671
+#           7:   -5995
+#           8:   -6333
+#           9:   -6408
+#          10:  -21803
+#          11:    3199
+#          12:   -6903
+#          13:   -1810
+#          14:   26768
+#          15:  -30138
+#          16:    6239
+#          17:   15458
+#          18:  -16809
+#          19:  -32157
+#          20:   -3316
+#          21:   11675
+#          22:   -1657
+#          23:  -13102
+#          24:  -24946
+#          25:    2323
+#          26:    8592
+#          27:    1567
+#          28:    1647
+#          29:  -13957
+#          30:     517
+#          31:  -29415
+# fail Min =    75
+# Your answer was: 65535
+# Min addr =  9,  8
+# Min valu =  -6408  -6333
+# MAD  Max = 64881
+# Your answer was :     0
+# Max pair = 19,  2
+# Max valu = -32157,  32724
+#           0:   16960
+#           1:  -24010
+#           2:  -24908
+#           3:     500
+#           4:  -26535
+#           5:   -1276
+#           6:  -24378
+#           7:  -29693
+#           8:   14276
+#           9:   21441
+#          10:  -14684
+#          11:   -8009
+#          12:  -30692
+#          13:   10646
+#          14:   24809
+#          15:   -9823
+#          16:  -17305
+#          17:  -18037
+#          18:   31698
+#          19:    3869
+#          20:  -16793
+#          21:    -429
+#          22:   -9201
+#          23:   -7325
+#          24:   14232
+#          25:  -19057
+#          26:    6299
+#          27:   27669
+#          28:  -26661
+#          29:   23160
+#          30:   29982
+#          31:  -29433
+# fail Min =    44
+# Your answer was: 65535
+# Min addr = 24,  8
+# Min valu =  14232  14276
+# MAD  Max = 62390
+# Your answer was :     0
+# Max pair = 18, 12
+# Max valu =  31698, -30692
+#           0:   10240
+#           1:  -25843
+#           2:  -25426
+#           3:  -28742
+#           4:  -27217
+#           5:    7116
+#           6:  -26536
+#           7:   29816
+#           8:    1411
+#           9:   10884
+#          10:  -10206
+#          11:  -29604
+#          12:  -23279
+#          13:     889
+#          14:   26492
+#          15:   29950
+#          16:   25370
+#          17:  -24032
+#          18:    3765
+#          19:  -30536
+#          20:   -5782
+#          21:  -15632
+#          22:   24510
+#          23:   -6756
+#          24:  -23302
+#          25:   -7999
+#          26:  -24297
+#          27:   25783
+#          28:  -15980
+#          29:   14635
+#          30:   -8176
+#          31:  -23058
+# fail Min =    23
+# Your answer was: 65535
+# Min addr = 24, 12
+# Min valu = -23302 -23279
+# MAD  Max = 60486
+# Your answer was :     0
+# Max pair = 19, 15
+# Max valu = -30536,  29950
+#           0:   -6143
+#           1:    9304
+#           2:   28984
+#           3:  -32192
+#           4:  -25748
+#           5:  -23945
+#           6:   26894
+#           7:   15754
+#           8:    6387
+#           9:    3451
+#          10:  -32168
+#          11:  -16727
+#          12:   32453
+#          13:  -14285
+#          14:   14915
+#          15:   21079
+#          16:  -22485
+#          17:    1932
+#          18:  -12992
+#          19:    1499
+#          20:   12664
+#          21:  -19802
+#          22:   13456
+#          23:  -23595
+#          24:   30587
+#          25:   30199
+#          26:   12172
+#          27:  -18623
+#          28:  -27726
+#          29:  -17096
+#          30:   13971
+#          31:  -29614
+# fail Min =    24
+# Your answer was: 65535
+# Min addr = 10,  3
+# Min valu = -32168 -32192
+# MAD  Max = 64645
+# Your answer was :     0
+# Max pair = 12,  3
+# Max valu =  32453, -32192
+# Minimum correct           0/         10
+# Maximum correct           0/         10
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv(112)
+#    Time: 316050 ns  Iteration: 0  Instance: /test_bench_program_2
+# Break in Module test_bench_program_2 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv line 112
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+restart
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/clk \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# fail Min =     1
+# Your answer was: 65535
+# Min addr =  1,  0
+# Min valu =      1      0
+# MAD  Max = 65535
+# Your answer was :     0
+# Max pair = 31, 15
+# Max valu = -32768,  32767
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -1
+#          18:   32767
+#          19:   16383
+#          20:    8191
+#          21:    4095
+#          22:    2047
+#          23:    1023
+#          24:     511
+#          25:     255
+#          26:     127
+#          27:      63
+#          28:      31
+#          29:      15
+#          30:       7
+#          31:       3
+# fail Min =     0
+# Your answer was: 65535
+# Min addr = 31,  2
+# Min valu =      3      3
+# MAD  Max = 32768
+# Your answer was :     0
+# Max pair = 16, 15
+# Max valu =     -1,  32767
+#           0:  -32768
+#           1:  -32768
+#           2:  -32768
+#           3:   32767
+#           4:   32767
+#           5:  -32768
+#           6:       0
+#           7:  -32640
+#           8:  -32768
+#           9:       0
+#          10:   32767
+#          11:       0
+#          12:       0
+#          13:   32767
+#          14:     255
+#          15:     255
+#          16:  -32257
+#          17:  -32257
+#          18:   32512
+#          19:   32767
+#          20:   32767
+#          21:   32512
+#          22:      -1
+#          23:    -256
+#          24:    -256
+#          25:      -1
+#          26:     255
+#          27:     256
+#          28:     256
+#          29:     255
+#          30:  -32768
+#          31:     255
+# fail Min =     0
+# Your answer was: 65535
+# Min addr =  1,  0
+# Min valu = -32768 -32768
+# MAD  Max = 65535
+# Your answer was :     0
+# Max pair =  3,  0
+# Max valu =  32767, -32768
+#           0:   13604
+#           1:   24193
+#           2:  -10743
+#           3:   22115
+#           4:   31501
+#           5:  -26227
+#           6:  -31643
+#           7:   21010
+#           8:   -7423
+#           9:  -13043
+#          10:   -3722
+#          11:  -12995
+#          12:   22509
+#          13:   -2164
+#          14:   -5639
+#          15:    9414
+#          16:  -31547
+#          17:  -11606
+#          18:   -2075
+#          19:   29303
+#          20:  -10734
+#          21:   -9329
+#          22:   27122
+#          23:  -26930
+#          24:   31464
+#          25:   20165
+#          26:   18780
+#          27:   10429
+#          28:   22573
+#          29:    9829
+#          30:   25187
+#          31:  -30966
+# fail Min =     9
+# Your answer was: 65535
+# Min addr = 20,  2
+# Min valu = -10734 -10743
+# MAD  Max = 63144
+# Your answer was :     0
+# Max pair =  6,  4
+# Max valu = -31643,  31501
+#           0:  -17920
+#           1:  -10986
+#           2:     504
+#           3:  -30155
+#           4:   28320
+#           5:   -4360
+#           6:   19353
+#           7:   -3977
+#           8:    4339
+#           9:  -28367
+#          10:  -10403
+#          11:  -17505
+#          12:  -18664
+#          13:   10603
+#          14:    9029
+#          15:   14556
+#          16:   17208
+#          17:   -7818
+#          18:   26171
+#          19:   30436
+#          20:   20469
+#          21:  -23276
+#          22:  -24887
+#          23:   16022
+#          24:   13990
+#          25:    8714
+#          26:  -29760
+#          27:    7440
+#          28:    5257
+#          29:  -15283
+#          30:  -23351
+#          31:   23777
+# fail Min =    75
+# Your answer was: 65535
+# Min addr = 30, 21
+# Min valu = -23351 -23276
+# MAD  Max = 60591
+# Your answer was :     0
+# Max pair = 19,  3
+# Max valu =  30436, -30155
+#           0:  -22876
+#           1:   11216
+#           2:  -25919
+#           3:    2764
+#           4:   12129
+#           5:   -3279
+#           6:   20620
+#           7:   -5566
+#           8:   31840
+#           9:   -1631
+#          10:   32302
+#          11:  -18009
+#          12:  -29955
+#          13:  -16655
+#          14:  -17089
+#          15:   -7016
+#          16:   -3944
+#          17:   31317
+#          18:    -260
+#          19:   20046
+#          20:   23234
+#          21:  -25743
+#          22:    3390
+#          23:  -11559
+#          24:    3933
+#          25:   18904
+#          26:    2347
+#          27:  -15081
+#          28:   27397
+#          29:   -6964
+#          30:   -5044
+#          31:   28897
+# fail Min =    52
+# Your answer was: 65535
+# Min addr = 29, 15
+# Min valu =  -6964  -7016
+# MAD  Max = 62257
+# Your answer was :     0
+# Max pair = 12, 10
+# Max valu = -29955,  32302
+#           0:  -22521
+#           1:   10740
+#           2:   32724
+#           3:  -14989
+#           4:   30705
+#           5:   19402
+#           6:   -2671
+#           7:   -5995
+#           8:   -6333
+#           9:   -6408
+#          10:  -21803
+#          11:    3199
+#          12:   -6903
+#          13:   -1810
+#          14:   26768
+#          15:  -30138
+#          16:    6239
+#          17:   15458
+#          18:  -16809
+#          19:  -32157
+#          20:   -3316
+#          21:   11675
+#          22:   -1657
+#          23:  -13102
+#          24:  -24946
+#          25:    2323
+#          26:    8592
+#          27:    1567
+#          28:    1647
+#          29:  -13957
+#          30:     517
+#          31:  -29415
+# fail Min =    75
+# Your answer was: 65535
+# Min addr =  9,  8
+# Min valu =  -6408  -6333
+# MAD  Max = 64881
+# Your answer was :     0
+# Max pair = 19,  2
+# Max valu = -32157,  32724
+#           0:   16960
+#           1:  -24010
+#           2:  -24908
+#           3:     500
+#           4:  -26535
+#           5:   -1276
+#           6:  -24378
+#           7:  -29693
+#           8:   14276
+#           9:   21441
+#          10:  -14684
+#          11:   -8009
+#          12:  -30692
+#          13:   10646
+#          14:   24809
+#          15:   -9823
+#          16:  -17305
+#          17:  -18037
+#          18:   31698
+#          19:    3869
+#          20:  -16793
+#          21:    -429
+#          22:   -9201
+#          23:   -7325
+#          24:   14232
+#          25:  -19057
+#          26:    6299
+#          27:   27669
+#          28:  -26661
+#          29:   23160
+#          30:   29982
+#          31:  -29433
+# fail Min =    44
+# Your answer was: 65535
+# Min addr = 24,  8
+# Min valu =  14232  14276
+# MAD  Max = 62390
+# Your answer was :     0
+# Max pair = 18, 12
+# Max valu =  31698, -30692
+#           0:   10240
+#           1:  -25843
+#           2:  -25426
+#           3:  -28742
+#           4:  -27217
+#           5:    7116
+#           6:  -26536
+#           7:   29816
+#           8:    1411
+#           9:   10884
+#          10:  -10206
+#          11:  -29604
+#          12:  -23279
+#          13:     889
+#          14:   26492
+#          15:   29950
+#          16:   25370
+#          17:  -24032
+#          18:    3765
+#          19:  -30536
+#          20:   -5782
+#          21:  -15632
+#          22:   24510
+#          23:   -6756
+#          24:  -23302
+#          25:   -7999
+#          26:  -24297
+#          27:   25783
+#          28:  -15980
+#          29:   14635
+#          30:   -8176
+#          31:  -23058
+# fail Min =    23
+# Your answer was: 65535
+# Min addr = 24, 12
+# Min valu = -23302 -23279
+# MAD  Max = 60486
+# Your answer was :     0
+# Max pair = 19, 15
+# Max valu = -30536,  29950
+#           0:   -6143
+#           1:    9304
+#           2:   28984
+#           3:  -32192
+#           4:  -25748
+#           5:  -23945
+#           6:   26894
+#           7:   15754
+#           8:    6387
+#           9:    3451
+#          10:  -32168
+#          11:  -16727
+#          12:   32453
+#          13:  -14285
+#          14:   14915
+#          15:   21079
+#          16:  -22485
+#          17:    1932
+#          18:  -12992
+#          19:    1499
+#          20:   12664
+#          21:  -19802
+#          22:   13456
+#          23:  -23595
+#          24:   30587
+#          25:   30199
+#          26:   12172
+#          27:  -18623
+#          28:  -27726
+#          29:  -17096
+#          30:   13971
+#          31:  -29614
+# fail Min =    24
+# Your answer was: 65535
+# Min addr = 10,  3
+# Min valu = -32168 -32192
+# MAD  Max = 64645
+# Your answer was :     0
+# Max pair = 12,  3
+# Max valu =  32453, -32192
+# Minimum correct           0/         10
+# Maximum correct           0/         10
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv(112)
+#    Time: 316050 ns  Iteration: 0  Instance: /test_bench_program_2
+# Break in Module test_bench_program_2 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv line 112
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.test_bench_program_2
+# End time: 21:12:40 on Jul 30,2024, Elapsed time: 0:05:48
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_2 
+# Start time: 21:12:40 on Jul 30,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/test_bench_program_2/D1/dataMemory/addr \
+sim:/test_bench_program_2/D1/dataMemory/write_data \
+sim:/test_bench_program_2/D1/dataMemory/mem_write \
+sim:/test_bench_program_2/D1/dataMemory/mem_read \
+sim:/test_bench_program_2/D1/dataMemory/data_out \
+sim:/test_bench_program_2/D1/dataMemory/Core \
+sim:/test_bench_program_2/D1/dataMemory/read_data
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# fail Min =     1
+# Your answer was: 65535
+# Min addr =  1,  0
+# Min valu =      1      0
+# MAD  Max = 65535
+# Your answer was :     0
+# Max pair = 31, 15
+# Max valu = -32768,  32767
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -1
+#          18:   32767
+#          19:   16383
+#          20:    8191
+#          21:    4095
+#          22:    2047
+#          23:    1023
+#          24:     511
+#          25:     255
+#          26:     127
+#          27:      63
+#          28:      31
+#          29:      15
+#          30:       7
+#          31:       3
+# fail Min =     0
+# Your answer was: 65535
+# Min addr = 31,  2
+# Min valu =      3      3
+# MAD  Max = 32768
+# Your answer was :     0
+# Max pair = 16, 15
+# Max valu =     -1,  32767
+#           0:  -32768
+#           1:  -32768
+#           2:  -32768
+#           3:   32767
+#           4:   32767
+#           5:  -32768
+#           6:       0
+#           7:  -32640
+#           8:  -32768
+#           9:       0
+#          10:   32767
+#          11:       0
+#          12:       0
+#          13:   32767
+#          14:     255
+#          15:     255
+#          16:  -32257
+#          17:  -32257
+#          18:   32512
+#          19:   32767
+#          20:   32767
+#          21:   32512
+#          22:      -1
+#          23:    -256
+#          24:    -256
+#          25:      -1
+#          26:     255
+#          27:     256
+#          28:     256
+#          29:     255
+#          30:  -32768
+#          31:     255
+# fail Min =     0
+# Your answer was: 65535
+# Min addr =  1,  0
+# Min valu = -32768 -32768
+# MAD  Max = 65535
+# Your answer was :     0
+# Max pair =  3,  0
+# Max valu =  32767, -32768
+#           0:   13604
+#           1:   24193
+#           2:  -10743
+#           3:   22115
+#           4:   31501
+#           5:  -26227
+#           6:  -31643
+#           7:   21010
+#           8:   -7423
+#           9:  -13043
+#          10:   -3722
+#          11:  -12995
+#          12:   22509
+#          13:   -2164
+#          14:   -5639
+#          15:    9414
+#          16:  -31547
+#          17:  -11606
+#          18:   -2075
+#          19:   29303
+#          20:  -10734
+#          21:   -9329
+#          22:   27122
+#          23:  -26930
+#          24:   31464
+#          25:   20165
+#          26:   18780
+#          27:   10429
+#          28:   22573
+#          29:    9829
+#          30:   25187
+#          31:  -30966
+# fail Min =     9
+# Your answer was: 65535
+# Min addr = 20,  2
+# Min valu = -10734 -10743
+# MAD  Max = 63144
+# Your answer was :     0
+# Max pair =  6,  4
+# Max valu = -31643,  31501
+#           0:  -17920
+#           1:  -10986
+#           2:     504
+#           3:  -30155
+#           4:   28320
+#           5:   -4360
+#           6:   19353
+#           7:   -3977
+#           8:    4339
+#           9:  -28367
+#          10:  -10403
+#          11:  -17505
+#          12:  -18664
+#          13:   10603
+#          14:    9029
+#          15:   14556
+#          16:   17208
+#          17:   -7818
+#          18:   26171
+#          19:   30436
+#          20:   20469
+#          21:  -23276
+#          22:  -24887
+#          23:   16022
+#          24:   13990
+#          25:    8714
+#          26:  -29760
+#          27:    7440
+#          28:    5257
+#          29:  -15283
+#          30:  -23351
+#          31:   23777
+# fail Min =    75
+# Your answer was: 65535
+# Min addr = 30, 21
+# Min valu = -23351 -23276
+# MAD  Max = 60591
+# Your answer was :     0
+# Max pair = 19,  3
+# Max valu =  30436, -30155
+#           0:  -22876
+#           1:   11216
+#           2:  -25919
+#           3:    2764
+#           4:   12129
+#           5:   -3279
+#           6:   20620
+#           7:   -5566
+#           8:   31840
+#           9:   -1631
+#          10:   32302
+#          11:  -18009
+#          12:  -29955
+#          13:  -16655
+#          14:  -17089
+#          15:   -7016
+#          16:   -3944
+#          17:   31317
+#          18:    -260
+#          19:   20046
+#          20:   23234
+#          21:  -25743
+#          22:    3390
+#          23:  -11559
+#          24:    3933
+#          25:   18904
+#          26:    2347
+#          27:  -15081
+#          28:   27397
+#          29:   -6964
+#          30:   -5044
+#          31:   28897
+# fail Min =    52
+# Your answer was: 65535
+# Min addr = 29, 15
+# Min valu =  -6964  -7016
+# MAD  Max = 62257
+# Your answer was :     0
+# Max pair = 12, 10
+# Max valu = -29955,  32302
+#           0:  -22521
+#           1:   10740
+#           2:   32724
+#           3:  -14989
+#           4:   30705
+#           5:   19402
+#           6:   -2671
+#           7:   -5995
+#           8:   -6333
+#           9:   -6408
+#          10:  -21803
+#          11:    3199
+#          12:   -6903
+#          13:   -1810
+#          14:   26768
+#          15:  -30138
+#          16:    6239
+#          17:   15458
+#          18:  -16809
+#          19:  -32157
+#          20:   -3316
+#          21:   11675
+#          22:   -1657
+#          23:  -13102
+#          24:  -24946
+#          25:    2323
+#          26:    8592
+#          27:    1567
+#          28:    1647
+#          29:  -13957
+#          30:     517
+#          31:  -29415
+# fail Min =    75
+# Your answer was: 65535
+# Min addr =  9,  8
+# Min valu =  -6408  -6333
+# MAD  Max = 64881
+# Your answer was :     0
+# Max pair = 19,  2
+# Max valu = -32157,  32724
+#           0:   16960
+#           1:  -24010
+#           2:  -24908
+#           3:     500
+#           4:  -26535
+#           5:   -1276
+#           6:  -24378
+#           7:  -29693
+#           8:   14276
+#           9:   21441
+#          10:  -14684
+#          11:   -8009
+#          12:  -30692
+#          13:   10646
+#          14:   24809
+#          15:   -9823
+#          16:  -17305
+#          17:  -18037
+#          18:   31698
+#          19:    3869
+#          20:  -16793
+#          21:    -429
+#          22:   -9201
+#          23:   -7325
+#          24:   14232
+#          25:  -19057
+#          26:    6299
+#          27:   27669
+#          28:  -26661
+#          29:   23160
+#          30:   29982
+#          31:  -29433
+# fail Min =    44
+# Your answer was: 65535
+# Min addr = 24,  8
+# Min valu =  14232  14276
+# MAD  Max = 62390
+# Your answer was :     0
+# Max pair = 18, 12
+# Max valu =  31698, -30692
+#           0:   10240
+#           1:  -25843
+#           2:  -25426
+#           3:  -28742
+#           4:  -27217
+#           5:    7116
+#           6:  -26536
+#           7:   29816
+#           8:    1411
+#           9:   10884
+#          10:  -10206
+#          11:  -29604
+#          12:  -23279
+#          13:     889
+#          14:   26492
+#          15:   29950
+#          16:   25370
+#          17:  -24032
+#          18:    3765
+#          19:  -30536
+#          20:   -5782
+#          21:  -15632
+#          22:   24510
+#          23:   -6756
+#          24:  -23302
+#          25:   -7999
+#          26:  -24297
+#          27:   25783
+#          28:  -15980
+#          29:   14635
+#          30:   -8176
+#          31:  -23058
+# fail Min =    23
+# Your answer was: 65535
+# Min addr = 24, 12
+# Min valu = -23302 -23279
+# MAD  Max = 60486
+# Your answer was :     0
+# Max pair = 19, 15
+# Max valu = -30536,  29950
+#           0:   -6143
+#           1:    9304
+#           2:   28984
+#           3:  -32192
+#           4:  -25748
+#           5:  -23945
+#           6:   26894
+#           7:   15754
+#           8:    6387
+#           9:    3451
+#          10:  -32168
+#          11:  -16727
+#          12:   32453
+#          13:  -14285
+#          14:   14915
+#          15:   21079
+#          16:  -22485
+#          17:    1932
+#          18:  -12992
+#          19:    1499
+#          20:   12664
+#          21:  -19802
+#          22:   13456
+#          23:  -23595
+#          24:   30587
+#          25:   30199
+#          26:   12172
+#          27:  -18623
+#          28:  -27726
+#          29:  -17096
+#          30:   13971
+#          31:  -29614
+# fail Min =    24
+# Your answer was: 65535
+# Min addr = 10,  3
+# Min valu = -32168 -32192
+# MAD  Max = 64645
+# Your answer was :     0
+# Max pair = 12,  3
+# Max valu =  32453, -32192
+# Minimum correct           0/         10
+# Maximum correct           0/         10
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv(112)
+#    Time: 316050 ns  Iteration: 0  Instance: /test_bench_program_2
+# Break in Module test_bench_program_2 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv line 112
