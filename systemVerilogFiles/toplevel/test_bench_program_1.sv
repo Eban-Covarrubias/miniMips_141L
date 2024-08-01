@@ -60,15 +60,17 @@ module test_bench_program_1;
 
 // check results in data_mem[64] and [65] (Minimum and Maximum distances, respectively)
     if(Min == D1.dataMemory.Core[64]) $display("good Min = %d",Min);
-	else                        $display("Resulting min = %d", D1.dataMemory.Core[64]);
+	else                        begin $display("Resulting min = %d", D1.dataMemory.Core[64]);
                               $display("fail Min = %d",Min);
                               $display("Min addr = %d, %d",Min1, Min2);
 							  $display("Min valu = %b, %b",Tmp[Min1],Tmp[Min2]);//{D1.dataMemory.Core[2*Min1],D1.dataMemory.Core[2*Min1+1]},{D1.dataMemory.Core[2*Min2],D1.dataMemory.Core[2*Min2+1]});
+  end
 	if(Max == D1.dataMemory.Core[65]) $display("good Max = %d",Max);
-	else                      $display("Resulting min = %d", D1.dataMemory.Core[65]);
+	else            begin           $display("Resulting min = %d", D1.dataMemory.Core[65]);
                             $display("MAD  Max = %d",Max);
 	                          $display("Max pair = %d, %d",Max1, Max2);
 							  $display("Max valu = %b, %b",Tmp[Max1],Tmp[Max2]);//{D1.dataMemory.Core[2*Max1],D1.dataMemory.Core[2*Max1+1]},{D1.dataMemory.Core[2*Max2],D1.dataMemory.Core[2*Max2+1]});
+  end
     #200ns start = 'b1;
 // to do: load operands for program 2 into data memory (reuse program 1 operands is fine here)
 	#200ns start = 'b0;
