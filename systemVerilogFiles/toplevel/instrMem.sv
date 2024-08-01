@@ -1,5 +1,5 @@
 module instrMem(
-    input logic [7:0] pc,       // Program counter input
+    input logic [9:0] pc,       // Program counter input
     output logic [8:0] data     // Instruction data output
 );
 
