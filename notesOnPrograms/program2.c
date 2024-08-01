@@ -5,7 +5,7 @@ maxMSB = 0;
 maxLSB = 0;
 
 // Loop through the array in pairs
-for (i = 0; i < 64; i += 2) {
+for (i = 0; i < 62; i += 2) {
     for (j = i + 2; j < 64; j += 2) {
         sign_mask = 0x80;
         signA = arr[i] & sign_mask;
