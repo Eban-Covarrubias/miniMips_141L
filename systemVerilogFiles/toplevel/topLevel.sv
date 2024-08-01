@@ -92,6 +92,10 @@ module topLevel(
 	 
 	 //use this to create needed muxs
 	 always_comb begin
+		//default case
+		alu_input_a = 0;
+		alu_input_b = 0;
+		write_data = 0;
 		if(instruction == 9'b101100100) begin
 			done = 1;
 			jump_amount = 1;
