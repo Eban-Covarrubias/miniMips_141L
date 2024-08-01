@@ -84,8 +84,9 @@ module topLevel(
 		.data_out(data_mem_out)
 	 );
 
+
 	 always_ff @(posedge clk) begin
-		if (start) pc = 0;
+		if(start) pc = 0;
 		else pc <= pc_next;
 	 end
 	 

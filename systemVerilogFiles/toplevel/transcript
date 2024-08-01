@@ -20806,3 +20806,4190 @@ run -all
 # ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_3.sv(76)
 #    Time: 53866050 ns  Iteration: 0  Instance: /test_bench_program_3
 # Break in Module test_bench_program_3 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_3.sv line 76
+vsim work.test_bench_program_2
+# End time: 02:48:38 on Aug 01,2024, Elapsed time: 0:03:43
+# Errors: 0, Warnings: 1
+# vsim work.test_bench_program_2 
+# Start time: 02:48:38 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+# WARNING: No extended dataflow license exists
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# good Min =     1
+# good Max = 65535
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -1
+#          18:   32767
+#          19:   16383
+#          20:    8191
+#          21:    4095
+#          22:    2047
+#          23:    1023
+#          24:     511
+#          25:     255
+#          26:     127
+#          27:      63
+#          28:      31
+#          29:      15
+#          30:       7
+#          31:       3
+# good Min =     0
+# good Max = 32768
+#           0:  -32768
+#           1:  -32768
+#           2:  -32768
+#           3:   32767
+#           4:   32767
+#           5:  -32768
+#           6:       0
+#           7:  -32640
+#           8:  -32768
+#           9:       0
+#          10:   32767
+#          11:       0
+#          12:       0
+#          13:   32767
+#          14:     255
+#          15:     255
+#          16:  -32257
+#          17:  -32257
+#          18:   32512
+#          19:   32767
+#          20:   32767
+#          21:   32512
+#          22:      -1
+#          23:    -256
+#          24:    -256
+#          25:      -1
+#          26:     255
+#          27:     256
+#          28:     256
+#          29:     255
+#          30:  -32768
+#          31:     255
+# good Min =     0
+# good Max = 65535
+#           0:   13604
+#           1:   24193
+#           2:  -10743
+#           3:   22115
+#           4:   31501
+#           5:  -26227
+#           6:  -31643
+#           7:   21010
+#           8:   -7423
+#           9:  -13043
+#          10:   -3722
+#          11:  -12995
+#          12:   22509
+#          13:   -2164
+#          14:   -5639
+#          15:    9414
+#          16:  -31547
+#          17:  -11606
+#          18:   -2075
+#          19:   29303
+#          20:  -10734
+#          21:   -9329
+#          22:   27122
+#          23:  -26930
+#          24:   31464
+#          25:   20165
+#          26:   18780
+#          27:   10429
+#          28:   22573
+#          29:    9829
+#          30:   25187
+#          31:  -30966
+# good Min =     9
+# good Max = 63144
+#           0:  -17920
+#           1:  -10986
+#           2:     504
+#           3:  -30155
+#           4:   28320
+#           5:   -4360
+#           6:   19353
+#           7:   -3977
+#           8:    4339
+#           9:  -28367
+#          10:  -10403
+#          11:  -17505
+#          12:  -18664
+#          13:   10603
+#          14:    9029
+#          15:   14556
+#          16:   17208
+#          17:   -7818
+#          18:   26171
+#          19:   30436
+#          20:   20469
+#          21:  -23276
+#          22:  -24887
+#          23:   16022
+#          24:   13990
+#          25:    8714
+#          26:  -29760
+#          27:    7440
+#          28:    5257
+#          29:  -15283
+#          30:  -23351
+#          31:   23777
+# good Min =    75
+# good Max = 60591
+#           0:  -22876
+#           1:   11216
+#           2:  -25919
+#           3:    2764
+#           4:   12129
+#           5:   -3279
+#           6:   20620
+#           7:   -5566
+#           8:   31840
+#           9:   -1631
+#          10:   32302
+#          11:  -18009
+#          12:  -29955
+#          13:  -16655
+#          14:  -17089
+#          15:   -7016
+#          16:   -3944
+#          17:   31317
+#          18:    -260
+#          19:   20046
+#          20:   23234
+#          21:  -25743
+#          22:    3390
+#          23:  -11559
+#          24:    3933
+#          25:   18904
+#          26:    2347
+#          27:  -15081
+#          28:   27397
+#          29:   -6964
+#          30:   -5044
+#          31:   28897
+# good Min =    52
+# good Max = 62257
+#           0:  -22521
+#           1:   10740
+#           2:   32724
+#           3:  -14989
+#           4:   30705
+#           5:   19402
+#           6:   -2671
+#           7:   -5995
+#           8:   -6333
+#           9:   -6408
+#          10:  -21803
+#          11:    3199
+#          12:   -6903
+#          13:   -1810
+#          14:   26768
+#          15:  -30138
+#          16:    6239
+#          17:   15458
+#          18:  -16809
+#          19:  -32157
+#          20:   -3316
+#          21:   11675
+#          22:   -1657
+#          23:  -13102
+#          24:  -24946
+#          25:    2323
+#          26:    8592
+#          27:    1567
+#          28:    1647
+#          29:  -13957
+#          30:     517
+#          31:  -29415
+# good Min =    75
+# good Max = 64881
+#           0:   16960
+#           1:  -24010
+#           2:  -24908
+#           3:     500
+#           4:  -26535
+#           5:   -1276
+#           6:  -24378
+#           7:  -29693
+#           8:   14276
+#           9:   21441
+#          10:  -14684
+#          11:   -8009
+#          12:  -30692
+#          13:   10646
+#          14:   24809
+#          15:   -9823
+#          16:  -17305
+#          17:  -18037
+#          18:   31698
+#          19:    3869
+#          20:  -16793
+#          21:    -429
+#          22:   -9201
+#          23:   -7325
+#          24:   14232
+#          25:  -19057
+#          26:    6299
+#          27:   27669
+#          28:  -26661
+#          29:   23160
+#          30:   29982
+#          31:  -29433
+# good Min =    44
+# good Max = 62390
+#           0:   10240
+#           1:  -25843
+#           2:  -25426
+#           3:  -28742
+#           4:  -27217
+#           5:    7116
+#           6:  -26536
+#           7:   29816
+#           8:    1411
+#           9:   10884
+#          10:  -10206
+#          11:  -29604
+#          12:  -23279
+#          13:     889
+#          14:   26492
+#          15:   29950
+#          16:   25370
+#          17:  -24032
+#          18:    3765
+#          19:  -30536
+#          20:   -5782
+#          21:  -15632
+#          22:   24510
+#          23:   -6756
+#          24:  -23302
+#          25:   -7999
+#          26:  -24297
+#          27:   25783
+#          28:  -15980
+#          29:   14635
+#          30:   -8176
+#          31:  -23058
+# good Min =    23
+# good Max = 60486
+#           0:   -6143
+#           1:    9304
+#           2:   28984
+#           3:  -32192
+#           4:  -25748
+#           5:  -23945
+#           6:   26894
+#           7:   15754
+#           8:    6387
+#           9:    3451
+#          10:  -32168
+#          11:  -16727
+#          12:   32453
+#          13:  -14285
+#          14:   14915
+#          15:   21079
+#          16:  -22485
+#          17:    1932
+#          18:  -12992
+#          19:    1499
+#          20:   12664
+#          21:  -19802
+#          22:   13456
+#          23:  -23595
+#          24:   30587
+#          25:   30199
+#          26:   12172
+#          27:  -18623
+#          28:  -27726
+#          29:  -17096
+#          30:   13971
+#          31:  -29614
+# good Min =    24
+# good Max = 64645
+# Minimum correct          10/         10
+# Maximum correct          10/         10
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv(112)
+#    Time: 51779450 ns  Iteration: 0  Instance: /test_bench_program_2
+# Break in Module test_bench_program_2 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv line 112
+vsim work.test_bench_program_1
+# End time: 02:48:59 on Aug 01,2024, Elapsed time: 0:00:21
+# Errors: 0, Warnings: 1
+# vsim work.test_bench_program_1 
+# Start time: 02:48:59 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_1
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+# WARNING: No extended dataflow license exists
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# good Min =  2
+# fail Min =  2
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# good Max = 14
+# MAD  Max = 14
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv(75)
+#    Time: 4190350 ns  Iteration: 0  Instance: /test_bench_program_1
+# Break in Module test_bench_program_1 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv line 75
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# Compile of test_bench_read.sv was successful.
+# 18 compiles, 0 failed with no errors.
+vsim work.test_bench
+# End time: 14:34:01 on Aug 01,2024, Elapsed time: 11:45:02
+# Errors: 0, Warnings: 3
+# vsim work.test_bench 
+# Start time: 14:34:01 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+# ** Warning: (vsim-3008) [CNNODP] - Component name (dm) is not on a downward path.
+#    Time: 0 ps  Iteration: 0  Instance: /test_bench File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_read.sv Line: 36
+# ** Error: (vsim-3043) Unresolved reference to 'dm' in D1.dm.
+#    Time: 0 ps  Iteration: 0  Instance: /test_bench File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_read.sv Line: 36
+# Error loading design
+# End time: 14:34:01 on Aug 01,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# Compile of test_bench_read.sv was successful.
+# 18 compiles, 0 failed with no errors.
+vsim work.test_bench
+# vsim work.test_bench 
+# Start time: 14:36:19 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+# ** Warning: (vsim-3008) [CNNODP] - Component name (core) is not on a downward path.
+#    Time: 0 ps  Iteration: 0  Instance: /test_bench File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_read.sv Line: 36
+# ** Error: (vsim-3043) Unresolved reference to 'core' in D1.dataMemory.core.
+#    Time: 0 ps  Iteration: 0  Instance: /test_bench File: C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_read.sv Line: 36
+# Error loading design
+# End time: 14:36:19 on Aug 01,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 3
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# Compile of test_bench_read.sv was successful.
+# 18 compiles, 0 failed with no errors.
+vsim work.test_bench
+# vsim work.test_bench 
+# Start time: 14:37:38 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+# WARNING: No extended dataflow license exists
+run -all
+#           0:  1111111111111111
+#           1:  0000000000000000
+#           2:  1111000000001111
+#           3:  1010101001010101
+#           4:  1000000000000000
+#           5:  0000000000000001
+#           6:  1111111111111111
+#           7:  0000000000000000
+#           8:  1111000000001111
+#           9:  1010101001010101
+#          10:  1000000000000000
+#          11:  0000000000000001
+#          12:  1111111111111111
+#          13:  0000000000000000
+#          14:  1111000000001111
+#          15:  1010101001010101
+#          16:  1000000000000000
+#          17:  0000000000000001
+#          18:  1111000000001111
+#          19:  1111000000001111
+#          20:  1111111111111111
+#          21:  1111111111111111
+#          22:  0000000000000000
+#          23:  1111000000001111
+#          24:  1010101001010101
+#          25:  1000000000000000
+#          26:  0000000000000001
+#          27:  1111000000001111
+#          28:  1111000000001111
+#          29:  1111111111111111
+#          30:  1111111111111111
+#          31:  0000000100000001
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=14
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 2
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 2
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 3
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=14
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 2
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 2
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 3
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=14
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 2
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 3
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=14
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=14
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 2
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 3
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist=14
+# dist=14
+# good Min =  0
+# Min addr =  6,  0
+# Min valu = 1111111111111111, 1111111111111111
+# good Max = 16
+# Max pair =  1,  0
+# Max valu = 0000000000000000, 1111111111111111
+#           0:  65535
+#           1:      0
+#           2:  61455
+#           3:  43605
+#           4:  32768
+#           5:      1
+#           6:  65535
+#           7:      0
+#           8:  61455
+#           9:  43605
+#          10:  32768
+#          11:      1
+#          12:  65535
+#          13:      0
+#          14:  61455
+#          15:  43605
+#          16:  32768
+#          17:      1
+#          18:  61455
+#          19:  61455
+#          20:  65535
+#          21:  65535
+#          22:      0
+#          23:  61455
+#          24:  43605
+#          25:  32768
+#          26:      1
+#          27:  61455
+#          28:  61455
+#          29:  65535
+#          30:  65535
+#          31:    257
+# fail Min =  0
+# Min addr =  6,  0
+# Min valu = 65535 65535
+# MAD  Max = 31
+# Max pair =  4,  0
+# Max valu = 32768, 65535
+# ** Warning: (vsim-PLI-3406) Too many digits (8) in data on line 1 of file "test3_2.txt". (Max is 2.)    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_read.sv(133)
+#    Time: 8395750 ns  Iteration: 0  Instance: /test_bench
+#           0:  65535
+#           1:      0
+#           2:  61455
+#           3:  43605
+#           4:  32768
+#           5:      1
+#           6:  65535
+#           7:      0
+#           8:  61455
+#           9:  43605
+#          10:  32768
+#          11:      1
+#          12:  65535
+#          13:      0
+#          14:  61455
+#          15:  43605
+#          16:  32768
+#          17:      1
+#          18:  61455
+#          19:  61455
+#          20:  65535
+#          21:  65535
+#          22:      0
+#          23:  61455
+#          24:  43605
+#          25:  32768
+#          26:      1
+#          27:  61455
+#          28:  61455
+#          29:  65535
+#          30:  65535
+#          31:    257
+# Boo!     0 * 65535 should =           0
+# Boo! 43605 * 61455 should = -1615222021
+# Boo!     1 * 32768 should =       32768
+# Yes!     0 * 65535 =           0
+# Boo! 43605 * 61455 should = -1615222021
+# Boo!     1 * 32768 should =       32768
+# Yes!     0 * 65535 =           0
+# Boo! 43605 * 61455 should = -1615222021
+# Boo!     1 * 32768 should =       32768
+# Boo! 61455 * 61455 should =  -518250271
+# Boo! 65535 * 65535 should =     -131071
+# Yes! 61455 *     0 =           0
+# Boo! 32768 * 43605 should =  1428848640
+# Boo! 61455 *     1 should =       61455
+# Boo! 65535 * 61455 should =  -267513871
+# Boo!   257 * 65535 should =    16842495
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_read.sv(150)
+#    Time: 12593350 ns  Iteration: 0  Instance: /test_bench
+# Break in Module test_bench at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_read.sv line 150
+add wave -position insertpoint sim:/test_bench/D1/*
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+add wave -position insertpoint  \
+sim:/test_bench/D1/dataMemory/addr \
+sim:/test_bench/D1/dataMemory/write_data \
+sim:/test_bench/D1/dataMemory/mem_write \
+sim:/test_bench/D1/dataMemory/mem_read \
+sim:/test_bench/D1/dataMemory/data_out \
+sim:/test_bench/D1/dataMemory/Core \
+sim:/test_bench/D1/dataMemory/read_data
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+#           0:  1111111111111111
+#           1:  0000000000000000
+#           2:  1111000000001111
+#           3:  1010101001010101
+#           4:  1000000000000000
+#           5:  0000000000000001
+#           6:  1111111111111111
+#           7:  0000000000000000
+#           8:  1111000000001111
+#           9:  1010101001010101
+#          10:  1000000000000000
+#          11:  0000000000000001
+#          12:  1111111111111111
+#          13:  0000000000000000
+#          14:  1111000000001111
+#          15:  1010101001010101
+#          16:  1000000000000000
+#          17:  0000000000000001
+#          18:  1111000000001111
+#          19:  1111000000001111
+#          20:  1111111111111111
+#          21:  1111111111111111
+#          22:  0000000000000000
+#          23:  1111000000001111
+#          24:  1010101001010101
+#          25:  1000000000000000
+#          26:  0000000000000001
+#          27:  1111000000001111
+#          28:  1111000000001111
+#          29:  1111111111111111
+#          30:  1111111111111111
+#          31:  0000000100000001
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=14
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 2
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 2
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 3
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=14
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 2
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 2
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 3
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=14
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 2
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 3
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=14
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=14
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 2
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 3
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist=14
+# dist=14
+# good Min =  0
+# Min addr =  6,  0
+# Min valu = 1111111111111111, 1111111111111111
+# good Max = 16
+# Max pair =  1,  0
+# Max valu = 0000000000000000, 1111111111111111
+#           0:  65535
+#           1:      0
+#           2:  61455
+#           3:  43605
+#           4:  32768
+#           5:      1
+#           6:  65535
+#           7:      0
+#           8:  61455
+#           9:  43605
+#          10:  32768
+#          11:      1
+#          12:  65535
+#          13:      0
+#          14:  61455
+#          15:  43605
+#          16:  32768
+#          17:      1
+#          18:  61455
+#          19:  61455
+#          20:  65535
+#          21:  65535
+#          22:      0
+#          23:  61455
+#          24:  43605
+#          25:  32768
+#          26:      1
+#          27:  61455
+#          28:  61455
+#          29:  65535
+#          30:  65535
+#          31:    257
+# fail Min =  0
+# Min addr =  6,  0
+# Min valu = 65535 65535
+# MAD  Max = 31
+# Max pair =  4,  0
+# Max valu = 32768, 65535
+# ** Warning: (vsim-PLI-3406) Too many digits (8) in data on line 1 of file "test3_2.txt". (Max is 2.)    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_read.sv(133)
+#    Time: 8395750 ns  Iteration: 0  Instance: /test_bench
+#           0:  65535
+#           1:      0
+#           2:  61455
+#           3:  43605
+#           4:  32768
+#           5:      1
+#           6:  65535
+#           7:      0
+#           8:  61455
+#           9:  43605
+#          10:  32768
+#          11:      1
+#          12:  65535
+#          13:      0
+#          14:  61455
+#          15:  43605
+#          16:  32768
+#          17:      1
+#          18:  61455
+#          19:  61455
+#          20:  65535
+#          21:  65535
+#          22:      0
+#          23:  61455
+#          24:  43605
+#          25:  32768
+#          26:      1
+#          27:  61455
+#          28:  61455
+#          29:  65535
+#          30:  65535
+#          31:    257
+# Boo!     0 * 65535 should =           0
+# Boo! 43605 * 61455 should = -1615222021
+# Boo!     1 * 32768 should =       32768
+# Yes!     0 * 65535 =           0
+# Boo! 43605 * 61455 should = -1615222021
+# Boo!     1 * 32768 should =       32768
+# Yes!     0 * 65535 =           0
+# Boo! 43605 * 61455 should = -1615222021
+# Boo!     1 * 32768 should =       32768
+# Boo! 61455 * 61455 should =  -518250271
+# Boo! 65535 * 65535 should =     -131071
+# Yes! 61455 *     0 =           0
+# Boo! 32768 * 43605 should =  1428848640
+# Boo! 61455 *     1 should =       61455
+# Boo! 65535 * 61455 should =  -267513871
+# Boo!   257 * 65535 should =    16842495
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_read.sv(150)
+#    Time: 12593350 ns  Iteration: 0  Instance: /test_bench
+# Break in Module test_bench at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_read.sv line 150
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv failed with 1 errors.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# Compile of test_bench_read.sv was successful.
+# 18 compiles, 1 failed with 1 error.
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv failed with 1 errors.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# Compile of test_bench_read.sv was successful.
+# 18 compiles, 1 failed with 1 error.
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv failed with 1 errors.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# Compile of test_bench_read.sv was successful.
+# 18 compiles, 1 failed with 1 error.
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv failed with 1 errors.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# Compile of test_bench_read.sv was successful.
+# 18 compiles, 1 failed with 1 error.
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of topLevel_tb.sv was successful.
+# Compile of topLevel_tb_2.sv was successful.
+# Compile of topLevel_tb_3.sv was successful.
+# Compile of topLevel_tb_4.sv was successful.
+# Compile of topLevel_tb_5.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# Compile of test_bench_read.sv was successful.
+# 18 compiles, 0 failed with no errors.
+vsim work.test_bench
+# End time: 15:24:07 on Aug 01,2024, Elapsed time: 0:46:29
+# Errors: 0, Warnings: 7
+# vsim work.test_bench 
+# Start time: 15:24:07 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/test_bench/D1/*
+run -all
+#           0:  1111111111111111
+#           1:  0000000000000000
+#           2:  1111000000001111
+#           3:  1010101001010101
+#           4:  1000000000000000
+#           5:  0000000000000001
+#           6:  1111111111111111
+#           7:  0000000000000000
+#           8:  1111000000001111
+#           9:  1010101001010101
+#          10:  1000000000000000
+#          11:  0000000000000001
+#          12:  1111111111111111
+#          13:  0000000000000000
+#          14:  1111000000001111
+#          15:  1010101001010101
+#          16:  1000000000000000
+#          17:  0000000000000001
+#          18:  1111000000001111
+#          19:  1111000000001111
+#          20:  1111111111111111
+#          21:  1111111111111111
+#          22:  0000000000000000
+#          23:  1111000000001111
+#          24:  1010101001010101
+#          25:  1000000000000000
+#          26:  0000000000000001
+#          27:  1111000000001111
+#          28:  1111000000001111
+#          29:  1111111111111111
+#          30:  1111111111111111
+#          31:  0000000100000001
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=14
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 2
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 2
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 3
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=14
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 2
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 2
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 3
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=14
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 2
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 3
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 7
+# dist= 7
+# dist= 2
+# dist= 0
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=14
+# dist=16
+# dist= 8
+# dist= 8
+# dist=15
+# dist=15
+# dist= 8
+# dist= 8
+# dist= 0
+# dist= 0
+# dist=14
+# dist= 8
+# dist= 8
+# dist= 1
+# dist= 1
+# dist= 8
+# dist= 8
+# dist=16
+# dist=16
+# dist= 2
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 0
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 7
+# dist= 7
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 2
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 3
+# dist= 7
+# dist= 7
+# dist=15
+# dist=15
+# dist= 1
+# dist= 0
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 8
+# dist= 0
+# dist=14
+# dist=14
+# good Min =  0
+# Min addr =  6,  0
+# Min valu = 1111111111111111, 1111111111111111
+# good Max = 16
+# Max pair =  1,  0
+# Max valu = 0000000000000000, 1111111111111111
+#           0:  65535
+#           1:      0
+#           2:  61455
+#           3:  43605
+#           4:  32768
+#           5:      1
+#           6:  65535
+#           7:      0
+#           8:  61455
+#           9:  43605
+#          10:  32768
+#          11:      1
+#          12:  65535
+#          13:      0
+#          14:  61455
+#          15:  43605
+#          16:  32768
+#          17:      1
+#          18:  61455
+#          19:  61455
+#          20:  65535
+#          21:  65535
+#          22:      0
+#          23:  61455
+#          24:  43605
+#          25:  32768
+#          26:      1
+#          27:  61455
+#          28:  61455
+#          29:  65535
+#          30:  65535
+#          31:    257
+# fail Min =  0
+# Min addr =  6,  0
+# Min valu = 65535 65535
+# MAD  Max = 31
+# Max pair =  4,  0
+# Max valu = 32768, 65535
+# ** Warning: (vsim-PLI-3406) Too many digits (8) in data on line 1 of file "test3_2.txt". (Max is 2.)    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_read.sv(133)
+#    Time: 8395750 ns  Iteration: 0  Instance: /test_bench
+#           0:  65535
+#           1:      0
+#           2:  61455
+#           3:  43605
+#           4:  32768
+#           5:      1
+#           6:  65535
+#           7:      0
+#           8:  61455
+#           9:  43605
+#          10:  32768
+#          11:      1
+#          12:  65535
+#          13:      0
+#          14:  61455
+#          15:  43605
+#          16:  32768
+#          17:      1
+#          18:  61455
+#          19:  61455
+#          20:  65535
+#          21:  65535
+#          22:      0
+#          23:  61455
+#          24:  43605
+#          25:  32768
+#          26:      1
+#          27:  61455
+#          28:  61455
+#          29:  65535
+#          30:  65535
+#          31:    257
+# Boo!     0 * 65535 should =           0
+# Boo! 43605 * 61455 should = -1615222021
+# Boo!     1 * 32768 should =       32768
+# Yes!     0 * 65535 =           0
+# Boo! 43605 * 61455 should = -1615222021
+# Boo!     1 * 32768 should =       32768
+# Yes!     0 * 65535 =           0
+# Boo! 43605 * 61455 should = -1615222021
+# Boo!     1 * 32768 should =       32768
+# Boo! 61455 * 61455 should =  -518250271
+# Boo! 65535 * 65535 should =     -131071
+# Yes! 61455 *     0 =           0
+# Boo! 32768 * 43605 should =  1428848640
+# Boo! 61455 *     1 should =       61455
+# Boo! 65535 * 61455 should =  -267513871
+# Boo!   257 * 65535 should =    16842495
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_read.sv(150)
+#    Time: 12593350 ns  Iteration: 0  Instance: /test_bench
+# Break in Module test_bench at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_read.sv line 150
+vsim work.test_bench_program_1
+# End time: 15:27:10 on Aug 01,2024, Elapsed time: 0:03:03
+# Errors: 0, Warnings: 2
+# vsim work.test_bench_program_1 
+# Start time: 15:27:10 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_1
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# good Min =  2
+# fail Min =  2
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# good Max = 14
+# MAD  Max = 14
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv(75)
+#    Time: 4190350 ns  Iteration: 0  Instance: /test_bench_program_1
+# Break in Module test_bench_program_1 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_1.sv line 75
+vsim work.test_bench_program_2
+# End time: 15:30:34 on Aug 01,2024, Elapsed time: 0:03:24
+# Errors: 0, Warnings: 1
+# vsim work.test_bench_program_2 
+# Start time: 15:30:34 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.test_bench_program_2
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# good Min =     1
+# good Max = 65535
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -1
+#          18:   32767
+#          19:   16383
+#          20:    8191
+#          21:    4095
+#          22:    2047
+#          23:    1023
+#          24:     511
+#          25:     255
+#          26:     127
+#          27:      63
+#          28:      31
+#          29:      15
+#          30:       7
+#          31:       3
+# good Min =     0
+# good Max = 32768
+#           0:  -32768
+#           1:  -32768
+#           2:  -32768
+#           3:   32767
+#           4:   32767
+#           5:  -32768
+#           6:       0
+#           7:  -32640
+#           8:  -32768
+#           9:       0
+#          10:   32767
+#          11:       0
+#          12:       0
+#          13:   32767
+#          14:     255
+#          15:     255
+#          16:  -32257
+#          17:  -32257
+#          18:   32512
+#          19:   32767
+#          20:   32767
+#          21:   32512
+#          22:      -1
+#          23:    -256
+#          24:    -256
+#          25:      -1
+#          26:     255
+#          27:     256
+#          28:     256
+#          29:     255
+#          30:  -32768
+#          31:     255
+# good Min =     0
+# good Max = 65535
+#           0:   13604
+#           1:   24193
+#           2:  -10743
+#           3:   22115
+#           4:   31501
+#           5:  -26227
+#           6:  -31643
+#           7:   21010
+#           8:   -7423
+#           9:  -13043
+#          10:   -3722
+#          11:  -12995
+#          12:   22509
+#          13:   -2164
+#          14:   -5639
+#          15:    9414
+#          16:  -31547
+#          17:  -11606
+#          18:   -2075
+#          19:   29303
+#          20:  -10734
+#          21:   -9329
+#          22:   27122
+#          23:  -26930
+#          24:   31464
+#          25:   20165
+#          26:   18780
+#          27:   10429
+#          28:   22573
+#          29:    9829
+#          30:   25187
+#          31:  -30966
+# good Min =     9
+# good Max = 63144
+#           0:  -17920
+#           1:  -10986
+#           2:     504
+#           3:  -30155
+#           4:   28320
+#           5:   -4360
+#           6:   19353
+#           7:   -3977
+#           8:    4339
+#           9:  -28367
+#          10:  -10403
+#          11:  -17505
+#          12:  -18664
+#          13:   10603
+#          14:    9029
+#          15:   14556
+#          16:   17208
+#          17:   -7818
+#          18:   26171
+#          19:   30436
+#          20:   20469
+#          21:  -23276
+#          22:  -24887
+#          23:   16022
+#          24:   13990
+#          25:    8714
+#          26:  -29760
+#          27:    7440
+#          28:    5257
+#          29:  -15283
+#          30:  -23351
+#          31:   23777
+# good Min =    75
+# good Max = 60591
+#           0:  -22876
+#           1:   11216
+#           2:  -25919
+#           3:    2764
+#           4:   12129
+#           5:   -3279
+#           6:   20620
+#           7:   -5566
+#           8:   31840
+#           9:   -1631
+#          10:   32302
+#          11:  -18009
+#          12:  -29955
+#          13:  -16655
+#          14:  -17089
+#          15:   -7016
+#          16:   -3944
+#          17:   31317
+#          18:    -260
+#          19:   20046
+#          20:   23234
+#          21:  -25743
+#          22:    3390
+#          23:  -11559
+#          24:    3933
+#          25:   18904
+#          26:    2347
+#          27:  -15081
+#          28:   27397
+#          29:   -6964
+#          30:   -5044
+#          31:   28897
+# good Min =    52
+# good Max = 62257
+#           0:  -22521
+#           1:   10740
+#           2:   32724
+#           3:  -14989
+#           4:   30705
+#           5:   19402
+#           6:   -2671
+#           7:   -5995
+#           8:   -6333
+#           9:   -6408
+#          10:  -21803
+#          11:    3199
+#          12:   -6903
+#          13:   -1810
+#          14:   26768
+#          15:  -30138
+#          16:    6239
+#          17:   15458
+#          18:  -16809
+#          19:  -32157
+#          20:   -3316
+#          21:   11675
+#          22:   -1657
+#          23:  -13102
+#          24:  -24946
+#          25:    2323
+#          26:    8592
+#          27:    1567
+#          28:    1647
+#          29:  -13957
+#          30:     517
+#          31:  -29415
+# good Min =    75
+# good Max = 64881
+#           0:   16960
+#           1:  -24010
+#           2:  -24908
+#           3:     500
+#           4:  -26535
+#           5:   -1276
+#           6:  -24378
+#           7:  -29693
+#           8:   14276
+#           9:   21441
+#          10:  -14684
+#          11:   -8009
+#          12:  -30692
+#          13:   10646
+#          14:   24809
+#          15:   -9823
+#          16:  -17305
+#          17:  -18037
+#          18:   31698
+#          19:    3869
+#          20:  -16793
+#          21:    -429
+#          22:   -9201
+#          23:   -7325
+#          24:   14232
+#          25:  -19057
+#          26:    6299
+#          27:   27669
+#          28:  -26661
+#          29:   23160
+#          30:   29982
+#          31:  -29433
+# good Min =    44
+# good Max = 62390
+#           0:   10240
+#           1:  -25843
+#           2:  -25426
+#           3:  -28742
+#           4:  -27217
+#           5:    7116
+#           6:  -26536
+#           7:   29816
+#           8:    1411
+#           9:   10884
+#          10:  -10206
+#          11:  -29604
+#          12:  -23279
+#          13:     889
+#          14:   26492
+#          15:   29950
+#          16:   25370
+#          17:  -24032
+#          18:    3765
+#          19:  -30536
+#          20:   -5782
+#          21:  -15632
+#          22:   24510
+#          23:   -6756
+#          24:  -23302
+#          25:   -7999
+#          26:  -24297
+#          27:   25783
+#          28:  -15980
+#          29:   14635
+#          30:   -8176
+#          31:  -23058
+# good Min =    23
+# good Max = 60486
+#           0:   -6143
+#           1:    9304
+#           2:   28984
+#           3:  -32192
+#           4:  -25748
+#           5:  -23945
+#           6:   26894
+#           7:   15754
+#           8:    6387
+#           9:    3451
+#          10:  -32168
+#          11:  -16727
+#          12:   32453
+#          13:  -14285
+#          14:   14915
+#          15:   21079
+#          16:  -22485
+#          17:    1932
+#          18:  -12992
+#          19:    1499
+#          20:   12664
+#          21:  -19802
+#          22:   13456
+#          23:  -23595
+#          24:   30587
+#          25:   30199
+#          26:   12172
+#          27:  -18623
+#          28:  -27726
+#          29:  -17096
+#          30:   13971
+#          31:  -29614
+# good Min =    24
+# good Max = 64645
+# Minimum correct          10/         10
+# Maximum correct          10/         10
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv(112)
+#    Time: 51779450 ns  Iteration: 0  Instance: /test_bench_program_2
+# Break in Module test_bench_program_2 at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench_program_2.sv line 112
+# Compile of adder.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of dataMem.sv was successful.
+# Compile of instrMem.sv was successful.
+# Compile of lut.sv was successful.
+# Compile of programCounter.sv was successful.
+# Compile of regFile.sv was successful.
+# Compile of tb_processor.sv was successful.
+# Compile of topLevel.sv was successful.
+# Compile of test_bench_program_1.sv was successful.
+# Compile of test_bench_program_3.sv was successful.
+# Compile of test_bench_program_2.sv was successful.
+# Compile of test_bench_read.sv was successful.
+# Compile of test_bench1_new.sv was successful.
+# Compile of test_bench2_new.sv was successful.
+# Compile of test_bench3_new.sv was successful.
+# 16 compiles, 5 failed with no errors.
+vsim work.test_bench1_new
+# End time: 15:41:57 on Aug 01,2024, Elapsed time: 0:11:23
+# Errors: 0, Warnings: 7
+# vsim work.test_bench1_new 
+# Start time: 15:41:57 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.test_bench1_new
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+run -all
+#           0:  0000000000000000
+#           1:  0000000000000001
+#           2:  0000000000000011
+#           3:  0000000000000111
+#           4:  0000000000001111
+#           5:  0000000000011111
+#           6:  0000000000111111
+#           7:  0000000001111111
+#           8:  0000000011111111
+#           9:  0000000111111111
+#          10:  0000001111111111
+#          11:  0000011111111111
+#          12:  0000111111111111
+#          13:  0001111111111111
+#          14:  0011111111111111
+#          15:  0111111111111111
+#          16:  1111111111111111
+#          17:  1111111111111110
+#          18:  1111111111111100
+#          19:  1111111111111000
+#          20:  1111111111110000
+#          21:  1111111111100000
+#          22:  1111111111000000
+#          23:  1111111110000000
+#          24:  1111111100000000
+#          25:  1111111000000000
+#          26:  1111110000000000
+#          27:  1111100000000000
+#          28:  1111000000000000
+#          29:  1110000000000000
+#          30:  1100000000000000
+#          31:  1000000000000000
+# good Min =  1
+# good Max = 16
+#           0:  0000000000000000
+#           1:  0000000000000001
+#           2:  0000000000000011
+#           3:  0000000000000111
+#           4:  0000000000001111
+#           5:  0000000000011111
+#           6:  0000000000111111
+#           7:  0000000001111111
+#           8:  0000000011111111
+#           9:  0000000111111111
+#          10:  0000001111111111
+#          11:  0000011111111111
+#          12:  0000111111111111
+#          13:  0001111111111111
+#          14:  0011111111111111
+#          15:  0111111111111111
+#          16:  1111111111111111
+#          17:  1111111111111111
+#          18:  0111111111111111
+#          19:  0011111111111111
+#          20:  0001111111111111
+#          21:  0000111111111111
+#          22:  0000011111111111
+#          23:  0000001111111111
+#          24:  0000000111111111
+#          25:  0000000011111111
+#          26:  0000000001111111
+#          27:  0000000000111111
+#          28:  0000000000011111
+#          29:  0000000000001111
+#          30:  0000000000000111
+#          31:  0000000000000011
+# good Min =  0
+# good Max = 16
+#           0:  1000000000000000
+#           1:  1000000000000000
+#           2:  1000000000000000
+#           3:  0111111111111111
+#           4:  0111111111111111
+#           5:  1000000000000000
+#           6:  0000000000000000
+#           7:  1000000010000000
+#           8:  1000000000000000
+#           9:  0000000000000000
+#          10:  0111111111111111
+#          11:  0000000000000000
+#          12:  0000000000000000
+#          13:  0111111111111111
+#          14:  0000000011111111
+#          15:  0000000011111111
+#          16:  1000000111111111
+#          17:  1000000111111111
+#          18:  0111111100000000
+#          19:  0111111111111111
+#          20:  0111111111111111
+#          21:  0111111100000000
+#          22:  1111111111111111
+#          23:  1111111100000000
+#          24:  1111111100000000
+#          25:  1111111111111111
+#          26:  0000000011111111
+#          27:  0000000100000000
+#          28:  0000000100000000
+#          29:  0000000011111111
+#          30:  1000000000000000
+#          31:  0000000011111111
+# good Min =  0
+# good Max = 16
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# good Min =  2
+# good Max = 14
+#           0:  1011101000000000
+#           1:  1101010100010110
+#           2:  0000000111111000
+#           3:  1000101000110101
+#           4:  0110111010100000
+#           5:  1110111011111000
+#           6:  0100101110011001
+#           7:  1111000001110111
+#           8:  0001000011110011
+#           9:  1001000100110001
+#          10:  1101011101011101
+#          11:  1011101110011111
+#          12:  1011011100011000
+#          13:  0010100101101011
+#          14:  0010001101000101
+#          15:  0011100011011100
+#          16:  0100001100111000
+#          17:  1110000101110110
+#          18:  0110011000111011
+#          19:  0111011011100100
+#          20:  0100111111110101
+#          21:  1010010100010100
+#          22:  1001111011001001
+#          23:  0011111010010110
+#          24:  0011011010100110
+#          25:  0010001000001010
+#          26:  1000101111000000
+#          27:  0001110100010000
+#          28:  0001010010001001
+#          29:  1100010001001101
+#          30:  1010010011001001
+#          31:  0101110011100001
+# good Min =  3
+# good Max = 14
+#           0:  1010011010100100
+#           1:  0010101111010000
+#           2:  1001101011000001
+#           3:  0000101011001100
+#           4:  0010111101100001
+#           5:  1111001100110001
+#           6:  0101000010001100
+#           7:  1110101001000010
+#           8:  0111110001100000
+#           9:  1111100110100001
+#          10:  0111111000101110
+#          11:  1011100110100111
+#          12:  1000101011111101
+#          13:  1011111011110001
+#          14:  1011110100111111
+#          15:  1110010010011000
+#          16:  1111000010011000
+#          17:  0111101001010101
+#          18:  1111111011111100
+#          19:  0100111001001110
+#          20:  0101101011000010
+#          21:  1001101101110001
+#          22:  0000110100111110
+#          23:  1101001011011001
+#          24:  0000111101011101
+#          25:  0100100111011000
+#          26:  0000100100101011
+#          27:  1100010100010111
+#          28:  0110101100000101
+#          29:  1110010011001100
+#          30:  1110110001001100
+#          31:  0111000011100001
+# good Min =  2
+# good Max = 13
+#           0:  1010100000000111
+#           1:  0010100111110100
+#           2:  0111111111010100
+#           3:  1100010101110011
+#           4:  0111011111110001
+#           5:  0100101111001010
+#           6:  1111010110010001
+#           7:  1110100010010101
+#           8:  1110011101000011
+#           9:  1110011011111000
+#          10:  1010101011010101
+#          11:  0000110001111111
+#          12:  1110010100001001
+#          13:  1111100011101110
+#          14:  0110100010010000
+#          15:  1000101001000110
+#          16:  0001100001011111
+#          17:  0011110001100010
+#          18:  1011111001010111
+#          19:  1000001001100011
+#          20:  1111001100001100
+#          21:  0010110110011011
+#          22:  1111100110000111
+#          23:  1100110011010010
+#          24:  1001111010001110
+#          25:  0000100100010011
+#          26:  0010000110010000
+#          27:  0000011000011111
+#          28:  0000011001101111
+#          29:  1100100101111011
+#          30:  0000001000000101
+#          31:  1000110100011001
+# good Min =  3
+# good Max = 13
+#           0:  0100001001000000
+#           1:  1010001000110110
+#           2:  1001111010110100
+#           3:  0000000111110100
+#           4:  1001100001011001
+#           5:  1111101100000100
+#           6:  1010000011000110
+#           7:  1000110000000011
+#           8:  0011011111000100
+#           9:  0101001111000001
+#          10:  1100011010100100
+#          11:  1110000010110111
+#          12:  1000100000011100
+#          13:  0010100110010110
+#          14:  0110000011101001
+#          15:  1101100110100001
+#          16:  1011110001100111
+#          17:  1011100110001011
+#          18:  0111101111010010
+#          19:  0000111100011101
+#          20:  1011111001100111
+#          21:  1111111001010011
+#          22:  1101110000001111
+#          23:  1110001101100011
+#          24:  0011011110011000
+#          25:  1011010110001111
+#          26:  0001100010011011
+#          27:  0110110000010101
+#          28:  1001011111011011
+#          29:  0101101001111000
+#          30:  0111010100011110
+#          31:  1000110100000111
+# good Min =  1
+# good Max = 14
+#           0:  0010100000000000
+#           1:  1001101100001101
+#           2:  1001110010101110
+#           3:  1000111110111010
+#           4:  1001010110101111
+#           5:  0001101111001100
+#           6:  1001100001011000
+#           7:  0111010001111000
+#           8:  0000010110000011
+#           9:  0010101010000100
+#          10:  1101100000100010
+#          11:  1000110001011100
+#          12:  1010010100010001
+#          13:  0000001101111001
+#          14:  0110011101111100
+#          15:  0111010011111110
+#          16:  0110001100011010
+#          17:  1010001000100000
+#          18:  0000111010110101
+#          19:  1000100010111000
+#          20:  1110100101101010
+#          21:  1100001011110000
+#          22:  0101111110111110
+#          23:  1110010110011100
+#          24:  1010010011111010
+#          25:  1110000011000001
+#          26:  1010000100010111
+#          27:  0110010010110111
+#          28:  1100000110010100
+#          29:  0011100100101011
+#          30:  1110000000010000
+#          31:  1010010111101110
+# good Min =  3
+# good Max = 14
+#           0:  1110100000000001
+#           1:  0010010001011000
+#           2:  0111000100111000
+#           3:  1000001001000000
+#           4:  1001101101101100
+#           5:  1010001001110111
+#           6:  0110100100001110
+#           7:  0011110110001010
+#           8:  0001100011110011
+#           9:  0000110101111011
+#          10:  1000001001011000
+#          11:  1011111010101001
+#          12:  0111111011000101
+#          13:  1100100000110011
+#          14:  0011101001000011
+#          15:  0101001001010111
+#          16:  1010100000101011
+#          17:  0000011110001100
+#          18:  1100110101000000
+#          19:  0000010111011011
+#          20:  0011000101111000
+#          21:  1011001010100110
+#          22:  0011010010010000
+#          23:  1010001111010101
+#          24:  0111011101111011
+#          25:  0111010111110111
+#          26:  0010111110001100
+#          27:  1011011101000001
+#          28:  1001001110110010
+#          29:  1011110100111000
+#          30:  0011011010010011
+#          31:  1000110001010010
+# good Min =  2
+# good Max = 13
+# Minimum correct          10/         10
+# Maximum correct          10/         10
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench1_new.sv(105)
+#    Time: 41913650 ns  Iteration: 0  Instance: /test_bench1_new
+# Break in Module test_bench1_new at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench1_new.sv line 105
+vsim work.test_bench2_new
+# End time: 15:42:20 on Aug 01,2024, Elapsed time: 0:00:23
+# Errors: 0, Warnings: 1
+# vsim work.test_bench2_new 
+# Start time: 15:42:20 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.test_bench2_new
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+run -all
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# good Min =     1
+# good Max = 65535
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -1
+#          18:   32767
+#          19:   16383
+#          20:    8191
+#          21:    4095
+#          22:    2047
+#          23:    1023
+#          24:     511
+#          25:     255
+#          26:     127
+#          27:      63
+#          28:      31
+#          29:      15
+#          30:       7
+#          31:       3
+# good Min =     0
+# good Max = 32768
+#           0:  -32768
+#           1:  -32768
+#           2:  -32768
+#           3:   32767
+#           4:   32767
+#           5:  -32768
+#           6:       0
+#           7:  -32640
+#           8:  -32768
+#           9:       0
+#          10:   32767
+#          11:       0
+#          12:       0
+#          13:   32767
+#          14:     255
+#          15:     255
+#          16:  -32257
+#          17:  -32257
+#          18:   32512
+#          19:   32767
+#          20:   32767
+#          21:   32512
+#          22:      -1
+#          23:    -256
+#          24:    -256
+#          25:      -1
+#          26:     255
+#          27:     256
+#          28:     256
+#          29:     255
+#          30:  -32768
+#          31:     255
+# good Min =     0
+# good Max = 65535
+#           0:   13604
+#           1:   24193
+#           2:  -10743
+#           3:   22115
+#           4:   31501
+#           5:  -26227
+#           6:  -31643
+#           7:   21010
+#           8:   -7423
+#           9:  -13043
+#          10:   -3722
+#          11:  -12995
+#          12:   22509
+#          13:   -2164
+#          14:   -5639
+#          15:    9414
+#          16:  -31547
+#          17:  -11606
+#          18:   -2075
+#          19:   29303
+#          20:  -10734
+#          21:   -9329
+#          22:   27122
+#          23:  -26930
+#          24:   31464
+#          25:   20165
+#          26:   18780
+#          27:   10429
+#          28:   22573
+#          29:    9829
+#          30:   25187
+#          31:  -30966
+# good Min =     9
+# good Max = 63144
+#           0:  -17920
+#           1:  -10986
+#           2:     504
+#           3:  -30155
+#           4:   28320
+#           5:   -4360
+#           6:   19353
+#           7:   -3977
+#           8:    4339
+#           9:  -28367
+#          10:  -10403
+#          11:  -17505
+#          12:  -18664
+#          13:   10603
+#          14:    9029
+#          15:   14556
+#          16:   17208
+#          17:   -7818
+#          18:   26171
+#          19:   30436
+#          20:   20469
+#          21:  -23276
+#          22:  -24887
+#          23:   16022
+#          24:   13990
+#          25:    8714
+#          26:  -29760
+#          27:    7440
+#          28:    5257
+#          29:  -15283
+#          30:  -23351
+#          31:   23777
+# good Min =    75
+# good Max = 60591
+#           0:  -22876
+#           1:   11216
+#           2:  -25919
+#           3:    2764
+#           4:   12129
+#           5:   -3279
+#           6:   20620
+#           7:   -5566
+#           8:   31840
+#           9:   -1631
+#          10:   32302
+#          11:  -18009
+#          12:  -29955
+#          13:  -16655
+#          14:  -17089
+#          15:   -7016
+#          16:   -3944
+#          17:   31317
+#          18:    -260
+#          19:   20046
+#          20:   23234
+#          21:  -25743
+#          22:    3390
+#          23:  -11559
+#          24:    3933
+#          25:   18904
+#          26:    2347
+#          27:  -15081
+#          28:   27397
+#          29:   -6964
+#          30:   -5044
+#          31:   28897
+# good Min =    52
+# good Max = 62257
+#           0:  -22521
+#           1:   10740
+#           2:   32724
+#           3:  -14989
+#           4:   30705
+#           5:   19402
+#           6:   -2671
+#           7:   -5995
+#           8:   -6333
+#           9:   -6408
+#          10:  -21803
+#          11:    3199
+#          12:   -6903
+#          13:   -1810
+#          14:   26768
+#          15:  -30138
+#          16:    6239
+#          17:   15458
+#          18:  -16809
+#          19:  -32157
+#          20:   -3316
+#          21:   11675
+#          22:   -1657
+#          23:  -13102
+#          24:  -24946
+#          25:    2323
+#          26:    8592
+#          27:    1567
+#          28:    1647
+#          29:  -13957
+#          30:     517
+#          31:  -29415
+# good Min =    75
+# good Max = 64881
+#           0:   16960
+#           1:  -24010
+#           2:  -24908
+#           3:     500
+#           4:  -26535
+#           5:   -1276
+#           6:  -24378
+#           7:  -29693
+#           8:   14276
+#           9:   21441
+#          10:  -14684
+#          11:   -8009
+#          12:  -30692
+#          13:   10646
+#          14:   24809
+#          15:   -9823
+#          16:  -17305
+#          17:  -18037
+#          18:   31698
+#          19:    3869
+#          20:  -16793
+#          21:    -429
+#          22:   -9201
+#          23:   -7325
+#          24:   14232
+#          25:  -19057
+#          26:    6299
+#          27:   27669
+#          28:  -26661
+#          29:   23160
+#          30:   29982
+#          31:  -29433
+# good Min =    44
+# good Max = 62390
+#           0:   10240
+#           1:  -25843
+#           2:  -25426
+#           3:  -28742
+#           4:  -27217
+#           5:    7116
+#           6:  -26536
+#           7:   29816
+#           8:    1411
+#           9:   10884
+#          10:  -10206
+#          11:  -29604
+#          12:  -23279
+#          13:     889
+#          14:   26492
+#          15:   29950
+#          16:   25370
+#          17:  -24032
+#          18:    3765
+#          19:  -30536
+#          20:   -5782
+#          21:  -15632
+#          22:   24510
+#          23:   -6756
+#          24:  -23302
+#          25:   -7999
+#          26:  -24297
+#          27:   25783
+#          28:  -15980
+#          29:   14635
+#          30:   -8176
+#          31:  -23058
+# good Min =    23
+# good Max = 60486
+#           0:   -6143
+#           1:    9304
+#           2:   28984
+#           3:  -32192
+#           4:  -25748
+#           5:  -23945
+#           6:   26894
+#           7:   15754
+#           8:    6387
+#           9:    3451
+#          10:  -32168
+#          11:  -16727
+#          12:   32453
+#          13:  -14285
+#          14:   14915
+#          15:   21079
+#          16:  -22485
+#          17:    1932
+#          18:  -12992
+#          19:    1499
+#          20:   12664
+#          21:  -19802
+#          22:   13456
+#          23:  -23595
+#          24:   30587
+#          25:   30199
+#          26:   12172
+#          27:  -18623
+#          28:  -27726
+#          29:  -17096
+#          30:   13971
+#          31:  -29614
+# good Min =    24
+# good Max = 64645
+# Minimum correct          10/         10
+# Maximum correct          10/         10
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench2_new.sv(108)
+#    Time: 51779450 ns  Iteration: 0  Instance: /test_bench2_new
+# Break in Module test_bench2_new at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench2_new.sv line 108
+vsim work.test_bench3_new
+# End time: 15:42:42 on Aug 01,2024, Elapsed time: 0:00:22
+# Errors: 0, Warnings: 1
+# vsim work.test_bench3_new 
+# Start time: 15:42:42 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.test_bench3_new
+# Loading work.topLevel
+# Loading work.regFile
+# Loading work.instrMem
+# Loading work.adder
+# Loading work.lut
+# Loading work.alu
+# Loading work.dataMem
+run -all
+#           0:      0
+#           1:      1
+#           2:      3
+#           3:      7
+#           4:     15
+#           5:     31
+#           6:     63
+#           7:    127
+#           8:    255
+#           9:    511
+#          10:   1023
+#          11:   2047
+#          12:   4095
+#          13:   8191
+#          14:  16383
+#          15:  32767
+#          16:  65535
+#          17:  65534
+#          18:  65532
+#          19:  65528
+#          20:  65520
+#          21:  65504
+#          22:  65472
+#          23:  65408
+#          24:  65280
+#          25:  65024
+#          26:  64512
+#          27:  63488
+#          28:  61440
+#          29:  57344
+#          30:  49152
+#          31:  32768
+# Yes!     1 *     0 =          0
+# Yes!     7 *     3 =         21
+# Yes!    31 *    15 =        465
+# Yes!   127 *    63 =       8001
+# Yes!   511 *   255 =     130305
+# Yes!  2047 *  1023 =    2094081
+# Yes!  8191 *  4095 =   33542145
+# Yes! 32767 * 16383 =  536821761
+# Yes! 65534 * 65535 = 4294770690
+# Yes! 65528 * 65532 = 4294180896
+# Yes! 65504 * 65520 = 4291822080
+# Yes! 65408 * 65472 = 4282392576
+# Yes! 65024 * 65280 = 4244766720
+# Yes! 63488 * 64512 = 4095737856
+# Yes! 57344 * 61440 = 3523215360
+# Yes! 32768 * 49152 = 1610612736
+#           0:      0
+#           1:      1
+#           2:      3
+#           3:      7
+#           4:     15
+#           5:     31
+#           6:     63
+#           7:    127
+#           8:    255
+#           9:    511
+#          10:   1023
+#          11:   2047
+#          12:   4095
+#          13:   8191
+#          14:  16383
+#          15:  32767
+#          16:  65535
+#          17:  65535
+#          18:  32767
+#          19:  16383
+#          20:   8191
+#          21:   4095
+#          22:   2047
+#          23:   1023
+#          24:    511
+#          25:    255
+#          26:    127
+#          27:     63
+#          28:     31
+#          29:     15
+#          30:      7
+#          31:      3
+# Yes!     1 *     0 =          0
+# Yes!     7 *     3 =         21
+# Yes!    31 *    15 =        465
+# Yes!   127 *    63 =       8001
+# Yes!   511 *   255 =     130305
+# Yes!  2047 *  1023 =    2094081
+# Yes!  8191 *  4095 =   33542145
+# Yes! 32767 * 16383 =  536821761
+# Yes! 65535 * 65535 = 4294836225
+# Yes! 16383 * 32767 =  536821761
+# Yes!  4095 *  8191 =   33542145
+# Yes!  1023 *  2047 =    2094081
+# Yes!   255 *   511 =     130305
+# Yes!    63 *   127 =       8001
+# Yes!    15 *    31 =        465
+# Yes!     3 *     7 =         21
+#           0:  32768
+#           1:  32768
+#           2:  32768
+#           3:  32767
+#           4:  32767
+#           5:  32768
+#           6:      0
+#           7:  32896
+#           8:  32768
+#           9:      0
+#          10:  32767
+#          11:      0
+#          12:      0
+#          13:  32767
+#          14:    255
+#          15:    255
+#          16:  33279
+#          17:  33279
+#          18:  32512
+#          19:  32767
+#          20:  32767
+#          21:  32512
+#          22:  65535
+#          23:  65280
+#          24:  65280
+#          25:  65535
+#          26:    255
+#          27:    256
+#          28:    256
+#          29:    255
+#          30:  32768
+#          31:    255
+# Yes! 32768 * 32768 = 1073741824
+# Yes! 32767 * 32768 = 1073709056
+# Yes! 32768 * 32767 = 1073709056
+# Yes! 32896 *     0 =          0
+# Yes!     0 * 32768 =          0
+# Yes!     0 * 32767 =          0
+# Yes! 32767 *     0 =          0
+# Yes!   255 *   255 =      65025
+# Yes! 33279 * 33279 = 1107491841
+# Yes! 32767 * 32512 = 1065320704
+# Yes! 32512 * 32767 = 1065320704
+# Yes! 65280 * 65535 = 4278124800
+# Yes! 65535 * 65280 = 4278124800
+# Yes!   256 *   255 =      65280
+# Yes!   255 *   256 =      65280
+# Yes!   255 * 32768 =    8355840
+#           0:  13604
+#           1:  24193
+#           2:  54793
+#           3:  22115
+#           4:  31501
+#           5:  39309
+#           6:  33893
+#           7:  21010
+#           8:  58113
+#           9:  52493
+#          10:  61814
+#          11:  52541
+#          12:  22509
+#          13:  63372
+#          14:  59897
+#          15:   9414
+#          16:  33989
+#          17:  53930
+#          18:  63461
+#          19:  29303
+#          20:  54802
+#          21:  56207
+#          22:  27122
+#          23:  38606
+#          24:  31464
+#          25:  20165
+#          26:  18780
+#          27:  10429
+#          28:  22573
+#          29:   9829
+#          30:  25187
+#          31:  34570
+# Yes! 24193 * 13604 =  329121572
+# Yes! 22115 * 54793 = 1211747195
+# Yes! 39309 * 31501 = 1238272809
+# Yes! 21010 * 33893 =  712091930
+# Yes! 52493 * 58113 = 3050525709
+# Yes! 52541 * 61814 = 3247769374
+# Yes! 63372 * 22509 = 1426440348
+# Yes!  9414 * 59897 =  563870358
+# Yes! 53930 * 33989 = 1833026770
+# Yes! 29303 * 63461 = 1859597683
+# Yes! 56207 * 54802 = 3080256014
+# Yes! 38606 * 27122 = 1047071932
+# Yes! 20165 * 31464 =  634471560
+# Yes! 10429 * 18780 =  195856620
+# Yes!  9829 * 22573 =  221870017
+# Yes! 34570 * 25187 =  870714590
+#           0:  47616
+#           1:  54550
+#           2:    504
+#           3:  35381
+#           4:  28320
+#           5:  61176
+#           6:  19353
+#           7:  61559
+#           8:   4339
+#           9:  37169
+#          10:  55133
+#          11:  48031
+#          12:  46872
+#          13:  10603
+#          14:   9029
+#          15:  14556
+#          16:  17208
+#          17:  57718
+#          18:  26171
+#          19:  30436
+#          20:  20469
+#          21:  42260
+#          22:  40649
+#          23:  16022
+#          24:  13990
+#          25:   8714
+#          26:  35776
+#          27:   7440
+#          28:   5257
+#          29:  50253
+#          30:  42185
+#          31:  23777
+# Yes! 54550 * 47616 = 2597452800
+# Yes! 35381 *   504 =   17832024
+# Yes! 61176 * 28320 = 1732504320
+# Yes! 61559 * 19353 = 1191351327
+# Yes! 37169 *  4339 =  161276291
+# Yes! 48031 * 55133 = 2648093123
+# Yes! 10603 * 46872 =  496983816
+# Yes! 14556 *  9029 =  131426124
+# Yes! 57718 * 17208 =  993211344
+# Yes! 30436 * 26171 =  796540556
+# Yes! 42260 * 20469 =  865019940
+# Yes! 16022 * 40649 =  651278278
+# Yes!  8714 * 13990 =  121908860
+# Yes!  7440 * 35776 =  266173440
+# Yes! 50253 *  5257 =  264180021
+# Yes! 23777 * 42185 = 1003032745
+#           0:  42660
+#           1:  11216
+#           2:  39617
+#           3:   2764
+#           4:  12129
+#           5:  62257
+#           6:  20620
+#           7:  59970
+#           8:  31840
+#           9:  63905
+#          10:  32302
+#          11:  47527
+#          12:  35581
+#          13:  48881
+#          14:  48447
+#          15:  58520
+#          16:  61592
+#          17:  31317
+#          18:  65276
+#          19:  20046
+#          20:  23234
+#          21:  39793
+#          22:   3390
+#          23:  53977
+#          24:   3933
+#          25:  18904
+#          26:   2347
+#          27:  50455
+#          28:  27397
+#          29:  58572
+#          30:  60492
+#          31:  28897
+# Yes! 11216 * 42660 =  478474560
+# Yes!  2764 * 39617 =  109501388
+# Yes! 62257 * 12129 =  755115153
+# Yes! 59970 * 20620 = 1236581400
+# Yes! 63905 * 31840 = 2034735200
+# Yes! 47527 * 32302 = 1535217154
+# Yes! 48881 * 35581 = 1739234861
+# Yes! 58520 * 48447 = 2835118440
+# Yes! 31317 * 61592 = 1928876664
+# Yes! 20046 * 65276 = 1308522696
+# Yes! 39793 * 23234 =  924550562
+# Yes! 53977 *  3390 =  182982030
+# Yes! 18904 *  3933 =   74349432
+# Yes! 50455 *  2347 =  118417885
+# Yes! 58572 * 27397 = 1604697084
+# Yes! 28897 * 60492 = 1748037324
+#           0:  43015
+#           1:  10740
+#           2:  32724
+#           3:  50547
+#           4:  30705
+#           5:  19402
+#           6:  62865
+#           7:  59541
+#           8:  59203
+#           9:  59128
+#          10:  43733
+#          11:   3199
+#          12:  58633
+#          13:  63726
+#          14:  26768
+#          15:  35398
+#          16:   6239
+#          17:  15458
+#          18:  48727
+#          19:  33379
+#          20:  62220
+#          21:  11675
+#          22:  63879
+#          23:  52434
+#          24:  40590
+#          25:   2323
+#          26:   8592
+#          27:   1567
+#          28:   1647
+#          29:  51579
+#          30:    517
+#          31:  36121
+# Yes! 10740 * 43015 =  461981100
+# Yes! 50547 * 32724 = 1654100028
+# Yes! 19402 * 30705 =  595738410
+# Yes! 59541 * 62865 = 3743044965
+# Yes! 59128 * 59203 = 3500554984
+# Yes!  3199 * 43733 =  139901867
+# Yes! 63726 * 58633 = 3736446558
+# Yes! 35398 * 26768 =  947533664
+# Yes! 15458 *  6239 =   96442462
+# Yes! 33379 * 48727 = 1626458533
+# Yes! 11675 * 62220 =  726418500
+# Yes! 52434 * 63879 = 3349431486
+# Yes!  2323 * 40590 =   94290570
+# Yes!  1567 *  8592 =   13463664
+# Yes! 51579 *  1647 =   84950613
+# Yes! 36121 *   517 =   18674557
+#           0:  16960
+#           1:  41526
+#           2:  40628
+#           3:    500
+#           4:  39001
+#           5:  64260
+#           6:  41158
+#           7:  35843
+#           8:  14276
+#           9:  21441
+#          10:  50852
+#          11:  57527
+#          12:  34844
+#          13:  10646
+#          14:  24809
+#          15:  55713
+#          16:  48231
+#          17:  47499
+#          18:  31698
+#          19:   3869
+#          20:  48743
+#          21:  65107
+#          22:  56335
+#          23:  58211
+#          24:  14232
+#          25:  46479
+#          26:   6299
+#          27:  27669
+#          28:  38875
+#          29:  23160
+#          30:  29982
+#          31:  36103
+# Yes! 41526 * 16960 =  704280960
+# Yes!   500 * 40628 =   20314000
+# Yes! 64260 * 39001 = 2506204260
+# Yes! 35843 * 41158 = 1475226194
+# Yes! 21441 * 14276 =  306091716
+# Yes! 57527 * 50852 = 2925363004
+# Yes! 10646 * 34844 =  370949224
+# Yes! 55713 * 24809 = 1382183817
+# Yes! 47499 * 48231 = 2290924269
+# Yes!  3869 * 31698 =  122639562
+# Yes! 65107 * 48743 = 3173510501
+# Yes! 58211 * 56335 = 3279316685
+# Yes! 46479 * 14232 =  661489128
+# Yes! 27669 *  6299 =  174287031
+# Yes! 23160 * 38875 =  900345000
+# Yes! 36103 * 29982 = 1082440146
+#           0:  10240
+#           1:  39693
+#           2:  40110
+#           3:  36794
+#           4:  38319
+#           5:   7116
+#           6:  39000
+#           7:  29816
+#           8:   1411
+#           9:  10884
+#          10:  55330
+#          11:  35932
+#          12:  42257
+#          13:    889
+#          14:  26492
+#          15:  29950
+#          16:  25370
+#          17:  41504
+#          18:   3765
+#          19:  35000
+#          20:  59754
+#          21:  49904
+#          22:  24510
+#          23:  58780
+#          24:  42234
+#          25:  57537
+#          26:  41239
+#          27:  25783
+#          28:  49556
+#          29:  14635
+#          30:  57360
+#          31:  42478
+# Yes! 39693 * 10240 =  406456320
+# Yes! 36794 * 40110 = 1475807340
+# Yes!  7116 * 38319 =  272678004
+# Yes! 29816 * 39000 = 1162824000
+# Yes! 10884 *  1411 =   15357324
+# Yes! 35932 * 55330 = 1988117560
+# Yes!   889 * 42257 =   37566473
+# Yes! 29950 * 26492 =  793435400
+# Yes! 41504 * 25370 = 1052956480
+# Yes! 35000 *  3765 =  131775000
+# Yes! 49904 * 59754 = 2981963616
+# Yes! 58780 * 24510 = 1440697800
+# Yes! 57537 * 42234 = 2430017658
+# Yes! 25783 * 41239 = 1063265137
+# Yes! 14635 * 49556 =  725252060
+# Yes! 42478 * 57360 = 2436538080
+#           0:  59393
+#           1:   9304
+#           2:  28984
+#           3:  33344
+#           4:  39788
+#           5:  41591
+#           6:  26894
+#           7:  15754
+#           8:   6387
+#           9:   3451
+#          10:  33368
+#          11:  48809
+#          12:  32453
+#          13:  51251
+#          14:  14915
+#          15:  21079
+#          16:  43051
+#          17:   1932
+#          18:  52544
+#          19:   1499
+#          20:  12664
+#          21:  45734
+#          22:  13456
+#          23:  41941
+#          24:  30587
+#          25:  30199
+#          26:  12172
+#          27:  46913
+#          28:  37810
+#          29:  48440
+#          30:  13971
+#          31:  35922
+# Yes!  9304 * 59393 =  552592472
+# Yes! 33344 * 28984 =  966442496
+# Yes! 41591 * 39788 = 1654822708
+# Yes! 15754 * 26894 =  423688076
+# Yes!  3451 *  6387 =   22041537
+# Yes! 48809 * 33368 = 1628658712
+# Yes! 51251 * 32453 = 1663248703
+# Yes! 21079 * 14915 =  314393285
+# Yes!  1932 * 43051 =   83174532
+# Yes!  1499 * 52544 =   78763456
+# Yes! 45734 * 12664 =  579175376
+# Yes! 41941 * 13456 =  564358096
+# Yes! 30199 * 30587 =  923696813
+# Yes! 46913 * 12172 =  571025036
+# Yes! 48440 * 37810 = 1831516400
+# Yes! 35922 * 13971 =  501866262
+# Tests passed          10/         10
+# ** Note: $stop    : C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench3_new.sv(76)
+#    Time: 53866050 ns  Iteration: 0  Instance: /test_bench3_new
+# Break in Module test_bench3_new at C:/Users/ewanc/OneDrive/Documents/summerone_24/CSE141L/modelSimFolder/topLevel/test_bench3_new.sv line 76
