@@ -1,4 +1,4 @@
-# miniMips_141L
+# miniMips_ComputerArchitecture
 Version control for our programs and processor architecture files
 
 In order to use our processor, use the sv files stored in systemVerilog files. These will include all the sv files needed for modules, and also has several test benches. 
